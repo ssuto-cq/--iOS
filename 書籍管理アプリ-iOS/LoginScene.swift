@@ -57,6 +57,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         loginButton.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
         loginButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
         loginButton.layer.position=CGPoint(x:self.view.frame.width/2,y:200)
+        loginButton.addTarget(self, action: #selector(ViewController.LoginTapped(sender:)), for: .touchUpInside)
         self.view.addSubview(loginButton)
         
         //画面のレイアウト
@@ -87,6 +88,12 @@ class ViewController: UIViewController,UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    internal func LoginTapped(sender : UIButton) {
+        let booksViewScene: BooksViewScene = BooksViewScene()
+        self.navigationController?.pushViewController(booksViewScene, animated: true)
+        }
+    
 
 
 }
