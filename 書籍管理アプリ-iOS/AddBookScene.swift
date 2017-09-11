@@ -10,10 +10,36 @@ import UIKit
 
 class AddBookScene: UIViewController,UITextFieldDelegate{
     
+    var bookImage:UIImage!
+    var bookImageView:UIImageView!
+    let imageButton=UIButton()
+    let bookNameLabel=UILabel()
+    let priceLabel=UILabel()
+    let dateLabel=UILabel()
+    let bookNameInput=UITextField()
+    let priceInput=UITextField()
+    let datePickerInput=UITextField()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title="書籍追加"
+        
+        UISetting()
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    //モーダル画面を閉じる処理
+    @IBAction func closeModalDialog(sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func UISetting(){
         
         //閉じるボタンの追加
         let closeButton:UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookScene.closeModalDialog))
@@ -23,15 +49,6 @@ class AddBookScene: UIViewController,UITextFieldDelegate{
         let saveButton:UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
-        var bookImage:UIImage!
-        var bookImageView:UIImageView!
-        let imageButton=UIButton()
-        let bookNameLabel=UILabel()
-        let priceLabel=UILabel()
-        let dateLabel=UILabel()
-        let bookNameInput=UITextField()
-        let priceInput=UITextField()
-        let datePickerInput=UITextField()
         
         //書籍画像の設定
         bookImage=UIImage(named: "noimage.png")
@@ -88,8 +105,8 @@ class AddBookScene: UIViewController,UITextFieldDelegate{
         datePickerInput.clearButtonMode = .always
         datePickerInput.returnKeyType = .done
         self.view.addSubview(datePickerInput)
+
         
-    
         ////全体のレイアウト////
         bookImageView.translatesAutoresizingMaskIntoConstraints=false
         imageButton.translatesAutoresizingMaskIntoConstraints=false
@@ -135,16 +152,7 @@ class AddBookScene: UIViewController,UITextFieldDelegate{
         datePickerInput.centerXAnchor.constraint(equalTo: bookNameInput.centerXAnchor).isActive=true
         datePickerInput.widthAnchor.constraint(equalToConstant: 220).isActive=true
         datePickerInput.heightAnchor.constraint(equalToConstant: 30).isActive=true
-        
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    //モーダル画面を閉じる処理
-    @IBAction func closeModalDialog(sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
+
     
 }

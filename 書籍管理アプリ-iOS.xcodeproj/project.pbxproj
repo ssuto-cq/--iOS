@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF036E691F664E1B00106B4C /* EditBookScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF036E681F664E1B00106B4C /* EditBookScene.swift */; };
 		EF0800F11F65425C0042D566 /* AddBookScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0800F01F65425C0042D566 /* AddBookScene.swift */; };
 		EF0800F31F6570CB0042D566 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0800F21F6570CB0042D566 /* noimage.png */; };
 		EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800311F6114F600D65DB7 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF036E681F664E1B00106B4C /* EditBookScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBookScene.swift; sourceTree = "<group>"; };
 		EF0800F01F65425C0042D566 /* AddBookScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookScene.swift; sourceTree = "<group>"; };
 		EF0800F21F6570CB0042D566 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noimage.png; path = ../../Documents/noimage.png; sourceTree = "<group>"; };
 		EF18002E1F6114F600D65DB7 /* 書籍管理アプリ-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "書籍管理アプリ-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 				EF1800331F6114F600D65DB7 /* LoginScene.swift */,
 				EF37574E1F626DF400FBCF6E /* BooksViewScene.swift */,
 				EF0800F01F65425C0042D566 /* AddBookScene.swift */,
+				EF036E681F664E1B00106B4C /* EditBookScene.swift */,
 				EF18003D1F6114F600D65DB7 /* Info.plist */,
 				EF3757501F62A49E00FBCF6E /* azarasi.jpg */,
 			);
@@ -287,6 +290,7 @@
 				EF1800341F6114F600D65DB7 /* LoginScene.swift in Sources */,
 				EF37574F1F626DF400FBCF6E /* BooksViewScene.swift in Sources */,
 				EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */,
+				EF036E691F664E1B00106B4C /* EditBookScene.swift in Sources */,
 				EF0800F11F65425C0042D566 /* AddBookScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

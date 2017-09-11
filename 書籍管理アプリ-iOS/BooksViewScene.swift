@@ -21,9 +21,10 @@ class BooksViewScene: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     let booksDate:[String]=["2017/5/10","2017/7/20","2017/8/8","1985/6/20"]
     
+    var selectedImage:UIImage?//
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         let tableView=UITableView()
@@ -67,7 +68,7 @@ class BooksViewScene: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         tabBar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
         tabBar.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive=true
-        tabBar.heightAnchor.constraint(equalToConstant: 70.0).isActive=true
+        tabBar.heightAnchor.constraint(equalToConstant: 50.0).isActive=true
         
     }
     
@@ -102,6 +103,17 @@ class BooksViewScene: UIViewController,UITableViewDelegate,UITableViewDataSource
         return 4
     }
     
+    //書籍編集画面への遷移処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //let editBookScene=EditBookScene()
+        let editBookScene=UINavigationController(rootViewController: EditBookScene())
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.present(editBookScene, animated: true, completion: nil)
+        
+    }
+        
+
 }
 
 //セルのカスタム
