@@ -78,6 +78,10 @@ class BooksViewScene: UIViewController,UITableViewDelegate,UITableViewDataSource
     //追加ボタンの処理
     func addButtonTapped(){
         print("追加完了")
+        let addBookScene=AddBookScene()
+        let navi=UINavigationController(rootViewController: addBookScene)
+        addBookScene.modalTransitionStyle=UIModalTransitionStyle.crossDissolve
+        present(navi,animated: true,completion: nil)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->UITableViewCell {
