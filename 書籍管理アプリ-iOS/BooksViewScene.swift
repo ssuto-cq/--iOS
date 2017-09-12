@@ -26,10 +26,10 @@ class BooksViewScene: UIViewController,UITableViewDelegate,UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title="書籍一覧"
         
         let tableView=UITableView()
         let loadButton=UIButton()
-        let tabBar=UITabBar()
         
         let addButton:UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(BooksViewScene.addButtonTapped))
         self.navigationItem.setRightBarButtonItems([addButton], animated: true)
@@ -51,24 +51,10 @@ class BooksViewScene: UIViewController,UITableViewDelegate,UITableViewDataSource
         loadButton.layer.position=CGPoint(x:self.view.frame.width/2,y:200)
         self.view.addSubview(loadButton)
         
-        //タブバーの設定
-        tabBar.delegate=self as? UITabBarDelegate
-        tabBar.barTintColor=UIColor.gray
-        let booksTab:UITabBarItem=UITabBarItem(title:"書籍一覧",image: nil, tag: 1)
-        let settingTab:UITabBarItem=UITabBarItem(title:"設定",image: nil, tag: 2)
-        tabBar.items=[booksTab,settingTab]
-        self.view.addSubview(tabBar)
-        
-        //画面のレイアウト
-        tabBar.translatesAutoresizingMaskIntoConstraints=false
         loadButton.translatesAutoresizingMaskIntoConstraints=false
         
-        loadButton.bottomAnchor.constraint(equalTo: tabBar.topAnchor).isActive=true
-        loadButton.widthAnchor.constraint(equalTo: tabBar.widthAnchor ).isActive=true
-        
-        tabBar.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
-        tabBar.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive=true
-        tabBar.heightAnchor.constraint(equalToConstant: 50.0).isActive=true
+        loadButton.bottomAnchor.constraint(equalTo:self.view.bottomAnchor,constant:-50).isActive=true
+        loadButton.widthAnchor.constraint(equalTo:self.view.widthAnchor).isActive=true
         
     }
     

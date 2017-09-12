@@ -35,7 +35,7 @@ class AddBookScene: UIViewController,UITextFieldDelegate{
     }
     
     //モーダル画面を閉じる処理
-    @IBAction func closeModalDialog(sender: UIBarButtonItem) {
+    func closeModalDialog(sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     
