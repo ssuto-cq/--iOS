@@ -25,8 +25,8 @@ class TabBarSetting:UITabBarController,UITabBarControllerDelegate{
         let beforeSettingScene=UINavigationController(rootViewController: BeforeSettingScene())
         beforeSettingScene.tabBarItem=UITabBarItem(title: "設定", image:nil, tag: 2)
         navigationController.append(beforeSettingScene)//配列の要素を追加
-        
             
+                
         self.delegate=self
         self.viewControllers=navigationController
  

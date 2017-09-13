@@ -27,7 +27,7 @@ class AccountSettingScene:UIViewController,UITextFieldDelegate {
         self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
         
         //保存ボタンの追加
-        let saveButton:UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
+        let saveButton:UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(self.saveButtonTapped(sender:)))
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
 
@@ -115,5 +115,9 @@ class AccountSettingScene:UIViewController,UITextFieldDelegate {
     
     func closeModalDialog(sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+    //保存ボタンを押した時の処理
+    func saveButtonTapped(sender:UITabBarItem){
+        self.navigationController?.pushViewController(BooksViewScene(), animated: true)
     }
 }

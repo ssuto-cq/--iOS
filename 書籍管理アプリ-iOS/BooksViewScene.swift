@@ -21,7 +21,7 @@ class BooksViewScene: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     let booksDate:[String]=["2017/5/10","2017/7/20","2017/8/8","1985/6/20"]
     
-    var selectedImage:UIImage?//
+    var selectedImage:UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,10 +92,14 @@ class BooksViewScene: UIViewController,UITableViewDelegate,UITableViewDataSource
     //書籍編集画面への遷移処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //let editBookScene=EditBookScene()
-        let editBookScene=UINavigationController(rootViewController: EditBookScene())
+        let editBookScene=EditBookScene()
+        
+        editBookScene.Titles = booksTitles[indexPath.row]
+        editBookScene.Price = booksPrice[indexPath.row]
+        editBookScene.Date = booksDate[indexPath.row]
+        editBookScene.Image = booksImages[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
-        self.present(editBookScene, animated: true, completion: nil)
+        self.navigationController?.pushViewController(editBookScene, animated: true)
         
     }
         
