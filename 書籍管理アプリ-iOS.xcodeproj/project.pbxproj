@@ -18,6 +18,7 @@
 		EF1800471F6114F600D65DB7 /* _________iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800461F6114F600D65DB7 /* _________iOSTests.swift */; };
 		EF1800521F6114F600D65DB7 /* _________iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */; };
 		EF1800601F611A5100D65DB7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */; };
+		EF18DD731F692A9500C0EAE4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EF18DD721F692A9500C0EAE4 /* .swiftlint.yml */; };
 		EF31BC7C1F643F28002DECEE /* adventure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7A1F643F28002DECEE /* adventure.jpg */; };
 		EF31BC7D1F643F28002DECEE /* animal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7B1F643F28002DECEE /* animal.jpg */; };
 		EF31BC801F643F53002DECEE /* himatubusi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7E1F643F53002DECEE /* himatubusi.jpg */; };
@@ -25,6 +26,17 @@
 		EF37574F1F626DF400FBCF6E /* BooksViewScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37574E1F626DF400FBCF6E /* BooksViewScene.swift */; };
 		EF3757511F62A49E00FBCF6E /* azarasi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF3757501F62A49E00FBCF6E /* azarasi.jpg */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		EF18DD6C1F6924F200C0EAE4 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		EF1800431F6114F600D65DB7 /* PBXContainerItemProxy */ = {
@@ -61,6 +73,7 @@
 		EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_________iOSUITests.swift"; sourceTree = "<group>"; };
 		EF1800531F6114F600D65DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		EF18DD721F692A9500C0EAE4 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EF31BC7A1F643F28002DECEE /* adventure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = adventure.jpg; path = ../../Documents/adventure.jpg; sourceTree = "<group>"; };
 		EF31BC7B1F643F28002DECEE /* animal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = animal.jpg; path = ../../Documents/animal.jpg; sourceTree = "<group>"; };
 		EF31BC7E1F643F53002DECEE /* himatubusi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = himatubusi.jpg; path = ../../Documents/himatubusi.jpg; sourceTree = "<group>"; };
@@ -97,6 +110,7 @@
 		EF1800251F6114F500D65DB7 = {
 			isa = PBXGroup;
 			children = (
+				EF18DD721F692A9500C0EAE4 /* .swiftlint.yml */,
 				EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */,
 				EF1800301F6114F600D65DB7 /* 書籍管理アプリ-iOS */,
 				EF31BC7A1F643F28002DECEE /* adventure.jpg */,
@@ -165,8 +179,10 @@
 				EF18002A1F6114F600D65DB7 /* Sources */,
 				EF18002B1F6114F600D65DB7 /* Frameworks */,
 				EF18002C1F6114F600D65DB7 /* Resources */,
+				EF18DD691F69155C00C0EAE4 /* ShellScript */,
 			);
 			buildRules = (
+				EF18DD6C1F6924F200C0EAE4 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -265,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF18DD731F692A9500C0EAE4 /* .swiftlint.yml in Resources */,
 				EF0800F31F6570CB0042D566 /* noimage.png in Resources */,
 				EF31BC801F643F53002DECEE /* himatubusi.jpg in Resources */,
 				EF3757511F62A49E00FBCF6E /* azarasi.jpg in Resources */,
@@ -290,6 +307,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EF18DD691F69155C00C0EAE4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EF18002A1F6114F600D65DB7 /* Sources */ = {
@@ -442,6 +475,7 @@
 				DEVELOPMENT_TEAM = 4ETBXX8G33;
 				INFOPLIST_FILE = "書籍管理アプリ-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.someone.---------iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -456,6 +490,7 @@
 				DEVELOPMENT_TEAM = 4ETBXX8G33;
 				INFOPLIST_FILE = "書籍管理アプリ-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.someone.---------iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
