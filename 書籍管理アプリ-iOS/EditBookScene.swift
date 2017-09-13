@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditBookScene: UIViewController,UITextFieldDelegate{
+class EditBookScene: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     var bookImage:UIImage!
     var bookImageView:UIImageView!
@@ -54,6 +54,8 @@ class EditBookScene: UIViewController,UITextFieldDelegate{
         imageButton.setTitleColor(UIColor.lightGray, for: .normal)
         imageButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12)
         imageButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        imageButton.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
+        
         self.view.addSubview(imageButton)
         
         //書籍名ラベルの設定
@@ -182,6 +184,27 @@ class EditBookScene: UIViewController,UITextFieldDelegate{
         datePickerInput.text = dateFormat.string(from:pickerDate)
         
         self.view.endEditing(true)
+    }
+    
+    //カメラロールから写真を選択
+    func choosePicture(){
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let pickerView=UIImagePickerController()
+            
+            pickerView.delegate=self
+            pickerView.sourceType = UIImagePickerControllerSourceType .photoLibrary
+            
+            self.present(pickerView,animated: true,completion: nil)
+            
+        }
+    }
+    
+    
+    //写真を選んだ後の処理
+    func imagePickerController(_ picker:UIImagePickerController,didFinishPickingMediaWithInfo info:[String : Any]){
+        let image=info[UIImagePickerControllerOriginalImage] as! UIImage
+        self.bookImageView.image=image
+        self.dismiss(animated: true)
     }
 
 

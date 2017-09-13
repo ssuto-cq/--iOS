@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddBookScene: UIViewController{
+class AddBookScene: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     var bookImage:UIImage!
     var bookImageView:UIImageView!
@@ -29,7 +29,7 @@ class AddBookScene: UIViewController{
         self.title="書籍追加"
         
         UISetting()
-        test()
+        Layout()
         
     }
     
@@ -46,10 +46,30 @@ class AddBookScene: UIViewController{
     func toolBarBtnPush(sender: UIBarButtonItem){
         
     let pickerDate = datePicker.date
-        print(pickerDate)
-        datePickerInput.text = dateFormat.string(from:pickerDate)
         
+        datePickerInput.text = dateFormat.string(from:pickerDate)
+    
         self.view.endEditing(true)
+    }
+    
+    //カメラロールから写真を選択
+    func choosePicture(){
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let pickerView=UIImagePickerController()
+            
+            pickerView.delegate=self
+            pickerView.sourceType = UIImagePickerControllerSourceType .photoLibrary
+            
+         self.present(pickerView,animated: true,completion: nil)
+            
+        }
+    }
+    
+    //写真を選んだ後の処理
+    func imagePickerController(_ picker:UIImagePickerController,didFinishPickingMediaWithInfo info:[String : Any]){
+        let image=info[UIImagePickerControllerOriginalImage] as! UIImage
+        self.bookImageView.image=image
+        self.dismiss(animated: true)
     }
 
     
@@ -74,6 +94,8 @@ class AddBookScene: UIViewController{
         imageButton.setTitleColor(UIColor.lightGray, for: .normal)
         imageButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12)
         imageButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        imageButton.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
+        
         self.view.addSubview(imageButton)
         
         //書籍名ラベルの設定
@@ -145,7 +167,7 @@ class AddBookScene: UIViewController{
 
 extension AddBookScene:UITextFieldDelegate{
     
-    func test(){
+    func Layout(){
     
     ////全体のレイアウト////
     bookImageView.translatesAutoresizingMaskIntoConstraints=false
