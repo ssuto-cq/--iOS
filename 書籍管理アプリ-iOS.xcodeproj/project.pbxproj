@@ -14,6 +14,8 @@
 		EF0AAE131F6773A800E19987 /* TabBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE121F6773A800E19987 /* TabBarSetting.swift */; };
 		EF0AAE151F67A33100E19987 /* AccountSettingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE141F67A33100E19987 /* AccountSettingScene.swift */; };
 		EF13394B1F6A05820073EACF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EF13394A1F6A05820073EACF /* .swiftlint.yml */; };
+		EF1339581F6A1DD20073EACF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1339571F6A1DD20073EACF /* R.generated.swift */; };
+		EF1339591F6A1EF00073EACF /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF13394D1F6A14160073EACF /* Rswift.framework */; };
 		EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800311F6114F600D65DB7 /* AppDelegate.swift */; };
 		EF1800341F6114F600D65DB7 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800331F6114F600D65DB7 /* LoginScene.swift */; };
 		EF1800471F6114F600D65DB7 /* _________iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800461F6114F600D65DB7 /* _________iOSTests.swift */; };
@@ -63,6 +65,9 @@
 		EF0AAE121F6773A800E19987 /* TabBarSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarSetting.swift; sourceTree = "<group>"; };
 		EF0AAE141F67A33100E19987 /* AccountSettingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingScene.swift; sourceTree = "<group>"; };
 		EF13394A1F6A05820073EACF /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EF13394D1F6A14160073EACF /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
+		EF1339551F6A1D1A0073EACF /* rswift */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = rswift; sourceTree = "<group>"; };
+		EF1339571F6A1DD20073EACF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		EF18002E1F6114F600D65DB7 /* 書籍管理アプリ-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "書籍管理アプリ-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1800311F6114F600D65DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF1800331F6114F600D65DB7 /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF1339591F6A1EF00073EACF /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,9 +113,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF13394C1F6A14150073EACF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF1339551F6A1D1A0073EACF /* rswift */,
+				EF13394D1F6A14160073EACF /* Rswift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EF1800251F6114F500D65DB7 = {
 			isa = PBXGroup;
 			children = (
+				EF1339571F6A1DD20073EACF /* R.generated.swift */,
 				EF13394A1F6A05820073EACF /* .swiftlint.yml */,
 				EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */,
 				EF1800301F6114F600D65DB7 /* 書籍管理アプリ-iOS */,
@@ -121,6 +137,7 @@
 				EF1800451F6114F600D65DB7 /* 書籍管理アプリ-iOSTests */,
 				EF1800501F6114F600D65DB7 /* 書籍管理アプリ-iOSUITests */,
 				EF18002F1F6114F600D65DB7 /* Products */,
+				EF13394C1F6A14150073EACF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,10 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF1800561F6114F600D65DB7 /* Build configuration list for PBXNativeTarget "書籍管理アプリ-iOS" */;
 			buildPhases = (
+				EF18DD691F69155C00C0EAE4 /* Swiftlint */,
+				EF1339521F6A16720073EACF /* rswift */,
 				EF18002A1F6114F600D65DB7 /* Sources */,
 				EF18002B1F6114F600D65DB7 /* Frameworks */,
 				EF18002C1F6114F600D65DB7 /* Resources */,
-				EF18DD691F69155C00C0EAE4 /* ShellScript */,
+				EF13394F1F6A145C0073EACF /* ShellScript */,
 			);
 			buildRules = (
 				EF18DD6C1F6924F200C0EAE4 /* PBXBuildRule */,
@@ -309,13 +328,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		EF18DD691F69155C00C0EAE4 /* ShellScript */ = {
+		EF13394F1F6A145C0073EACF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		EF1339521F6A16720073EACF /* rswift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = rswift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/rswift\" \"$SRCROOT\"";
+		};
+		EF18DD691F69155C00C0EAE4 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +379,7 @@
 			files = (
 				EF1800341F6114F600D65DB7 /* LoginScene.swift in Sources */,
 				EF036E6B1F6696BE00106B4C /* BeforeSettingScene.swift in Sources */,
+				EF1339581F6A1DD20073EACF /* R.generated.swift in Sources */,
 				EF0AAE131F6773A800E19987 /* TabBarSetting.swift in Sources */,
 				EF37574F1F626DF400FBCF6E /* BooksViewScene.swift in Sources */,
 				EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */,
@@ -473,8 +522,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 4ETBXX8G33;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "書籍管理アプリ-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Rswift.framework",
+				);
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.someone.---------iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,8 +545,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 4ETBXX8G33;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "書籍管理アプリ-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Rswift.framework",
+				);
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.someone.---------iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
