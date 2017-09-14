@@ -28,7 +28,78 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
 
         self.title=R.string.localizable.addbook()
 
-        UISetting()
+        //UISetting()
+        //閉じるボタンの追加
+        let closeButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookScene.closeModalDialog))
+        self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
+        //保存ボタンの追加
+        let saveButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
+        self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
+        //書籍画像の設定
+        bookImage=UIImage(named:"noimage.png")
+        bookImageView=UIImageView(image:bookImage)
+        self.view.addSubview(bookImageView)
+        //画像添付ボタンの設定
+        let addImageTitle=R.string.localizable.addimage()
+        imageButton.setTitle(addImageTitle, for:UIControlState.normal)
+        imageButton.setTitleColor(UIColor.lightGray, for: .normal)
+        imageButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12)
+        imageButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        imageButton.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
+        self.view.addSubview(imageButton)
+        //書籍名ラベルの設定
+        bookNameLabel.text=R.string.localizable.booktitle()
+        bookNameLabel.sizeToFit()
+        self.view.addSubview(bookNameLabel)
+        //金額ラベルの設定
+        priceLabel.text=R.string.localizable.pricetitle()
+        priceLabel.sizeToFit()
+        self.view.addSubview(priceLabel)
+        //購入日ラベルの設定
+        dateLabel.text=R.string.localizable.datetitle()
+        dateLabel.sizeToFit()
+        self.view.addSubview(dateLabel)
+        //書籍名入力欄の設定
+        bookNameInput.delegate = self
+        bookNameInput.placeholder = ""
+        bookNameInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        bookNameInput.leftViewMode = .always//文字の左の余白
+        bookNameInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        bookNameInput.clearButtonMode = .always
+        bookNameInput.returnKeyType = .done
+        self.view.addSubview(bookNameInput)
+        //金額入力欄の設定
+        priceInput.delegate = self
+        priceInput.placeholder = ""
+        priceInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        priceInput.leftViewMode = .always//文字の左の余白
+        priceInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        priceInput.clearButtonMode = .always
+        priceInput.returnKeyType = .done
+        self.view.addSubview(priceInput)
+        //
+        datePickerInput.delegate = self
+        datePickerInput.placeholder = ""
+        datePickerInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        datePickerInput.leftViewMode = .always//文字の左の余白
+        datePickerInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        datePickerInput.clearButtonMode = .always
+        datePickerInput.returnKeyType = .done
+        self.view.addSubview(datePickerInput)
+        //デートピッカーの表示
+        datePicker.datePickerMode=UIDatePickerMode.date
+        datePicker.locale=NSLocale(localeIdentifier:"ja_JP") as Locale
+        datePickerInput.inputView=datePicker
+        dateFormat.dateFormat="yyyy年MM月dd日"
+        self.datePickerInput.delegate=self
+        let pickerToolBar = UIToolbar(frame: CGRect(x:0, y:30, width:self.view.frame.size.width, height: 40.0))
+        pickerToolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        let spaceBarBtn=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        let finishTitle=R.string.localizable.finish()
+        let toolBarBtn=UIBarButtonItem(title: finishTitle, style: .done, target: self, action: #selector(toolBarBtnPush))
+        pickerToolBar.items=[spaceBarBtn, toolBarBtn]
+        datePickerInput.inputAccessoryView=pickerToolBar
+        //layout
         layout()
 
     }
@@ -70,94 +141,6 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
         let image=info[UIImagePickerControllerOriginalImage] as! UIImage
         self.bookImageView.image=image
         self.dismiss(animated: true)
-    }
-
-    func UISetting() {
-
-        //閉じるボタンの追加
-        let closeButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookScene.closeModalDialog))
-        self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
-
-        //保存ボタンの追加
-        let saveButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
-        self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
-
-        //書籍画像の設定
-        bookImage=UIImage(named: "noimage.png")
-        bookImageView=UIImageView(image:bookImage)
-        self.view.addSubview(bookImageView)
-
-        //画像添付ボタンの設定
-        let addImageTitle=R.string.localizable.addimage()
-        imageButton.setTitle(addImageTitle, for:UIControlState.normal)
-        imageButton.setTitleColor(UIColor.lightGray, for: .normal)
-        imageButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12)
-        imageButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
-        imageButton.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
-
-        self.view.addSubview(imageButton)
-
-        //書籍名ラベルの設定
-        bookNameLabel.text=R.string.localizable.booktitle()
-        bookNameLabel.sizeToFit()
-        self.view.addSubview(bookNameLabel)
-
-        //金額ラベルの設定
-        priceLabel.text=R.string.localizable.pricetitle()
-        priceLabel.sizeToFit()
-        self.view.addSubview(priceLabel)
-
-        //購入日ラベルの設定
-        dateLabel.text=R.string.localizable.datetitle()
-        dateLabel.sizeToFit()
-        self.view.addSubview(dateLabel)
-
-        //書籍名入力欄の設定
-        bookNameInput.delegate = self
-        bookNameInput.placeholder = ""
-        bookNameInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        bookNameInput.leftViewMode = .always//文字の左の余白
-        bookNameInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        bookNameInput.clearButtonMode = .always
-        bookNameInput.returnKeyType = .done
-        self.view.addSubview(bookNameInput)
-
-        //金額入力欄の設定
-        priceInput.delegate = self
-        priceInput.placeholder = ""
-        priceInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        priceInput.leftViewMode = .always//文字の左の余白
-        priceInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        priceInput.clearButtonMode = .always
-        priceInput.returnKeyType = .done
-        self.view.addSubview(priceInput)
-
-        datePickerInput.delegate = self
-        datePickerInput.placeholder = ""
-        datePickerInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        datePickerInput.leftViewMode = .always//文字の左の余白
-        datePickerInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        datePickerInput.clearButtonMode = .always
-        datePickerInput.returnKeyType = .done
-        self.view.addSubview(datePickerInput)
-
-        //デートピッカーの表示
-        datePicker.datePickerMode=UIDatePickerMode.date
-        datePicker.locale=NSLocale(localeIdentifier:"ja_JP") as Locale
-        datePickerInput.inputView=datePicker
-
-        dateFormat.dateFormat="yyyy年MM月dd日"
-        self.datePickerInput.delegate=self
-
-        let pickerToolBar = UIToolbar(frame: CGRect(x:0, y:30, width:self.view.frame.size.width, height: 40.0))
-        pickerToolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
-        let spaceBarBtn=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)        
-        let finishTitle=R.string.localizable.finish()
-        let toolBarBtn=UIBarButtonItem(title: finishTitle, style: .done, target: self, action: #selector(toolBarBtnPush))
-
-        pickerToolBar.items=[spaceBarBtn, toolBarBtn]
-        datePickerInput.inputAccessoryView=pickerToolBar
-
     }
 
 }

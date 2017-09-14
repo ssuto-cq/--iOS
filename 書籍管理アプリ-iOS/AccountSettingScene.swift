@@ -67,7 +67,7 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
 
         //パスワード確認入力欄の設定
         confirmInput.delegate = self
-        confirmInput.placeholder = R.string.localizable.confirmpassInput
+        confirmInput.placeholder = R.string.localizable.confirmpassInput()
         confirmInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         confirmInput.leftViewMode = .always//文字の左の余白
         confirmInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
