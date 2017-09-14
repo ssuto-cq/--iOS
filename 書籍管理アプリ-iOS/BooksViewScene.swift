@@ -26,7 +26,7 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title="書籍一覧"
+        self.title=NSLocalizedString("booksview", comment: "")
 
         let tableView=UITableView()
         let loadButton=UIButton()
@@ -43,7 +43,8 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.view.addSubview(tableView)
 
         //読み込みボタンの設定
-        loadButton.setTitle("もっと読み込む,,,,,", for:UIControlState.normal)
+        let loadTitle=NSLocalizedString("load", comment: "")
+        loadButton.setTitle(loadTitle, for:UIControlState.normal)
         loadButton.setTitleColor(UIColor.lightGray, for: .normal)
         loadButton.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
         loadButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
@@ -63,7 +64,6 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     //追加ボタンの処理
     func addButtonTapped() {
-        print("追加完了")
         let addBookScene=AddBookScene()
         let navi=UINavigationController(rootViewController: addBookScene)
         addBookScene.modalTransitionStyle=UIModalTransitionStyle.crossDissolve

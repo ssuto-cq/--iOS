@@ -17,12 +17,14 @@ class TabBarSetting: UITabBarController, UITabBarControllerDelegate {
 
         //書籍一覧画面
         let booksViewScene=UINavigationController(rootViewController: BooksViewScene())
-        booksViewScene.tabBarItem=UITabBarItem(title:"書籍一覧", image:nil, tag: 1)
+        let booksViewTitle=NSLocalizedString("booksview", comment: "")
+        booksViewScene.tabBarItem=UITabBarItem(title:booksViewTitle, image:nil, tag: 1)
         navigationController.append(booksViewScene)//配列の要素を追加
 
         //設定前画面
         let beforeSettingScene=UINavigationController(rootViewController: BeforeSettingScene())
-        beforeSettingScene.tabBarItem=UITabBarItem(title: "設定", image:nil, tag: 2)
+        let settingTitle=NSLocalizedString("setting", comment: "")
+        beforeSettingScene.tabBarItem=UITabBarItem(title: settingTitle, image:nil, tag: 2)
         navigationController.append(beforeSettingScene)//配列の要素を追加
 
         self.delegate=self

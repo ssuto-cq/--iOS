@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  書籍管理アプリ-iOS
+
+  Created by 須藤 翔太 on 2017/09/14.
+  Copyright © 2017年 須藤 翔太. All rights reserved.
+*/
+"booksview"="書籍一覧";
+"mailaddress"="メールアドレス";
+"password"="パスワード";
+"addressInput"="メールアドレスを入力";
+"passwordInput"="パスワードを入力";
+"login"="ログイン";
+"load"="もっと読み込む,,,,,";
+"addbook"="書籍追加";
+"editbook"="書籍編集";
+"addimage"="画像添付";
+"booktitle"="書籍名";
+"pricetitle"="金額";
+"datetitle"="購入日";
+"finish"="完了";
+"setting"="設定";
+"accountsetting"="アカウント設定";
+"confirmpass"="パスワード確認";
+"confirmpassInput"="パスワードをもう一回入力";

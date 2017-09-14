@@ -13,11 +13,12 @@ class BeforeSettingScene: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title="設定"
+        self.title=NSLocalizedString("setting", comment: "")
 
         let settingButton=UIButton()
 
-        settingButton.setTitle("アカウント設定", for:UIControlState.normal)
+        let accountSettingTitle=NSLocalizedString("accountsetting", comment: "")
+        settingButton.setTitle(accountSettingTitle, for:UIControlState.normal)
         settingButton.setTitleColor(UIColor.lightGray, for: .normal)
         settingButton.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
         settingButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)

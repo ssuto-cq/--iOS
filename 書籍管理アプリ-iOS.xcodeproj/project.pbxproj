@@ -16,6 +16,7 @@
 		EF13394B1F6A05820073EACF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EF13394A1F6A05820073EACF /* .swiftlint.yml */; };
 		EF1339581F6A1DD20073EACF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1339571F6A1DD20073EACF /* R.generated.swift */; };
 		EF1339591F6A1EF00073EACF /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF13394D1F6A14160073EACF /* Rswift.framework */; };
+		EF13395C1F6A248F0073EACF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF13395E1F6A248F0073EACF /* Localizable.strings */; };
 		EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800311F6114F600D65DB7 /* AppDelegate.swift */; };
 		EF1800341F6114F600D65DB7 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800331F6114F600D65DB7 /* LoginScene.swift */; };
 		EF1800471F6114F600D65DB7 /* _________iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800461F6114F600D65DB7 /* _________iOSTests.swift */; };
@@ -68,6 +69,8 @@
 		EF13394D1F6A14160073EACF /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		EF1339551F6A1D1A0073EACF /* rswift */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = rswift; sourceTree = "<group>"; };
 		EF1339571F6A1DD20073EACF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		EF13395D1F6A248F0073EACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EF13395F1F6A25330073EACF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EF18002E1F6114F600D65DB7 /* 書籍管理アプリ-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "書籍管理アプリ-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1800311F6114F600D65DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF1800331F6114F600D65DB7 /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				EF1339571F6A1DD20073EACF /* R.generated.swift */,
+				EF13395E1F6A248F0073EACF /* Localizable.strings */,
 				EF13394A1F6A05820073EACF /* .swiftlint.yml */,
 				EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */,
 				EF1800301F6114F600D65DB7 /* 書籍管理アプリ-iOS */,
@@ -282,6 +286,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = EF1800251F6114F500D65DB7;
 			productRefGroup = EF18002F1F6114F600D65DB7 /* Products */;
@@ -304,6 +309,7 @@
 				EF0800F31F6570CB0042D566 /* noimage.png in Resources */,
 				EF31BC801F643F53002DECEE /* himatubusi.jpg in Resources */,
 				EF3757511F62A49E00FBCF6E /* azarasi.jpg in Resources */,
+				EF13395C1F6A248F0073EACF /* Localizable.strings in Resources */,
 				EF31BC811F643F53002DECEE /* waste.jpg in Resources */,
 				EF31BC7C1F643F28002DECEE /* adventure.jpg in Resources */,
 				EF1800601F611A5100D65DB7 /* Default-568h@2x.png in Resources */,
@@ -420,11 +426,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		EF13395E1F6A248F0073EACF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF13395D1F6A248F0073EACF /* Base */,
+				EF13395F1F6A25330073EACF /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		EF1800541F6114F600D65DB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -476,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

@@ -26,7 +26,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title="書籍追加"
+        self.title=NSLocalizedString("addbook", comment: "")
 
         UISetting()
         layout()
@@ -88,7 +88,8 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
         self.view.addSubview(bookImageView)
 
         //画像添付ボタンの設定
-        imageButton.setTitle("画像添付", for:UIControlState.normal)
+        let addImageTitle=NSLocalizedString("addimage", comment: "")
+        imageButton.setTitle(addImageTitle, for:UIControlState.normal)
         imageButton.setTitleColor(UIColor.lightGray, for: .normal)
         imageButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12)
         imageButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
@@ -97,17 +98,17 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
         self.view.addSubview(imageButton)
 
         //書籍名ラベルの設定
-        bookNameLabel.text="書籍名"
+        bookNameLabel.text=NSLocalizedString("booktitle", comment: "")
         bookNameLabel.sizeToFit()
         self.view.addSubview(bookNameLabel)
 
         //金額ラベルの設定
-        priceLabel.text="金額"
+        priceLabel.text=NSLocalizedString("pricetitle", comment: "")
         priceLabel.sizeToFit()
         self.view.addSubview(priceLabel)
 
         //購入日ラベルの設定
-        dateLabel.text="購入日"
+        dateLabel.text=NSLocalizedString("datetitle", comment: "")
         dateLabel.sizeToFit()
         self.view.addSubview(dateLabel)
 
@@ -150,9 +151,9 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
 
         let pickerToolBar = UIToolbar(frame: CGRect(x:0, y:30, width:self.view.frame.size.width, height: 40.0))
         pickerToolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
-
-        let spaceBarBtn=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action:nil)
-        let toolBarBtn=UIBarButtonItem(title: "完了", style: .done, target: self, action: #selector(toolBarBtnPush))
+        let spaceBarBtn=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)        
+        let finishTitle=NSLocalizedString("finish", comment: "")
+        let toolBarBtn=UIBarButtonItem(title: finishTitle, style: .done, target: self, action: #selector(toolBarBtnPush))
 
         pickerToolBar.items=[spaceBarBtn, toolBarBtn]
         datePickerInput.inputAccessoryView=pickerToolBar
