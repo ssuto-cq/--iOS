@@ -115,6 +115,7 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
     }
     //保存ボタンを押した時の処理
     func saveButtonTapped(sender: UITabBarItem) {
-        self.navigationController?.pushViewController(BooksViewScene(), animated: true)
+        //self.navigationController?.pushViewController(BooksViewScene(), animated: true)
+        print("保存")
     }
 }
