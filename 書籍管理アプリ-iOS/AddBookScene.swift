@@ -29,7 +29,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
         self.title="書籍追加"
 
         UISetting()
-        Layout()
+        layout()
 
     }
 
@@ -163,7 +163,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
 
 extension AddBookScene:UITextFieldDelegate {
 
-    func Layout() {
+    func layout() {
 
     ////全体のレイアウト////
     bookImageView.translatesAutoresizingMaskIntoConstraints=false

@@ -24,10 +24,10 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
     let dateFormat=DateFormatter()
 
     //書籍情報の受け取り
-    var Titles: String = ""
-    var Price: String = ""
-    var Date: String = ""
-    var Image: String = ""
+    var titles: String = ""
+    var price: String = ""
+    var date: String = ""
+    var image: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
 
         //書籍画像の設定
-        bookImage=UIImage(named:Image)
+        bookImage=UIImage(named:image)
         bookImageView=UIImageView(image:bookImage)
         self.view.addSubview(bookImageView)
 
@@ -73,7 +73,7 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
 
         //書籍名入力欄の設定
         bookNameInput.delegate = self
-        bookNameInput.placeholder = Titles
+        bookNameInput.placeholder = titles
         bookNameInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         bookNameInput.leftViewMode = .always//文字の左の余白
         bookNameInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -83,7 +83,7 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
 
         //金額入力欄の設定
         priceInput.delegate = self
-        priceInput.placeholder = Price
+        priceInput.placeholder = price
         priceInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         priceInput.leftViewMode = .always//文字の左の余白
         priceInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -92,7 +92,7 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         self.view.addSubview(priceInput)
 
         datePickerInput.delegate = self
-        datePickerInput.placeholder = Date
+        datePickerInput.placeholder = date
         datePickerInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         datePickerInput.leftViewMode = .always//文字の左の余白
         datePickerInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))

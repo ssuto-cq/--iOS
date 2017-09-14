@@ -92,10 +92,10 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         let editBookScene=EditBookScene()
 
-        editBookScene.Titles = booksTitles[indexPath.row]
-        editBookScene.Price = booksPrice[indexPath.row]
-        editBookScene.Date = booksDate[indexPath.row]
-        editBookScene.Image = booksImages[indexPath.row]
+        editBookScene.titles = booksTitles[indexPath.row]
+        editBookScene.price = booksPrice[indexPath.row]
+        editBookScene.date = booksDate[indexPath.row]
+        editBookScene.image = booksImages[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         self.navigationController?.pushViewController(editBookScene, animated: true)
 

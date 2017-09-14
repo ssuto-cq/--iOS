@@ -13,12 +13,12 @@
 		EF0800F31F6570CB0042D566 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0800F21F6570CB0042D566 /* noimage.png */; };
 		EF0AAE131F6773A800E19987 /* TabBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE121F6773A800E19987 /* TabBarSetting.swift */; };
 		EF0AAE151F67A33100E19987 /* AccountSettingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE141F67A33100E19987 /* AccountSettingScene.swift */; };
+		EF13394B1F6A05820073EACF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EF13394A1F6A05820073EACF /* .swiftlint.yml */; };
 		EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800311F6114F600D65DB7 /* AppDelegate.swift */; };
 		EF1800341F6114F600D65DB7 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800331F6114F600D65DB7 /* LoginScene.swift */; };
 		EF1800471F6114F600D65DB7 /* _________iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800461F6114F600D65DB7 /* _________iOSTests.swift */; };
 		EF1800521F6114F600D65DB7 /* _________iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */; };
 		EF1800601F611A5100D65DB7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */; };
-		EF18DD731F692A9500C0EAE4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EF18DD721F692A9500C0EAE4 /* .swiftlint.yml */; };
 		EF31BC7C1F643F28002DECEE /* adventure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7A1F643F28002DECEE /* adventure.jpg */; };
 		EF31BC7D1F643F28002DECEE /* animal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7B1F643F28002DECEE /* animal.jpg */; };
 		EF31BC801F643F53002DECEE /* himatubusi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7E1F643F53002DECEE /* himatubusi.jpg */; };
@@ -62,6 +62,7 @@
 		EF0800F21F6570CB0042D566 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noimage.png; path = ../../Documents/noimage.png; sourceTree = "<group>"; };
 		EF0AAE121F6773A800E19987 /* TabBarSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarSetting.swift; sourceTree = "<group>"; };
 		EF0AAE141F67A33100E19987 /* AccountSettingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingScene.swift; sourceTree = "<group>"; };
+		EF13394A1F6A05820073EACF /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EF18002E1F6114F600D65DB7 /* 書籍管理アプリ-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "書籍管理アプリ-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1800311F6114F600D65DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF1800331F6114F600D65DB7 /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_________iOSUITests.swift"; sourceTree = "<group>"; };
 		EF1800531F6114F600D65DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		EF18DD721F692A9500C0EAE4 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EF31BC7A1F643F28002DECEE /* adventure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = adventure.jpg; path = ../../Documents/adventure.jpg; sourceTree = "<group>"; };
 		EF31BC7B1F643F28002DECEE /* animal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = animal.jpg; path = ../../Documents/animal.jpg; sourceTree = "<group>"; };
 		EF31BC7E1F643F53002DECEE /* himatubusi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = himatubusi.jpg; path = ../../Documents/himatubusi.jpg; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		EF1800251F6114F500D65DB7 = {
 			isa = PBXGroup;
 			children = (
-				EF18DD721F692A9500C0EAE4 /* .swiftlint.yml */,
+				EF13394A1F6A05820073EACF /* .swiftlint.yml */,
 				EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */,
 				EF1800301F6114F600D65DB7 /* 書籍管理アプリ-iOS */,
 				EF31BC7A1F643F28002DECEE /* adventure.jpg */,
@@ -281,7 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF18DD731F692A9500C0EAE4 /* .swiftlint.yml in Resources */,
+				EF13394B1F6A05820073EACF /* .swiftlint.yml in Resources */,
 				EF0800F31F6570CB0042D566 /* noimage.png in Resources */,
 				EF31BC801F643F53002DECEE /* himatubusi.jpg in Resources */,
 				EF3757511F62A49E00FBCF6E /* azarasi.jpg in Resources */,
