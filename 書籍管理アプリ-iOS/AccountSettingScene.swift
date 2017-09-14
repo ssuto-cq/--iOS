@@ -13,7 +13,7 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title=NSLocalizedString("accountsetting", comment: "")
+        self.title=R.string.localizable.accountsetting()
 
         let addressLabel=UILabel()
         let passwordLabel=UILabel()
@@ -31,23 +31,23 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
 
         //メールアドレスラベルの設定
-        addressLabel.text=NSLocalizedString("mailaddress", comment: "")
+        addressLabel.text=R.string.localizable.mailaddress()
         addressLabel.sizeToFit()
         self.view.addSubview(addressLabel)
 
         //パスワードラベルの設定
-        passwordLabel.text=NSLocalizedString("password", comment: "")
+        passwordLabel.text=R.string.localizable.password()
         passwordLabel.sizeToFit()
         self.view.addSubview(passwordLabel)
 
         //パスワード確認ラベルの設定
-        confirmLabel.text=NSLocalizedString("confirmpass", comment: "")
+        confirmLabel.text=R.string.localizable.confirmpass()
         confirmLabel.sizeToFit()
         self.view.addSubview(confirmLabel)
 
         //メールアドレス入力欄の設定
         addressInput.delegate = self
-        addressInput.placeholder = NSLocalizedString("addressInput", comment: "")
+        addressInput.placeholder = R.string.localizable.addressInput()
         addressInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         addressInput.leftViewMode = .always//文字の左の余白
         addressInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -57,7 +57,7 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
 
         //パスワード入力欄の設定
         passwordInput.delegate = self
-        passwordInput.placeholder = NSLocalizedString("passwordInput", comment: "")
+        passwordInput.placeholder = R.string.localizable.passwordInput()
         passwordInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         passwordInput.leftViewMode = .always
         passwordInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -67,7 +67,7 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
 
         //パスワード確認入力欄の設定
         confirmInput.delegate = self
-        confirmInput.placeholder = NSLocalizedString("confirmpassInput", comment: "")
+        confirmInput.placeholder = R.string.localizable.confirmpassInput
         confirmInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         confirmInput.leftViewMode = .always//文字の左の余白
         confirmInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))

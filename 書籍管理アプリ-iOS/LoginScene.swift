@@ -13,7 +13,7 @@ class LoginScene: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title=NSLocalizedString("booksview", comment: "")
+        self.title=R.string.localizable.booksview()
 
         let addressLabel=UILabel()
         let passwordLabel=UILabel()
@@ -22,18 +22,18 @@ class LoginScene: UIViewController, UITextFieldDelegate {
         let loginButton=UIButton()
 
         //メールアドレスラベルの設定
-        addressLabel.text=NSLocalizedString("mailaddress", comment: "")
+        addressLabel.text=R.string.localizable.mailaddress()
         addressLabel.sizeToFit()
         self.view.addSubview(addressLabel)
 
         //パスワードラベルの設定
-        passwordLabel.text=NSLocalizedString("password", comment: "")
+        passwordLabel.text=R.string.localizable.password()
         passwordLabel.sizeToFit()
         self.view.addSubview(passwordLabel)
 
         //メールアドレス入力欄の設定
         addressInput.delegate = self
-        addressInput.placeholder = NSLocalizedString("assressInput", comment: "")
+        addressInput.placeholder = R.string.localizable.addressInput()
         addressInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         addressInput.leftViewMode = .always//文字の左の余白
         addressInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -43,7 +43,7 @@ class LoginScene: UIViewController, UITextFieldDelegate {
 
         //パスワード入力欄の設定
         passwordInput.delegate = self
-        passwordInput.placeholder = NSLocalizedString("passwordInput", comment: "")
+        passwordInput.placeholder = R.string.localizable.passwordInput()
         passwordInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         passwordInput.leftViewMode = .always
         passwordInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -52,7 +52,7 @@ class LoginScene: UIViewController, UITextFieldDelegate {
         self.view.addSubview(passwordInput)
 
         //ログインボタンの設定
-        let loginTitle=NSLocalizedString("login", comment: "")
+        let loginTitle=R.string.localizable.login()
         loginButton.setTitle(loginTitle, for:UIControlState.normal)
         loginButton.setTitleColor(UIColor.lightGray, for: .normal)
         loginButton.titleLabel?.font =  UIFont.systemFont(ofSize: 24)

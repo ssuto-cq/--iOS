@@ -58,17 +58,17 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         self.view.addSubview(imageButton)
 
         //書籍名ラベルの設定
-        bookNameLabel.text=NSLocalizedString("booktitle", comment: "")
+        bookNameLabel.text=R.string.localizable.booktitle()
         bookNameLabel.sizeToFit()
         self.view.addSubview(bookNameLabel)
 
         //金額ラベルの設定
-        priceLabel.text=NSLocalizedString("pricetitle", comment: "")
+        priceLabel.text=R.string.localizable.pricetitle()
         priceLabel.sizeToFit()
         self.view.addSubview(priceLabel)
 
         //購入日ラベルの設定
-        dateLabel.text=NSLocalizedString("datetitle", comment: "")
+        dateLabel.text=R.string.localizable.datetitle()
         dateLabel.sizeToFit()
         self.view.addSubview(dateLabel)
 

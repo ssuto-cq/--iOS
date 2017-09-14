@@ -26,7 +26,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title=NSLocalizedString("addbook", comment: "")
+        self.title=R.string.localizable.addbook()
 
         UISetting()
         layout()
@@ -88,7 +88,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
         self.view.addSubview(bookImageView)
 
         //画像添付ボタンの設定
-        let addImageTitle=NSLocalizedString("addimage", comment: "")
+        let addImageTitle=R.string.localizable.addimage()
         imageButton.setTitle(addImageTitle, for:UIControlState.normal)
         imageButton.setTitleColor(UIColor.lightGray, for: .normal)
         imageButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12)
@@ -98,17 +98,17 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
         self.view.addSubview(imageButton)
 
         //書籍名ラベルの設定
-        bookNameLabel.text=NSLocalizedString("booktitle", comment: "")
+        bookNameLabel.text=R.string.localizable.booktitle()
         bookNameLabel.sizeToFit()
         self.view.addSubview(bookNameLabel)
 
         //金額ラベルの設定
-        priceLabel.text=NSLocalizedString("pricetitle", comment: "")
+        priceLabel.text=R.string.localizable.pricetitle()
         priceLabel.sizeToFit()
         self.view.addSubview(priceLabel)
 
         //購入日ラベルの設定
-        dateLabel.text=NSLocalizedString("datetitle", comment: "")
+        dateLabel.text=R.string.localizable.datetitle()
         dateLabel.sizeToFit()
         self.view.addSubview(dateLabel)
 
@@ -152,7 +152,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
         let pickerToolBar = UIToolbar(frame: CGRect(x:0, y:30, width:self.view.frame.size.width, height: 40.0))
         pickerToolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
         let spaceBarBtn=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)        
-        let finishTitle=NSLocalizedString("finish", comment: "")
+        let finishTitle=R.string.localizable.finish()
         let toolBarBtn=UIBarButtonItem(title: finishTitle, style: .done, target: self, action: #selector(toolBarBtnPush))
 
         pickerToolBar.items=[spaceBarBtn, toolBarBtn]

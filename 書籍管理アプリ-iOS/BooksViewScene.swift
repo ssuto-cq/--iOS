@@ -26,7 +26,7 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title=NSLocalizedString("booksview", comment: "")
+        self.title=R.string.localizable.booksview()
 
         let tableView=UITableView()
         let loadButton=UIButton()
@@ -43,7 +43,7 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.view.addSubview(tableView)
 
         //読み込みボタンの設定
-        let loadTitle=NSLocalizedString("load", comment: "")
+        let loadTitle=R.string.localizable.load()
         loadButton.setTitle(loadTitle, for:UIControlState.normal)
         loadButton.setTitleColor(UIColor.lightGray, for: .normal)
         loadButton.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
