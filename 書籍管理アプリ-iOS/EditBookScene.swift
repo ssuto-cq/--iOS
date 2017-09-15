@@ -1,10 +1,3 @@
-//
-//  EditBookScene.swift
-//  書籍管理アプリ-iOS
-//
-//  Created by 須藤 翔太 on 2017/09/11.
-//  Copyright © 2017年 須藤 翔太. All rights reserved.
-//
 
 import UIKit
 
@@ -12,16 +5,16 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
 
     var bookImage: UIImage!
     var bookImageView: UIImageView!
-    let imageButton=UIButton()
-    let bookNameLabel=UILabel()
-    let priceLabel=UILabel()
-    let dateLabel=UILabel()
-    let bookNameInput=UITextField()
-    let priceInput=UITextField()
-    let datePickerInput=UITextField()
+    let imageButton = UIButton()
+    let bookNameLabel = UILabel()
+    let priceLabel = UILabel()
+    let dateLabel = UILabel()
+    let bookNameInput = UITextField()
+    let priceInput = UITextField()
+    let datePickerInput = UITextField()
 
-    let datePicker=UIDatePicker()
-    let dateFormat=DateFormatter()
+    let datePicker = UIDatePicker()
+    let dateFormat = DateFormatter()
 
     //書籍情報の受け取り
     var titles: String = ""
@@ -32,23 +25,23 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title=NSLocalizedString("editbook", comment: "")
+        self.title = NSLocalizedString("editbook", comment: "")
 
         //閉じるボタンの追加
-        let closeButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(backBooksView))
+        let closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(backBooksView))
         self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
 
         //保存ボタンの追加
-        let saveButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
+        let saveButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
 
         //書籍画像の設定
-        bookImage=UIImage(named:image)
-        bookImageView=UIImageView(image:bookImage)
+        bookImage = UIImage(named:image)
+        bookImageView = UIImageView(image:bookImage)
         self.view.addSubview(bookImageView)
 
         //画像添付ボタンの設定
-        let addImageTitle=NSLocalizedString("addimage", comment: "")
+        let addImageTitle = NSLocalizedString("addimage", comment: "")
         imageButton.setTitle(addImageTitle, for:UIControlState.normal)
         imageButton.setTitleColor(UIColor.lightGray, for: .normal)
         imageButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12)
@@ -58,17 +51,17 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         self.view.addSubview(imageButton)
 
         //書籍名ラベルの設定
-        bookNameLabel.text=R.string.localizable.booktitle()
+        bookNameLabel.text = R.string.localizable.booktitle()
         bookNameLabel.sizeToFit()
         self.view.addSubview(bookNameLabel)
 
         //金額ラベルの設定
-        priceLabel.text=R.string.localizable.pricetitle()
+        priceLabel.text = R.string.localizable.pricetitle()
         priceLabel.sizeToFit()
         self.view.addSubview(priceLabel)
 
         //購入日ラベルの設定
-        dateLabel.text=R.string.localizable.datetitle()
+        dateLabel.text = R.string.localizable.datetitle()
         dateLabel.sizeToFit()
         self.view.addSubview(dateLabel)
 
@@ -102,12 +95,12 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         self.view.addSubview(datePickerInput)
 
         //デートピッカーの表示
-        datePicker.datePickerMode=UIDatePickerMode.date
+        datePicker.datePickerMode = UIDatePickerMode.date
         datePicker.locale=NSLocale(localeIdentifier:"ja_JP") as Locale
-        datePickerInput.inputView=datePicker
+        datePickerInput.inputView = datePicker
 
-        dateFormat.dateFormat="yyyy年MM月dd日"
-        self.datePickerInput.delegate=self
+        dateFormat.dateFormat = "yyyy年MM月dd日"
+        self.datePickerInput.delegate = self
 
         let pickerToolBar = UIToolbar(frame: CGRect(x:0, y:30, width:self.view.frame.size.width, height: 40.0))
         pickerToolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
@@ -115,54 +108,54 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         let finishTitle=NSLocalizedString("finish", comment: "")
         let toolBarBtn=UIBarButtonItem(title: finishTitle, style: .done, target: self, action: #selector(toolBarBtnPush))
 
-        pickerToolBar.items=[spaceBarBtn, toolBarBtn]
-        datePickerInput.inputAccessoryView=pickerToolBar
+        pickerToolBar.items = [spaceBarBtn, toolBarBtn]
+        datePickerInput.inputAccessoryView = pickerToolBar
 
         ////全体のレイアウト////
-        bookImageView.translatesAutoresizingMaskIntoConstraints=false
-        imageButton.translatesAutoresizingMaskIntoConstraints=false
-        bookNameLabel.translatesAutoresizingMaskIntoConstraints=false
-        priceLabel.translatesAutoresizingMaskIntoConstraints=false
-        dateLabel.translatesAutoresizingMaskIntoConstraints=false
-        bookNameInput.translatesAutoresizingMaskIntoConstraints=false
-        priceInput.translatesAutoresizingMaskIntoConstraints=false
-        datePickerInput.translatesAutoresizingMaskIntoConstraints=false
+        bookImageView.translatesAutoresizingMaskIntoConstraints = false
+        imageButton.translatesAutoresizingMaskIntoConstraints = false
+        bookNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        bookNameInput.translatesAutoresizingMaskIntoConstraints = false
+        priceInput.translatesAutoresizingMaskIntoConstraints = false
+        datePickerInput.translatesAutoresizingMaskIntoConstraints = false
 
         //画像のレイアウト
-        bookImageView.topAnchor.constraint(equalTo:self.view.topAnchor, constant:80).isActive=true
-        bookImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:30).isActive=true
-        bookImageView.widthAnchor.constraint(equalToConstant:120).isActive=true
-        bookImageView.heightAnchor.constraint(equalToConstant:150).isActive=true
+        bookImageView.topAnchor.constraint(equalTo:self.view.topAnchor, constant:80).isActive = true
+        bookImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:30).isActive = true
+        bookImageView.widthAnchor.constraint(equalToConstant:120).isActive = true
+        bookImageView.heightAnchor.constraint(equalToConstant:150).isActive = true
 
         //画像添付ボタンのレイアウト
-        imageButton.centerYAnchor.constraint(equalTo: bookImageView.centerYAnchor).isActive=true
-        imageButton.leadingAnchor.constraint(equalTo: bookImageView.leadingAnchor, constant:150).isActive=true
+        imageButton.centerYAnchor.constraint(equalTo: bookImageView.centerYAnchor).isActive = true
+        imageButton.leadingAnchor.constraint(equalTo: bookImageView.leadingAnchor, constant:150).isActive = true
 
         //ラベルのレイアウト
-        bookNameLabel.centerYAnchor.constraint(equalTo: bookNameInput.centerYAnchor, constant:-30).isActive=true
-        bookNameLabel.leadingAnchor.constraint(equalTo:self.view.leadingAnchor, constant:50).isActive=true
+        bookNameLabel.centerYAnchor.constraint(equalTo: bookNameInput.centerYAnchor, constant:-30).isActive = true
+        bookNameLabel.leadingAnchor.constraint(equalTo:self.view.leadingAnchor, constant:50).isActive = true
 
-        priceLabel.centerYAnchor.constraint(equalTo: priceInput.centerYAnchor, constant:-30).isActive=true
+        priceLabel.centerYAnchor.constraint(equalTo: priceInput.centerYAnchor, constant:-30).isActive = true
         priceLabel.leadingAnchor.constraint(equalTo: bookNameLabel.leadingAnchor).isActive=true
 
-        dateLabel.centerYAnchor.constraint(equalTo: datePickerInput.centerYAnchor, constant:-30).isActive=true
+        dateLabel.centerYAnchor.constraint(equalTo: datePickerInput.centerYAnchor, constant:-30).isActive = true
         dateLabel.leadingAnchor.constraint(equalTo: bookNameLabel.leadingAnchor).isActive=true
 
         //入力欄のレイアウト
-        bookNameInput.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive=true
-        bookNameInput.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        bookNameInput.widthAnchor.constraint(equalToConstant: 220).isActive=true
-        bookNameInput.heightAnchor.constraint(equalToConstant: 30).isActive=true
+        bookNameInput.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        bookNameInput.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        bookNameInput.widthAnchor.constraint(equalToConstant: 220).isActive = true
+        bookNameInput.heightAnchor.constraint(equalToConstant: 30).isActive = true
 
-        priceInput.centerYAnchor.constraint(equalTo: bookNameInput.centerYAnchor, constant:100).isActive=true
-        priceInput.centerXAnchor.constraint(equalTo: bookNameInput.centerXAnchor).isActive=true
-        priceInput.widthAnchor.constraint(equalToConstant: 220).isActive=true
-        priceInput.heightAnchor.constraint(equalToConstant: 30).isActive=true
+        priceInput.centerYAnchor.constraint(equalTo: bookNameInput.centerYAnchor, constant:100).isActive = true
+        priceInput.centerXAnchor.constraint(equalTo: bookNameInput.centerXAnchor).isActive = true
+        priceInput.widthAnchor.constraint(equalToConstant: 220).isActive = true
+        priceInput.heightAnchor.constraint(equalToConstant: 30).isActive = true
 
-        datePickerInput.centerYAnchor.constraint(equalTo: bookNameInput.centerYAnchor, constant:200).isActive=true
-        datePickerInput.centerXAnchor.constraint(equalTo: bookNameInput.centerXAnchor).isActive=true
-        datePickerInput.widthAnchor.constraint(equalToConstant: 220).isActive=true
-        datePickerInput.heightAnchor.constraint(equalToConstant: 30).isActive=true
+        datePickerInput.centerYAnchor.constraint(equalTo: bookNameInput.centerYAnchor, constant:200).isActive = true
+        datePickerInput.centerXAnchor.constraint(equalTo: bookNameInput.centerXAnchor).isActive = true
+        datePickerInput.widthAnchor.constraint(equalToConstant: 220).isActive = true
+        datePickerInput.heightAnchor.constraint(equalToConstant: 30).isActive = true
 
             }
 
@@ -188,9 +181,9 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
     //カメラロールから写真を選択
     func choosePicture() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let pickerView=UIImagePickerController()
+            let pickerView = UIImagePickerController()
 
-            pickerView.delegate=self
+            pickerView.delegate = self
             pickerView.sourceType = UIImagePickerControllerSourceType .photoLibrary
 
             self.present(pickerView, animated: true, completion: nil)
@@ -200,8 +193,8 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
 
     //写真を選んだ後の処理
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image=info[UIImagePickerControllerOriginalImage] as! UIImage
-        self.bookImageView.image=image
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        self.bookImageView.image = image
         self.dismiss(animated: true)
     }
 

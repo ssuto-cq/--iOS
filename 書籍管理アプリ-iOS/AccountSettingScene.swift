@@ -1,10 +1,3 @@
-//
-//  AccountSettingScene.swift
-//  書籍管理アプリ-iOS
-//
-//  Created by 須藤 翔太 on 2017/09/12.
-//  Copyright © 2017年 須藤 翔太. All rights reserved.
-//
 
 import UIKit
 
@@ -13,14 +6,14 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title=R.string.localizable.accountsetting()
+        self.title = R.string.localizable.accountsetting()
 
-        let addressLabel=UILabel()
-        let passwordLabel=UILabel()
-        let confirmLabel=UILabel()
-        let addressInput=UITextField()
-        let passwordInput=UITextField()
-        let confirmInput=UITextField()
+        let addressLabel = UILabel()
+        let passwordLabel = UILabel()
+        let confirmLabel = UILabel()
+        let addressInput = UITextField()
+        let passwordInput = UITextField()
+        let confirmInput =  UITextField()
 
         //閉じるボタンの追加
         let closeButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookScene.closeModalDialog))
@@ -31,17 +24,17 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
 
         //メールアドレスラベルの設定
-        addressLabel.text=R.string.localizable.mailaddress()
+        addressLabel.text = R.string.localizable.mailaddress()
         addressLabel.sizeToFit()
         self.view.addSubview(addressLabel)
 
         //パスワードラベルの設定
-        passwordLabel.text=R.string.localizable.password()
+        passwordLabel.text = R.string.localizable.password()
         passwordLabel.sizeToFit()
         self.view.addSubview(passwordLabel)
 
         //パスワード確認ラベルの設定
-        confirmLabel.text=R.string.localizable.confirmpass()
+        confirmLabel.text = R.string.localizable.confirmpass()
         confirmLabel.sizeToFit()
         self.view.addSubview(confirmLabel)
 
@@ -76,33 +69,33 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
         self.view.addSubview(confirmInput)
 
         //全体のレイアウト
-        addressLabel.translatesAutoresizingMaskIntoConstraints=false
-        passwordLabel.translatesAutoresizingMaskIntoConstraints=false
-        confirmLabel.translatesAutoresizingMaskIntoConstraints=false
-        addressInput.translatesAutoresizingMaskIntoConstraints=false
-        passwordInput.translatesAutoresizingMaskIntoConstraints=false
-        confirmInput.translatesAutoresizingMaskIntoConstraints=false
+        addressLabel.translatesAutoresizingMaskIntoConstraints = false
+        passwordLabel.translatesAutoresizingMaskIntoConstraints = false
+        confirmLabel.translatesAutoresizingMaskIntoConstraints = false
+        addressInput.translatesAutoresizingMaskIntoConstraints = false
+        passwordInput.translatesAutoresizingMaskIntoConstraints = false
+        confirmInput.translatesAutoresizingMaskIntoConstraints = false
 
-        addressLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:35).isActive=true
-        addressLabel.bottomAnchor.constraint(equalTo: addressInput.topAnchor, constant:-10).isActive=true
+        addressLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:35).isActive = true
+        addressLabel.bottomAnchor.constraint(equalTo: addressInput.topAnchor, constant:-10).isActive = true
 
-        passwordLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive=true
-        passwordLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:100).isActive=true
+        passwordLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
+        passwordLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:100).isActive = true
 
-        confirmLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive=true
-        confirmLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:200).isActive=true
+        confirmLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
+        confirmLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:200).isActive = true
 
-        addressInput.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        addressInput.topAnchor.constraint(equalTo: self.view.topAnchor, constant:120).isActive=true
-        addressInput.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:0.8).isActive=true
+        addressInput.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        addressInput.topAnchor.constraint(equalTo: self.view.topAnchor, constant:120).isActive = true
+        addressInput.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:0.8).isActive = true
 
-        passwordInput.centerXAnchor.constraint(equalTo: addressInput.centerXAnchor).isActive=true
-        passwordInput.topAnchor.constraint(equalTo: addressInput.topAnchor, constant:100).isActive=true
-        passwordInput.widthAnchor.constraint(equalTo: addressInput.widthAnchor).isActive=true
+        passwordInput.centerXAnchor.constraint(equalTo: addressInput.centerXAnchor).isActive = true
+        passwordInput.topAnchor.constraint(equalTo: addressInput.topAnchor, constant:100).isActive = true
+        passwordInput.widthAnchor.constraint(equalTo: addressInput.widthAnchor).isActive = true
 
-        confirmInput.centerXAnchor.constraint(equalTo: addressInput.centerXAnchor).isActive=true
-        confirmInput.topAnchor.constraint(equalTo: addressInput.topAnchor, constant:200).isActive=true
-        confirmInput.widthAnchor.constraint(equalTo: addressInput.widthAnchor).isActive=true
+        confirmInput.centerXAnchor.constraint(equalTo: addressInput.centerXAnchor).isActive = true
+        confirmInput.topAnchor.constraint(equalTo: addressInput.topAnchor, constant:200).isActive = true
+        confirmInput.widthAnchor.constraint(equalTo: addressInput.widthAnchor).isActive = true
 
     }
 

@@ -1,10 +1,3 @@
-//
-//  AccountSettingScene.swift
-//  書籍管理アプリ-iOS
-//
-//  Created by 須藤 翔太 on 2017/09/11.
-//  Copyright © 2017年 須藤 翔太. All rights reserved.
-//
 
 import UIKit
 
@@ -13,11 +6,11 @@ class BeforeSettingScene: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title=R.string.localizable.setting()
+        self.title = R.string.localizable.setting()
 
-        let settingButton=UIButton()
+        let settingButton = UIButton()
 
-        let accountSettingTitle=R.string.localizable.accountsetting()
+        let accountSettingTitle = R.string.localizable.accountsetting()
         settingButton.setTitle(accountSettingTitle, for:UIControlState.normal)
         settingButton.setTitleColor(UIColor.lightGray, for: .normal)
         settingButton.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
@@ -28,8 +21,8 @@ class BeforeSettingScene: UIViewController {
 
         settingButton.translatesAutoresizingMaskIntoConstraints=false
 
-        settingButton.topAnchor.constraint(equalTo:self.view.topAnchor, constant:120).isActive=true
-        settingButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+        settingButton.topAnchor.constraint(equalTo:self.view.topAnchor, constant:120).isActive = true
+        settingButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,9 +30,9 @@ class BeforeSettingScene: UIViewController {
     }
 
     func settingButtonTapped(sender: UIButton) {
-        let accountSettingScene=AccountSettingScene()
-        let navi=UINavigationController(rootViewController: accountSettingScene)
-        accountSettingScene.modalTransitionStyle=UIModalTransitionStyle.crossDissolve
+        let accountSettingScene = AccountSettingScene()
+        let navi = UINavigationController(rootViewController: accountSettingScene)
+        accountSettingScene.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         present(navi, animated: true, completion: nil)
     }
 }
