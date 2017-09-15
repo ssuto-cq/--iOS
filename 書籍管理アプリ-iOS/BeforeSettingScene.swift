@@ -32,7 +32,7 @@ class BeforeSettingScene: UIViewController {
     func settingButtonTapped(sender: UIButton) {
         let accountSettingScene = AccountSettingScene()
         let navi = UINavigationController(rootViewController: accountSettingScene)
-        accountSettingScene.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        accountSettingScene.modalTransitionStyle = .crossDissolve
         present(navi, animated: true, completion: nil)
     }
 }

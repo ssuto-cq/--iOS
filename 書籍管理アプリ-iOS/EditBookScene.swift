@@ -95,7 +95,7 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         self.view.addSubview(datePickerInput)
 
         //デートピッカーの表示
-        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.datePickerMode = .date
         datePicker.locale=NSLocale(localeIdentifier:"ja_JP") as Locale
         datePickerInput.inputView = datePicker
 
@@ -184,7 +184,7 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
             let pickerView = UIImagePickerController()
 
             pickerView.delegate = self
-            pickerView.sourceType = UIImagePickerControllerSourceType .photoLibrary
+            pickerView.sourceType = .photoLibrary
 
             self.present(pickerView, animated: true, completion: nil)
 

@@ -16,7 +16,7 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
         let confirmInput =  UITextField()
 
         //閉じるボタンの追加
-        let closeButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookScene.closeModalDialog))
+        let closeButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookScene.closeModal))
         self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
 
         //保存ボタンの追加
@@ -103,7 +103,7 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
     }
 
-    func closeModalDialog(sender: UIBarButtonItem) {
+    func closeModal(sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     //保存ボタンを押した時の処理

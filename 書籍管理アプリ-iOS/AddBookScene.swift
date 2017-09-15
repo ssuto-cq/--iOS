@@ -23,7 +23,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
 
         //UISetting()
         //閉じるボタンの追加
-        let closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookScene.closeModalDialog))
+        let closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(self.closeModal))
         self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
         //保存ボタンの追加
         let saveButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
@@ -80,7 +80,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
         datePickerInput.returnKeyType = .done
         self.view.addSubview(datePickerInput)
         //デートピッカーの表示
-        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.datePickerMode = .date
         datePicker.locale=NSLocale(localeIdentifier:"ja_JP") as Locale
         datePickerInput.inputView = datePicker
         dateFormat.dateFormat = "yyyy年MM月dd日"
@@ -102,7 +102,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
     }
 
     //モーダル画面を閉じる処理
-    func closeModalDialog(sender: UIBarButtonItem) {
+    func closeModal(sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -122,7 +122,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
             let pickerView = UIImagePickerController()
 
             pickerView.delegate = self
-            pickerView.sourceType = UIImagePickerControllerSourceType .photoLibrary
+            pickerView.sourceType = .photoLibrary
 
          self.present(pickerView, animated: true, completion: nil)
 
