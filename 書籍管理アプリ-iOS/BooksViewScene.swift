@@ -1,26 +1,22 @@
-
 import UIKit
 
 class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let statusBarHeight=UIApplication.shared.statusBarFrame.height
-
-    //本のタイトル、画像名、価格、日付
-    let booksTitles: [String] = ["超暇つぶし図鑑", "せつない動物図鑑", "浪費図鑑", "冒険図鑑"]
-
-    let booksImages: [String] = ["himatubusi.jpg", "animal.jpg", "waste.jpg", "adventure.jpg"]
-
-    let booksPrice: [String] = ["1000円", "1100円", "900円", "1700円"]
-
-    let booksDate: [String] = ["2017/5/10", "2017/7/20", "2017/8/8", "1985/6/20"]
-
+    
+    var books:[Book] = []
     var selectedImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = R.string.localizable.booksview()
-
+        
+        books.append(Book(name: "超暇つぶし図鑑", price:1000, boughtDate: "2017/5/10", imagePath: "himatubusi.jpg"))
+        books.append(Book(name: "せつない動物図鑑", price: 1100, boughtDate: "2017/7/20", imagePath: "animal.jpg"))
+        books.append(Book(name: "浪費図鑑", price: 900, boughtDate: "2017/8/8", imagePath: "waste.jpg"))
+        books.append(Book(name: "冒険図鑑", price: 1700, boughtDate: "1985/6/20", imagePath: "adventure.jpg"))
+        
         let tableView = UITableView()
         let loadButton = UIButton()
 
@@ -66,12 +62,8 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell=tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(MyCell.self), for: indexPath) as! MyCell
-
-        cell.booksTitlesUI.text = booksTitles[indexPath.row]
-        cell.booksPriceUI.text = booksPrice[indexPath.row]
-        cell.booksDateUI.text = booksDate[indexPath.row]
-        cell.myImageView.image = UIImage(named: booksImages[indexPath.row])
-        cell.accessoryType = .disclosureIndicator
+        
+        cell.bookRegister(book: books[indexPath.row])
 
         return cell
     }
@@ -84,12 +76,9 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let editBookScene = EditBookScene()
-
-        editBookScene.titles = booksTitles[indexPath.row]
-        editBookScene.price = booksPrice[indexPath.row]
-        editBookScene.date = booksDate[indexPath.row]
-        editBookScene.image = booksImages[indexPath.row]
-        tableView.deselectRow(at: indexPath, animated: true)
+        
+        editBookScene.book = books[indexPath.row]
+        
         self.navigationController?.pushViewController(editBookScene, animated: true)
 
     }
@@ -104,7 +93,7 @@ class MyCell: UITableViewCell {
     var myImageView: UIImageView!
     var booksPriceUI: UILabel!
     var booksDateUI: UILabel!
-
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
 
@@ -136,4 +125,13 @@ class MyCell: UITableViewCell {
         booksDateUI.frame = CGRect(x: 170, y: 25, width: 120, height: frame.height)
         myImageView.frame = CGRect(x: 5, y: 0, width: 70, height: frame.height)
     }
+    
+    func bookRegister(book:Book){
+        
+        booksTitlesUI.text = book.name
+        booksPriceUI.text = String(describing:book.price)
+        booksDateUI.text = book.boughtDate
+        myImageView.image = UIImage(named: book.imagePath)
+    }
+    
 }

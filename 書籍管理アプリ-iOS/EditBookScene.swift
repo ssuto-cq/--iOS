@@ -1,4 +1,3 @@
-
 import UIKit
 
 class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -15,18 +14,21 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
 
     let datePicker = UIDatePicker()
     let dateFormat = DateFormatter()
-
-    //書籍情報の受け取り
-    var titles: String = ""
-    var price: String = ""
-    var date: String = ""
-    var image: String = ""
-
+    
+    var book: Book! {
+        didSet {
+            bookNameInput.text = book.name
+            priceInput.text = String(book.price)
+            datePickerInput.text = book.boughtDate
+            bookImage = UIImage(named: book.imagePath)!
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = NSLocalizedString("editbook", comment: "")
-
+        
         //閉じるボタンの追加
         let closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(backBooksView))
         self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
@@ -36,7 +38,6 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
 
         //書籍画像の設定
-        bookImage = UIImage(named:image)
         bookImageView = UIImageView(image:bookImage)
         self.view.addSubview(bookImageView)
 
@@ -67,7 +68,6 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
 
         //書籍名入力欄の設定
         bookNameInput.delegate = self
-        bookNameInput.placeholder = titles
         bookNameInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         bookNameInput.leftViewMode = .always//文字の左の余白
         bookNameInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -77,7 +77,6 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
 
         //金額入力欄の設定
         priceInput.delegate = self
-        priceInput.placeholder = price
         priceInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         priceInput.leftViewMode = .always//文字の左の余白
         priceInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
@@ -86,7 +85,6 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         self.view.addSubview(priceInput)
 
         datePickerInput.delegate = self
-        datePickerInput.placeholder = date
         datePickerInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         datePickerInput.leftViewMode = .always//文字の左の余白
         datePickerInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))

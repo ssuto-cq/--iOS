@@ -1,4 +1,3 @@
-
 import UIKit
 
 class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {

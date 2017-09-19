@@ -28,6 +28,7 @@
 		EF31BC811F643F53002DECEE /* waste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7F1F643F53002DECEE /* waste.jpg */; };
 		EF37574F1F626DF400FBCF6E /* BooksViewScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37574E1F626DF400FBCF6E /* BooksViewScene.swift */; };
 		EF3757511F62A49E00FBCF6E /* azarasi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF3757501F62A49E00FBCF6E /* azarasi.jpg */; };
+		EFD1F3731F6F444E003C62BD /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD1F3721F6F444E003C62BD /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -88,6 +89,7 @@
 		EF31BC7F1F643F53002DECEE /* waste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waste.jpg; path = ../../Documents/waste.jpg; sourceTree = "<group>"; };
 		EF37574E1F626DF400FBCF6E /* BooksViewScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewScene.swift; sourceTree = "<group>"; };
 		EF3757501F62A49E00FBCF6E /* azarasi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = azarasi.jpg; path = ../../../Documents/azarasi.jpg; sourceTree = "<group>"; };
+		EFD1F3721F6F444E003C62BD /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				EF0AAE121F6773A800E19987 /* TabBarSetting.swift */,
 				EF1800331F6114F600D65DB7 /* LoginScene.swift */,
 				EF37574E1F626DF400FBCF6E /* BooksViewScene.swift */,
+				EFD1F3721F6F444E003C62BD /* Book.swift */,
 				EF0800F01F65425C0042D566 /* AddBookScene.swift */,
 				EF036E681F664E1B00106B4C /* EditBookScene.swift */,
 				EF036E6A1F6696BE00106B4C /* BeforeSettingScene.swift */,
@@ -391,6 +394,7 @@
 				EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */,
 				EF0AAE151F67A33100E19987 /* AccountSettingScene.swift in Sources */,
 				EF036E691F664E1B00106B4C /* EditBookScene.swift in Sources */,
+				EFD1F3731F6F444E003C62BD /* Book.swift in Sources */,
 				EF0800F11F65425C0042D566 /* AddBookScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
