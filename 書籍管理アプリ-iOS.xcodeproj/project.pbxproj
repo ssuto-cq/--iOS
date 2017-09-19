@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF032C1A1F7109C700AB6596 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF032C191F7109C700AB6596 /* Util.swift */; };
 		EF036E691F664E1B00106B4C /* EditBookScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF036E681F664E1B00106B4C /* EditBookScene.swift */; };
 		EF036E6B1F6696BE00106B4C /* BeforeSettingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF036E6A1F6696BE00106B4C /* BeforeSettingScene.swift */; };
 		EF0800F11F65425C0042D566 /* AddBookScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0800F01F65425C0042D566 /* AddBookScene.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF032C191F7109C700AB6596 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
 		EF036E681F664E1B00106B4C /* EditBookScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBookScene.swift; sourceTree = "<group>"; };
 		EF036E6A1F6696BE00106B4C /* BeforeSettingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeSettingScene.swift; sourceTree = "<group>"; };
 		EF0800F01F65425C0042D566 /* AddBookScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookScene.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				EF1800311F6114F600D65DB7 /* AppDelegate.swift */,
+				EF032C191F7109C700AB6596 /* Util.swift */,
 				EF0AAE121F6773A800E19987 /* TabBarSetting.swift */,
 				EF1800331F6114F600D65DB7 /* LoginScene.swift */,
 				EF37574E1F626DF400FBCF6E /* BooksViewScene.swift */,
@@ -386,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF032C1A1F7109C700AB6596 /* Util.swift in Sources */,
 				EF1800341F6114F600D65DB7 /* LoginScene.swift in Sources */,
 				EF036E6B1F6696BE00106B4C /* BeforeSettingScene.swift in Sources */,
 				EF1339581F6A1DD20073EACF /* R.generated.swift in Sources */,

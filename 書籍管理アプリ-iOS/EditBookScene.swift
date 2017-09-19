@@ -10,7 +10,7 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
     let dateLabel = UILabel()
     let bookNameInput = UITextField()
     let priceInput = UITextField()
-    let datePickerInput = UITextField()
+    var datePickerInput = UITextField()
 
     let datePicker = UIDatePicker()
     let dateFormat = DateFormatter()
@@ -83,7 +83,8 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         priceInput.clearButtonMode = .always
         priceInput.returnKeyType = .done
         self.view.addSubview(priceInput)
-
+        //
+        datePickerInput = Util()
         datePickerInput.delegate = self
         datePickerInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
         datePickerInput.leftViewMode = .always//文字の左の余白
@@ -91,23 +92,6 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
         datePickerInput.clearButtonMode = .always
         datePickerInput.returnKeyType = .done
         self.view.addSubview(datePickerInput)
-
-        //デートピッカーの表示
-        datePicker.datePickerMode = .date
-        datePicker.locale=NSLocale(localeIdentifier:"ja_JP") as Locale
-        datePickerInput.inputView = datePicker
-
-        dateFormat.dateFormat = "yyyy年MM月dd日"
-        self.datePickerInput.delegate = self
-
-        let pickerToolBar = UIToolbar(frame: CGRect(x:0, y:30, width:self.view.frame.size.width, height: 40.0))
-        pickerToolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
-        let spaceBarBtn=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)        
-        let finishTitle=NSLocalizedString("finish", comment: "")
-        let toolBarBtn=UIBarButtonItem(title: finishTitle, style: .done, target: self, action: #selector(toolBarBtnPush))
-
-        pickerToolBar.items = [spaceBarBtn, toolBarBtn]
-        datePickerInput.inputAccessoryView = pickerToolBar
 
         ////全体のレイアウト////
         bookImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -165,14 +149,9 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
     func backBooksView() {
         self.navigationController?.popViewController(animated: true)
     }
-
-    //デートピッカーを閉じる処理
-    func toolBarBtnPush(sender: UIBarButtonItem) {
-
-        let pickerDate = datePicker.date
-        print(pickerDate)
-        datePickerInput.text = dateFormat.string(from:pickerDate)
-
+    
+    //ピッカー外タッチで閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 
