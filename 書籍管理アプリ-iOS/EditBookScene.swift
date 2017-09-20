@@ -20,6 +20,7 @@ class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControl
             bookNameInput.text = book.name
             priceInput.text = String(book.price)
             datePickerInput.text = book.boughtDate
+            print(datePickerInput)
             bookImage = UIImage(named: book.imagePath)!
         }
     }
