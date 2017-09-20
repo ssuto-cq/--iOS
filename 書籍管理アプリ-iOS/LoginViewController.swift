@@ -1,6 +1,6 @@
 import UIKit
 
-class LoginScene: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class LoginScene: UIViewController, UITextFieldDelegate {
         loginButton.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
         loginButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
         loginButton.layer.position = CGPoint(x:self.view.frame.width/2, y:200)
-        loginButton.addTarget(self, action: #selector(LoginScene.loginTapped(sender:)), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(LoginViewController.loginTapped(sender:)), for: .touchUpInside)
         self.view.addSubview(loginButton)
 
         //画面のレイアウト
@@ -83,7 +83,7 @@ class LoginScene: UIViewController, UITextFieldDelegate {
     }
 
     internal func loginTapped(sender: UIButton) {
-        let booksViewScene: BooksViewScene = BooksViewScene()
+        let booksViewScene: BooksViewController = BooksViewController()
         self.navigationController?.pushViewController(booksViewScene, animated: true)
         }
 

@@ -1,6 +1,6 @@
 import UIKit
 
-class AccountSettingScene: UIViewController, UITextFieldDelegate {
+class AccountSettingViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +15,7 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
         let confirmInput =  UITextField()
 
         //閉じるボタンの追加
-        let closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookScene.closeModal))
+        let closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookViewController.closeModal))
         self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
 
         //保存ボタンの追加

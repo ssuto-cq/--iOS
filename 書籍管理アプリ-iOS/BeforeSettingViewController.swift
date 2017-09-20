@@ -1,6 +1,6 @@
 import UIKit
 
-class BeforeSettingScene: UIViewController {
+class BeforeSettingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class BeforeSettingScene: UIViewController {
     }
 
     func settingButtonTapped(sender: UIButton) {
-        let accountSettingScene = AccountSettingScene()
+        let accountSettingScene = AccountSettingViewController()
         let navi = UINavigationController(rootViewController: accountSettingScene)
         accountSettingScene.modalTransitionStyle = .crossDissolve
         present(navi, animated: true, completion: nil)

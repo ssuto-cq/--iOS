@@ -21,12 +21,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 8 files.
+  /// This `R.file` struct is generated, and contains static references to 7 files.
   struct file {
     /// Resource file `.swiftlint.yml`.
     static let swiftlintYml = Rswift.FileResource(bundle: R.hostingBundle, name: ".swiftlint", pathExtension: "yml")
-    /// Resource file `Default-568h@2x.png`.
-    static let default568h2xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "Default-568h@2x", pathExtension: "png")
     /// Resource file `adventure.jpg`.
     static let adventureJpg = Rswift.FileResource(bundle: R.hostingBundle, name: "adventure", pathExtension: "jpg")
     /// Resource file `animal.jpg`.
@@ -43,12 +41,6 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: ".swiftlint", withExtension: "yml")`
     static func swiftlintYml(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.swiftlintYml
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-    
-    /// `bundle.url(forResource: "Default-568h@2x", withExtension: "png")`
-    static func default568h2xPng(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.default568h2xPng
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -96,10 +88,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 7 images.
+  /// This `R.image` struct is generated, and contains static references to 6 images.
   struct image {
-    /// Image `Default-568h`.
-    static let default568h = Rswift.ImageResource(bundle: R.hostingBundle, name: "Default-568h")
     /// Image `adventure.jpg`.
     static let adventureJpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "adventure.jpg")
     /// Image `animal.jpg`.
@@ -112,11 +102,6 @@ struct R: Rswift.Validatable {
     static let noimage = Rswift.ImageResource(bundle: R.hostingBundle, name: "noimage")
     /// Image `waste.jpg`.
     static let wasteJpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "waste.jpg")
-    
-    /// `UIImage(named: "Default-568h", bundle: ..., traitCollection: ...)`
-    static func default568h(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.default568h, compatibleWith: traitCollection)
-    }
     
     /// `UIImage(named: "adventure.jpg", bundle: ..., traitCollection: ...)`
     static func adventureJpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {

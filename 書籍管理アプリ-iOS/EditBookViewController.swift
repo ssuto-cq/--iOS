@@ -1,6 +1,6 @@
 import UIKit
 
-class EditBookScene: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditBookViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var bookImage: UIImage!
     var bookImageView: UIImageView!

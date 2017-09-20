@@ -1,6 +1,6 @@
 import UIKit
 
-class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let statusBarHeight=UIApplication.shared.statusBarFrame.height
     
@@ -20,7 +20,7 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
         let tableView = UITableView()
         let loadButton = UIButton()
 
-        let addButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(BooksViewScene.addButtonTapped))
+        let addButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(BooksViewController.addButtonTapped))
         self.navigationItem.setRightBarButtonItems([addButton], animated: true)
 
         //テーブルビューの設定
@@ -53,7 +53,7 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     //追加ボタンの処理
     func addButtonTapped() {
-        let addBookScene = AddBookScene()
+        let addBookScene = AddBookViewController()
         let navi = UINavigationController(rootViewController: addBookScene)
         addBookScene.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         present(navi, animated: true, completion: nil)
@@ -75,7 +75,7 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
     //書籍編集画面への遷移処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let editBookScene = EditBookScene()
+        let editBookScene = EditBookViewController()
         
         editBookScene.book = books[indexPath.row]
         
@@ -84,54 +84,3 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
 }
-
-//セルのカスタム
-/*class MyCell: UITableViewCell {
-
-    var booksTitlesUI: UILabel!
-    var booksImagesUI: UIImage!
-    var myImageView: UIImageView!
-    var booksPriceUI: UILabel!
-    var booksDateUI: UILabel!
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style:style, reuseIdentifier:reuseIdentifier)
-
-        booksTitlesUI = UILabel(frame:CGRect.zero)
-        booksTitlesUI.textAlignment = .left
-        contentView.addSubview(booksTitlesUI)
-
-        booksImagesUI = UIImage(named:"azarasi.jpg")
-        myImageView = UIImageView(image:booksImagesUI)
-        contentView.addSubview(myImageView)
-
-        booksPriceUI = UILabel(frame:CGRect.zero)
-        booksPriceUI.textAlignment = .left
-        contentView.addSubview(booksPriceUI)
-
-        booksDateUI = UILabel(frame:CGRect.zero)
-        booksDateUI.textAlignment = .left
-        contentView.addSubview(booksDateUI)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder: ) has not been implemented")
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        booksTitlesUI.frame = CGRect(x: 110, y: -20, width: frame.width, height: frame.height)
-        booksPriceUI.frame = CGRect(x: 90, y: 25, width: 120, height: frame.height)
-        booksDateUI.frame = CGRect(x: 170, y: 25, width: 120, height: frame.height)
-        myImageView.frame = CGRect(x: 5, y: 0, width: 70, height: frame.height)
-    }
-    
-    func bookRegister(book:Book){
-        
-        booksTitlesUI.text = book.name
-        booksPriceUI.text = String(describing:book.price)
-        booksDateUI.text = book.boughtDate
-        myImageView.image = UIImage(named: book.imagePath)
-    }
-    
-}*/

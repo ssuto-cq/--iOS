@@ -1,6 +1,6 @@
 import UIKit
 
-class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var bookImage: UIImage!
     var bookImageView: UIImageView!
@@ -120,7 +120,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
 
 }
 
-extension AddBookScene:UITextFieldDelegate {
+extension AddBookViewController:UITextFieldDelegate {
 
     func layout() {
 
