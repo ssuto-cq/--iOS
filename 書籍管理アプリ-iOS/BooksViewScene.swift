@@ -28,7 +28,7 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.rowHeight = 90
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(MyCell.self, forCellReuseIdentifier: NSStringFromClass(MyCell.self))//
+        tableView.register(BookCell.self, forCellReuseIdentifier: NSStringFromClass(BookCell.self))//
         self.view.addSubview(tableView)
 
         //読み込みボタンの設定
@@ -61,7 +61,7 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell=tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(MyCell.self), for: indexPath) as! MyCell
+        let cell=tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(BookCell.self), for: indexPath) as! BookCell
         
         cell.bookRegister(book: books[indexPath.row])
 
@@ -86,7 +86,7 @@ class BooksViewScene: UIViewController, UITableViewDelegate, UITableViewDataSour
 }
 
 //セルのカスタム
-class MyCell: UITableViewCell {
+/*class MyCell: UITableViewCell {
 
     var booksTitlesUI: UILabel!
     var booksImagesUI: UIImage!
@@ -134,4 +134,4 @@ class MyCell: UITableViewCell {
         myImageView.image = UIImage(named: book.imagePath)
     }
     
-}
+}*/

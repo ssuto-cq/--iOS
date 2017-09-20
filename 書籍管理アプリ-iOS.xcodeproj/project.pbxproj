@@ -10,6 +10,7 @@
 		EF032C1A1F7109C700AB6596 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF032C191F7109C700AB6596 /* Util.swift */; };
 		EF036E691F664E1B00106B4C /* EditBookScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF036E681F664E1B00106B4C /* EditBookScene.swift */; };
 		EF036E6B1F6696BE00106B4C /* BeforeSettingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF036E6A1F6696BE00106B4C /* BeforeSettingScene.swift */; };
+		EF0717081F724FBA00732883 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0717071F724FBA00732883 /* BookCell.swift */; };
 		EF0800F11F65425C0042D566 /* AddBookScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0800F01F65425C0042D566 /* AddBookScene.swift */; };
 		EF0800F31F6570CB0042D566 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0800F21F6570CB0042D566 /* noimage.png */; };
 		EF0AAE131F6773A800E19987 /* TabBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE121F6773A800E19987 /* TabBarSetting.swift */; };
@@ -64,6 +65,7 @@
 		EF032C191F7109C700AB6596 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
 		EF036E681F664E1B00106B4C /* EditBookScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBookScene.swift; sourceTree = "<group>"; };
 		EF036E6A1F6696BE00106B4C /* BeforeSettingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeSettingScene.swift; sourceTree = "<group>"; };
+		EF0717071F724FBA00732883 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		EF0800F01F65425C0042D566 /* AddBookScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookScene.swift; sourceTree = "<group>"; };
 		EF0800F21F6570CB0042D566 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noimage.png; path = ../../Documents/noimage.png; sourceTree = "<group>"; };
 		EF0AAE121F6773A800E19987 /* TabBarSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarSetting.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				EF0AAE121F6773A800E19987 /* TabBarSetting.swift */,
 				EF1800331F6114F600D65DB7 /* LoginScene.swift */,
 				EF37574E1F626DF400FBCF6E /* BooksViewScene.swift */,
+				EF0717071F724FBA00732883 /* BookCell.swift */,
 				EFD1F3721F6F444E003C62BD /* Book.swift */,
 				EF0800F01F65425C0042D566 /* AddBookScene.swift */,
 				EF036E681F664E1B00106B4C /* EditBookScene.swift */,
@@ -389,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF0717081F724FBA00732883 /* BookCell.swift in Sources */,
 				EF032C1A1F7109C700AB6596 /* Util.swift in Sources */,
 				EF1800341F6114F600D65DB7 /* LoginScene.swift in Sources */,
 				EF036E6B1F6696BE00106B4C /* BeforeSettingScene.swift in Sources */,
