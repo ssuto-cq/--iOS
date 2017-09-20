@@ -50,8 +50,8 @@ playground.xcworkspace
 
 # Carthage
 #
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
+# Add this line if you want to avoid checking in source code from Carthage dependencies. 
+Carthage/Checkouts
 
 Carthage/Build
 
@@ -65,6 +65,5 @@ Carthage/Build
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
-fastlana/wiftest_output
-
-# .generated.swift
+fastlana/wiftest_output 
+.generated.swift
