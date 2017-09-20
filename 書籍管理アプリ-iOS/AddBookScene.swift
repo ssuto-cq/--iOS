@@ -106,7 +106,7 @@ class AddBookScene: UIViewController, UIImagePickerControllerDelegate, UINavigat
             pickerView.delegate = self
             pickerView.sourceType = .photoLibrary
 
-         self.present(pickerView, animated: true, completion: nil)
+            self.present(pickerView, animated: true, completion: nil)
 
         }
     }

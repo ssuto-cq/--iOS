@@ -15,11 +15,11 @@ class AccountSettingScene: UIViewController, UITextFieldDelegate {
         let confirmInput =  UITextField()
 
         //閉じるボタンの追加
-        let closeButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookScene.closeModal))
+        let closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookScene.closeModal))
         self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
 
         //保存ボタンの追加
-        let saveButton: UIBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(self.saveButtonTapped(sender:)))
+        let saveButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(self.saveButtonTapped(sender:)))
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
 
         //メールアドレスラベルの設定

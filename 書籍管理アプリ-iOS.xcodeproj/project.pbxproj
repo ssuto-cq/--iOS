@@ -23,7 +23,6 @@
 		EF1800341F6114F600D65DB7 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800331F6114F600D65DB7 /* LoginScene.swift */; };
 		EF1800471F6114F600D65DB7 /* _________iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800461F6114F600D65DB7 /* _________iOSTests.swift */; };
 		EF1800521F6114F600D65DB7 /* _________iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */; };
-		EF1800601F611A5100D65DB7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */; };
 		EF31BC7C1F643F28002DECEE /* adventure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7A1F643F28002DECEE /* adventure.jpg */; };
 		EF31BC7D1F643F28002DECEE /* animal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7B1F643F28002DECEE /* animal.jpg */; };
 		EF31BC801F643F53002DECEE /* himatubusi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7E1F643F53002DECEE /* himatubusi.jpg */; };
@@ -86,7 +85,6 @@
 		EF18004D1F6114F600D65DB7 /* 書籍管理アプリ-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "書籍管理アプリ-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_________iOSUITests.swift"; sourceTree = "<group>"; };
 		EF1800531F6114F600D65DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EF31BC7A1F643F28002DECEE /* adventure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = adventure.jpg; path = ../../Documents/adventure.jpg; sourceTree = "<group>"; };
 		EF31BC7B1F643F28002DECEE /* animal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = animal.jpg; path = ../../Documents/animal.jpg; sourceTree = "<group>"; };
 		EF31BC7E1F643F53002DECEE /* himatubusi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = himatubusi.jpg; path = ../../Documents/himatubusi.jpg; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				EF1339571F6A1DD20073EACF /* R.generated.swift */,
 				EF13395E1F6A248F0073EACF /* Localizable.strings */,
 				EF13394A1F6A05820073EACF /* .swiftlint.yml */,
-				EF18005F1F611A5100D65DB7 /* Default-568h@2x.png */,
 				EF1800301F6114F600D65DB7 /* 書籍管理アプリ-iOS */,
 				EF31BC7A1F643F28002DECEE /* adventure.jpg */,
 				EF31BC7B1F643F28002DECEE /* animal.jpg */,
@@ -321,7 +318,6 @@
 				EF13395C1F6A248F0073EACF /* Localizable.strings in Resources */,
 				EF31BC811F643F53002DECEE /* waste.jpg in Resources */,
 				EF31BC7C1F643F28002DECEE /* adventure.jpg in Resources */,
-				EF1800601F611A5100D65DB7 /* Default-568h@2x.png in Resources */,
 				EF31BC7D1F643F28002DECEE /* animal.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
