@@ -10,9 +10,9 @@ class AccountSettingViewController: UIViewController, UITextFieldDelegate {
         let addressLabel = UILabel()
         let passwordLabel = UILabel()
         let confirmLabel = UILabel()
-        let addressInput = UITextField()
-        let passwordInput = UITextField()
-        let confirmInput =  UITextField()
+        let addressTextField = UITextField()
+        let passwordTextField = UITextField()
+        let confirmTextField =  UITextField()
 
         //閉じるボタンの追加
         let closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookViewController.closeModal))
@@ -38,45 +38,45 @@ class AccountSettingViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(confirmLabel)
 
         //メールアドレス入力欄の設定
-        addressInput.delegate = self
-        addressInput.placeholder = R.string.localizable.addressInput()
-        addressInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        addressInput.leftViewMode = .always//文字の左の余白
-        addressInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        addressInput.clearButtonMode = .always
-        addressInput.returnKeyType = .done
-        self.view.addSubview(addressInput)
+        addressTextField.delegate = self
+        addressTextField.placeholder = R.string.localizable.addressInput()
+        addressTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        addressTextField.leftViewMode = .always//文字の左の余白
+        addressTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        addressTextField.clearButtonMode = .always
+        addressTextField.returnKeyType = .done
+        self.view.addSubview(addressTextField)
 
         //パスワード入力欄の設定
-        passwordInput.delegate = self
-        passwordInput.placeholder = R.string.localizable.passwordInput()
-        passwordInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        passwordInput.leftViewMode = .always
-        passwordInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        passwordInput.clearButtonMode = .always
-        passwordInput.returnKeyType = .done
-        self.view.addSubview(passwordInput)
+        passwordTextField.delegate = self
+        passwordTextField.placeholder = R.string.localizable.passwordInput()
+        passwordTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        passwordTextField.leftViewMode = .always
+        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        passwordTextField.clearButtonMode = .always
+        passwordTextField.returnKeyType = .done
+        self.view.addSubview(passwordTextField)
 
         //パスワード確認入力欄の設定
-        confirmInput.delegate = self
-        confirmInput.placeholder = R.string.localizable.confirmpassInput()
-        confirmInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        confirmInput.leftViewMode = .always//文字の左の余白
-        confirmInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        confirmInput.clearButtonMode = .always
-        confirmInput.returnKeyType = .done
-        self.view.addSubview(confirmInput)
+        confirmTextField.delegate = self
+        confirmTextField.placeholder = R.string.localizable.confirmpassInput()
+        confirmTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        confirmTextField.leftViewMode = .always//文字の左の余白
+        confirmTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        confirmTextField.clearButtonMode = .always
+        confirmTextField.returnKeyType = .done
+        self.view.addSubview(confirmTextField)
 
         //全体のレイアウト
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
         confirmLabel.translatesAutoresizingMaskIntoConstraints = false
-        addressInput.translatesAutoresizingMaskIntoConstraints = false
-        passwordInput.translatesAutoresizingMaskIntoConstraints = false
-        confirmInput.translatesAutoresizingMaskIntoConstraints = false
+        addressTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        confirmTextField.translatesAutoresizingMaskIntoConstraints = false
 
         addressLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:35).isActive = true
-        addressLabel.bottomAnchor.constraint(equalTo: addressInput.topAnchor, constant:-10).isActive = true
+        addressLabel.bottomAnchor.constraint(equalTo: addressTextField.topAnchor, constant:-10).isActive = true
 
         passwordLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
         passwordLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:100).isActive = true
@@ -84,17 +84,17 @@ class AccountSettingViewController: UIViewController, UITextFieldDelegate {
         confirmLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
         confirmLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:200).isActive = true
 
-        addressInput.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        addressInput.topAnchor.constraint(equalTo: self.view.topAnchor, constant:120).isActive = true
-        addressInput.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:0.8).isActive = true
+        addressTextField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        addressTextField.topAnchor.constraint(equalTo: self.view.topAnchor, constant:120).isActive = true
+        addressTextField.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:0.8).isActive = true
 
-        passwordInput.centerXAnchor.constraint(equalTo: addressInput.centerXAnchor).isActive = true
-        passwordInput.topAnchor.constraint(equalTo: addressInput.topAnchor, constant:100).isActive = true
-        passwordInput.widthAnchor.constraint(equalTo: addressInput.widthAnchor).isActive = true
+        passwordTextField.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:100).isActive = true
+        passwordTextField.widthAnchor.constraint(equalTo: addressTextField.widthAnchor).isActive = true
 
-        confirmInput.centerXAnchor.constraint(equalTo: addressInput.centerXAnchor).isActive = true
-        confirmInput.topAnchor.constraint(equalTo: addressInput.topAnchor, constant:200).isActive = true
-        confirmInput.widthAnchor.constraint(equalTo: addressInput.widthAnchor).isActive = true
+        confirmTextField.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
+        confirmTextField.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:200).isActive = true
+        confirmTextField.widthAnchor.constraint(equalTo: addressTextField.widthAnchor).isActive = true
 
     }
 

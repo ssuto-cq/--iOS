@@ -13,5 +13,4 @@ struct Book{
         self.boughtDate = boughtDate
         self.imagePath = imagePath
     }
-    
 }

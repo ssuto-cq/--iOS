@@ -9,8 +9,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         let addressLabel = UILabel()
         let passwordLabel = UILabel()
-        let addressInput = UITextField()
-        let passwordInput = UITextField()
+        let addressTextField = UITextField()
+        let passwordTextField = UITextField()
         let loginButton = UIButton()
 
         //メールアドレスラベルの設定
@@ -24,24 +24,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(passwordLabel)
 
         //メールアドレス入力欄の設定
-        addressInput.delegate = self
-        addressInput.placeholder = R.string.localizable.addressInput()
-        addressInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        addressInput.leftViewMode = .always//文字の左の余白
-        addressInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        addressInput.clearButtonMode = .always
-        addressInput.returnKeyType = .done
-        self.view.addSubview(addressInput)
+        addressTextField.delegate = self
+        addressTextField.placeholder = R.string.localizable.addressInput()
+        addressTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        addressTextField.leftViewMode = .always//文字の左の余白
+        addressTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        addressTextField.clearButtonMode = .always
+        addressTextField.returnKeyType = .done
+        self.view.addSubview(addressTextField)
 
         //パスワード入力欄の設定
-        passwordInput.delegate = self
-        passwordInput.placeholder = R.string.localizable.passwordInput()
-        passwordInput.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        passwordInput.leftViewMode = .always
-        passwordInput.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        passwordInput.clearButtonMode = .always
-        passwordInput.returnKeyType = .done
-        self.view.addSubview(passwordInput)
+        passwordTextField.delegate = self
+        passwordTextField.placeholder = R.string.localizable.passwordInput()
+        passwordTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        passwordTextField.leftViewMode = .always
+        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        passwordTextField.clearButtonMode = .always
+        passwordTextField.returnKeyType = .done
+        self.view.addSubview(passwordTextField)
 
         //ログインボタンの設定
         let loginTitle = R.string.localizable.login()
@@ -56,8 +56,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //画面のレイアウト
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
-        addressInput.translatesAutoresizingMaskIntoConstraints = false
-        passwordInput.translatesAutoresizingMaskIntoConstraints = false
+        addressTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         loginButton.translatesAutoresizingMaskIntoConstraints = false
 
         addressLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:35).isActive = true
@@ -66,16 +66,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
         passwordLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:100).isActive = true
 
-        addressInput.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        addressInput.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        addressInput.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:0.8).isActive = true
+        addressTextField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        addressTextField.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        addressTextField.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:0.8).isActive = true
 
-        passwordInput.centerXAnchor.constraint(equalTo: addressInput.centerXAnchor).isActive = true
-        passwordInput.topAnchor.constraint(equalTo: addressInput.topAnchor, constant:100.0).isActive = true
-        passwordInput.widthAnchor.constraint(equalTo: addressInput.widthAnchor).isActive = true
+        passwordTextField.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:100.0).isActive = true
+        passwordTextField.widthAnchor.constraint(equalTo: addressTextField.widthAnchor).isActive = true
 
-        loginButton.centerXAnchor.constraint(equalTo: addressInput.centerXAnchor).isActive = true
-        loginButton.topAnchor.constraint(equalTo: addressInput.topAnchor, constant:150.0).isActive = true
+        loginButton.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
+        loginButton.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:150.0).isActive = true
     }
 
     override func didReceiveMemoryWarning() {

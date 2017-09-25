@@ -21,10 +21,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 7 files.
+  /// This `R.file` struct is generated, and contains static references to 8 files.
   struct file {
     /// Resource file `.swiftlint.yml`.
     static let swiftlintYml = Rswift.FileResource(bundle: R.hostingBundle, name: ".swiftlint", pathExtension: "yml")
+    /// Resource file `Default-568h@2x.png`.
+    static let default568h2xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "Default-568h@2x", pathExtension: "png")
     /// Resource file `adventure.jpg`.
     static let adventureJpg = Rswift.FileResource(bundle: R.hostingBundle, name: "adventure", pathExtension: "jpg")
     /// Resource file `animal.jpg`.
@@ -41,6 +43,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: ".swiftlint", withExtension: "yml")`
     static func swiftlintYml(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.swiftlintYml
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "Default-568h@2x", withExtension: "png")`
+    static func default568h2xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.default568h2xPng
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -88,8 +96,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 6 images.
+  /// This `R.image` struct is generated, and contains static references to 7 images.
   struct image {
+    /// Image `Default-568h`.
+    static let default568h = Rswift.ImageResource(bundle: R.hostingBundle, name: "Default-568h")
     /// Image `adventure.jpg`.
     static let adventureJpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "adventure.jpg")
     /// Image `animal.jpg`.
@@ -102,6 +112,11 @@ struct R: Rswift.Validatable {
     static let noimage = Rswift.ImageResource(bundle: R.hostingBundle, name: "noimage")
     /// Image `waste.jpg`.
     static let wasteJpg = Rswift.ImageResource(bundle: R.hostingBundle, name: "waste.jpg")
+    
+    /// `UIImage(named: "Default-568h", bundle: ..., traitCollection: ...)`
+    static func default568h(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.default568h, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "adventure.jpg", bundle: ..., traitCollection: ...)`
     static func adventureJpg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -158,8 +173,12 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 18 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 19 localization keys.
     struct localizable {
+      /// Base translation: %d
+      /// 
+      /// Locales: Base, ja
+      static let price = Rswift.StringResource(key: "price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base", "ja"], comment: nil)
       /// Base translation: AccountSetting
       /// 
       /// Locales: Base, ja
@@ -232,6 +251,13 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: Base, ja
       static let setting = Rswift.StringResource(key: "setting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base", "ja"], comment: nil)
+      
+      /// Base translation: %d
+      /// 
+      /// Locales: Base, ja
+      static func price(_ value1: Int) -> String {
+        return String(format: NSLocalizedString("price", bundle: R.hostingBundle, value: "%d", comment: ""), locale: R.applicationLocale, value1)
+      }
       
       /// Base translation: AccountSetting
       /// 

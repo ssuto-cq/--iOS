@@ -29,6 +29,7 @@
 		EF31BC811F643F53002DECEE /* waste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7F1F643F53002DECEE /* waste.jpg */; };
 		EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37574E1F626DF400FBCF6E /* BooksViewController.swift */; };
 		EF3757511F62A49E00FBCF6E /* azarasi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF3757501F62A49E00FBCF6E /* azarasi.jpg */; };
+		EF98A1B81F78D98600A6AA02 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF98A1B71F78D98600A6AA02 /* Default-568h@2x.png */; };
 		EFD1F3731F6F444E003C62BD /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD1F3721F6F444E003C62BD /* Book.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +91,8 @@
 		EF31BC7E1F643F53002DECEE /* himatubusi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = himatubusi.jpg; path = ../../Documents/himatubusi.jpg; sourceTree = "<group>"; };
 		EF31BC7F1F643F53002DECEE /* waste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waste.jpg; path = ../../Documents/waste.jpg; sourceTree = "<group>"; };
 		EF37574E1F626DF400FBCF6E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
-		EF3757501F62A49E00FBCF6E /* azarasi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = azarasi.jpg; path = ../../../Documents/azarasi.jpg; sourceTree = "<group>"; };
+		EF3757501F62A49E00FBCF6E /* azarasi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = azarasi.jpg; path = ../../Documents/azarasi.jpg; sourceTree = "<group>"; };
+		EF98A1B71F78D98600A6AA02 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		EFD1F3721F6F444E003C62BD /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 		EF1800251F6114F500D65DB7 = {
 			isa = PBXGroup;
 			children = (
+				EF98A1B71F78D98600A6AA02 /* Default-568h@2x.png */,
 				EF1339571F6A1DD20073EACF /* R.generated.swift */,
 				EF13395E1F6A248F0073EACF /* Localizable.strings */,
 				EF13394A1F6A05820073EACF /* .swiftlint.yml */,
@@ -141,6 +144,7 @@
 				EF31BC7E1F643F53002DECEE /* himatubusi.jpg */,
 				EF31BC7F1F643F53002DECEE /* waste.jpg */,
 				EF0800F21F6570CB0042D566 /* noimage.png */,
+				EF3757501F62A49E00FBCF6E /* azarasi.jpg */,
 				EF1800451F6114F600D65DB7 /* 書籍管理アプリ-iOSTests */,
 				EF1800501F6114F600D65DB7 /* 書籍管理アプリ-iOSUITests */,
 				EF18002F1F6114F600D65DB7 /* Products */,
@@ -173,7 +177,6 @@
 				EF036E6A1F6696BE00106B4C /* BeforeSettingViewController.swift */,
 				EF0AAE141F67A33100E19987 /* AccountSettingViewController.swift */,
 				EF18003D1F6114F600D65DB7 /* Info.plist */,
-				EF3757501F62A49E00FBCF6E /* azarasi.jpg */,
 			);
 			path = "書籍管理アプリ-iOS";
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				EF13394B1F6A05820073EACF /* .swiftlint.yml in Resources */,
 				EF0800F31F6570CB0042D566 /* noimage.png in Resources */,
 				EF31BC801F643F53002DECEE /* himatubusi.jpg in Resources */,
+				EF98A1B81F78D98600A6AA02 /* Default-568h@2x.png in Resources */,
 				EF3757511F62A49E00FBCF6E /* azarasi.jpg in Resources */,
 				EF13395C1F6A248F0073EACF /* Localizable.strings in Resources */,
 				EF31BC811F643F53002DECEE /* waste.jpg in Resources */,
@@ -547,8 +551,6 @@
 		EF1800571F6114F600D65DB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 4ETBXX8G33;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
