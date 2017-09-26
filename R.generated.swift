@@ -160,7 +160,7 @@ struct R: Rswift.Validatable {
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 19 localization keys.
     struct localizable {
-      /// Base translation: %d
+      /// Base translation: %d yen
       /// 
       /// Locales: Base, ja
       static let price = Rswift.StringResource(key: "price", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base", "ja"], comment: nil)
@@ -237,11 +237,11 @@ struct R: Rswift.Validatable {
       /// Locales: Base, ja
       static let setting = Rswift.StringResource(key: "setting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base", "ja"], comment: nil)
       
-      /// Base translation: %d
+      /// Base translation: %d yen
       /// 
       /// Locales: Base, ja
       static func price(_ value1: Int) -> String {
-        return String(format: NSLocalizedString("price", bundle: R.hostingBundle, value: "%d", comment: ""), locale: R.applicationLocale, value1)
+        return String(format: NSLocalizedString("price", bundle: R.hostingBundle, value: "%d yen", comment: ""), locale: R.applicationLocale, value1)
       }
       
       /// Base translation: AccountSetting

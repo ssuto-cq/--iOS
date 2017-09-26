@@ -83,8 +83,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     internal func loginTapped(sender: UIButton) {
-        let booksViewScene: BooksViewController = BooksViewController()
-        self.navigationController?.pushViewController(booksViewScene, animated: true)
+        let booksViewController: BooksViewController = BooksViewController()
+        self.navigationController?.pushViewController(booksViewController, animated: true)
         }
 
 }

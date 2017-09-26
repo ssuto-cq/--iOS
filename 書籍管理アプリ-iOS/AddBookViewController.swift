@@ -19,10 +19,10 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
 
         //UISetting()
         //閉じるボタンの追加
-        let closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(self.closeModal))
+        let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(self.closeModal))
         self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
         //保存ボタンの追加
-        let saveButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
+        let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
         //書籍画像の設定
         bookImage = UIImage(named:"noimage.png")

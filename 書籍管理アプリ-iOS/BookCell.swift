@@ -43,7 +43,7 @@ class BookCell: UITableViewCell {
     func bookRegister(book:Book){
         
         booksTitlesUI.text = book.name
-        booksPriceUI.text = R.string.localizable.price(book.price) + "円"
+        booksPriceUI.text = R.string.localizable.price(book.price) 
         booksDateUI.text = book.boughtDate
         myImageView.image = UIImage(named: book.imagePath)
     }

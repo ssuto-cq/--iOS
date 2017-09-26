@@ -2,7 +2,7 @@ import UIKit
 
 class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let statusBarHeight=UIApplication.shared.statusBarFrame.height
+    let statusBarHeight = UIApplication.shared.statusBarFrame.height
     
     var books:[Book] = []
     var selectedImage: UIImage?
@@ -20,7 +20,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let tableView = UITableView()
         let loadButton = UIButton()
 
-        let addButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(BooksViewController.addButtonTapped))
+        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(BooksViewController.addButtonTapped))
         self.navigationItem.setRightBarButtonItems([addButton], animated: true)
 
         //テーブルビューの設定
@@ -53,15 +53,15 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     //追加ボタンの処理
     func addButtonTapped() {
-        let addBookScene = AddBookViewController()
-        let navi = UINavigationController(rootViewController: addBookScene)
-        addBookScene.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        let addBookViewController = AddBookViewController()
+        let navi = UINavigationController(rootViewController: addBookViewController)
+        addBookViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         present(navi, animated: true, completion: nil)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell=tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(BookCell.self), for: indexPath) as! BookCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(BookCell.self), for: indexPath) as! BookCell
         
         cell.bookRegister(book: books[indexPath.row])
 
@@ -75,11 +75,11 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //書籍編集画面への遷移処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let editBookScene = EditBookViewController()
+        let editBookViewController = EditBookViewController()
         
-        editBookScene.book = books[indexPath.row]
+        editBookViewController.book = books[indexPath.row]
         
-        self.navigationController?.pushViewController(editBookScene, animated: true)
+        self.navigationController?.pushViewController(editBookViewController, animated: true)
 
     }
 

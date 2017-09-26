@@ -28,11 +28,11 @@ class EditBookViewController: UIViewController, UITextFieldDelegate, UIImagePick
         self.title = NSLocalizedString("editbook", comment: "")
         
         //閉じるボタンの追加
-        let closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(backBooksView))
+        let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(backBooksView))
         self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
 
         //保存ボタンの追加
-        let saveButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
+        let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
 
         //書籍画像の設定
