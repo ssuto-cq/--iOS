@@ -26,6 +26,8 @@
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>カメラロールの写真を表示</string>
+	<key>UILaunchStoryboardName</key>
+	<string>Defalut-568@2x</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
