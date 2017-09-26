@@ -66,4 +66,4 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlana/wiftest_output 
-.generated.swift
+*.generated.swift
