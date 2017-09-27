@@ -1,6 +1,6 @@
 import UIKit
 
-class AccountSettingViewController: UIViewController, UITextFieldDelegate {
+class AccountSettingViewController: UIViewController {
     
     let addressLabel: UILabel = {
         let label = UILabel()
@@ -79,35 +79,7 @@ class AccountSettingViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(passwordTextField)
         self.view.addSubview(confirmTextField)
 
-        //全体のレイアウト
-        addressLabel.translatesAutoresizingMaskIntoConstraints = false
-        passwordLabel.translatesAutoresizingMaskIntoConstraints = false
-        confirmLabel.translatesAutoresizingMaskIntoConstraints = false
-        addressTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        confirmTextField.translatesAutoresizingMaskIntoConstraints = false
-
-        addressLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:35).isActive = true
-        addressLabel.bottomAnchor.constraint(equalTo: addressTextField.topAnchor, constant:-10).isActive = true
-
-        passwordLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
-        passwordLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:100).isActive = true
-
-        confirmLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
-        confirmLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:200).isActive = true
-
-        addressTextField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        addressTextField.topAnchor.constraint(equalTo: self.view.topAnchor, constant:120).isActive = true
-        addressTextField.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:0.8).isActive = true
-
-        passwordTextField.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:100).isActive = true
-        passwordTextField.widthAnchor.constraint(equalTo: addressTextField.widthAnchor).isActive = true
-
-        confirmTextField.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
-        confirmTextField.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:200).isActive = true
-        confirmTextField.widthAnchor.constraint(equalTo: addressTextField.widthAnchor).isActive = true
-
+        layout()
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,4 +94,37 @@ class AccountSettingViewController: UIViewController, UITextFieldDelegate {
         //self.navigationController?.pushViewController(BooksViewScene(), animated: true)
         print("保存")
     }
+}
+
+extension AccountSettingViewController: UITextFieldDelegate {
+    
+    func layout() {
+        addressLabel.translatesAutoresizingMaskIntoConstraints = false
+        passwordLabel.translatesAutoresizingMaskIntoConstraints = false
+        confirmLabel.translatesAutoresizingMaskIntoConstraints = false
+        addressTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        confirmTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        addressLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:35).isActive = true
+        addressLabel.bottomAnchor.constraint(equalTo: addressTextField.topAnchor, constant:-10).isActive = true
+        
+        passwordLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
+        passwordLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:100).isActive = true
+        
+        confirmLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
+        confirmLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:200).isActive = true
+        
+        addressTextField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        addressTextField.topAnchor.constraint(equalTo: self.view.topAnchor, constant:120).isActive = true
+        addressTextField.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:0.8).isActive = true
+        
+        passwordTextField.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:100).isActive = true
+        passwordTextField.widthAnchor.constraint(equalTo: addressTextField.widthAnchor).isActive = true
+        
+        confirmTextField.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
+        confirmTextField.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:200).isActive = true
+        confirmTextField.widthAnchor.constraint(equalTo: addressTextField.widthAnchor).isActive = true
+     }
 }
