@@ -3,9 +3,8 @@ import UIKit
 class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var books:[Book] = []
-    var selectedImage: UIImage?
     
-    lazy var bookTableView: UITableView = {
+    private lazy var bookTableView: UITableView = {
         let tableView = UITableView()
         tableView.frame = CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height)
         tableView.rowHeight = 90
@@ -15,7 +14,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return tableView
     }()
     
-    lazy var loadButton: UIButton = {
+    private lazy var loadButton: UIButton = {
         let button = UIButton()
         let loadTitle = R.string.localizable.load()
         button.layer.position = CGPoint(x:self.view.frame.width/2, y:200)

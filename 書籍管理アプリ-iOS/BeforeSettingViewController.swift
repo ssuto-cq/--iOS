@@ -2,7 +2,7 @@ import UIKit
 
 class BeforeSettingViewController: UIViewController {
     
-    lazy var settingButton: UIButton = {
+    private lazy var settingButton: UIButton = {
         let button = UIButton()
         let accountSettingTitle = R.string.localizable.accountsetting()
         button.setTitle(accountSettingTitle, for:UIControlState.normal)

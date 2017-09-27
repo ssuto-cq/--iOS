@@ -3,9 +3,8 @@ import UIKit
 
 class Util: UITextField{
     
-    let datePicker = UIDatePicker()
-    let dateFormat = DateFormatter()
-    
+    private let datePicker = UIDatePicker()
+    private let dateFormat = DateFormatter()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,8 +17,7 @@ class Util: UITextField{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
+        
     func datePickerValueChanged(sender: UIDatePicker) {
         let pickerDate = datePicker.date
         

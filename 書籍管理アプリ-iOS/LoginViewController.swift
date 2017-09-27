@@ -2,21 +2,21 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    let addressLabel: UILabel = {
+    fileprivate let addressLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.mailaddress()
         label.sizeToFit()
         return label
     }()
     
-    let passwordLabel: UILabel = {
+    fileprivate let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.password()
         label.sizeToFit()
         return label
     }()
     
-    let addressTextField: UITextField = {
+    fileprivate let addressTextField: UITextField = {
         let textField = UITextField()
         textField.delegate = self as? UITextFieldDelegate
         textField.placeholder = R.string.localizable.addressInput()
@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
-    let passwordTextField: UITextField = {
+    fileprivate let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.delegate = self as? UITextFieldDelegate
         textField.placeholder = R.string.localizable.passwordInput()
@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
-    lazy var loginButton: UIButton = {
+    fileprivate lazy var loginButton: UIButton = {
         let button = UIButton()
         let loginTitle = R.string.localizable.login()
         button.setTitle(loginTitle, for:UIControlState.normal)
@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    internal func loginTapped(sender: UIButton) {
+    func loginTapped(sender: UIButton) {
         let booksViewController: BooksViewController = BooksViewController()
         self.navigationController?.pushViewController(booksViewController, animated: true)
     }

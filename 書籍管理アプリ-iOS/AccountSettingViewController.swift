@@ -2,28 +2,28 @@ import UIKit
 
 class AccountSettingViewController: UIViewController {
     
-    let addressLabel: UILabel = {
+    fileprivate let addressLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.mailaddress()
         label.sizeToFit()
         return label
     }()
     
-    let passwordLabel: UILabel = {
+    fileprivate let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.password()
         label.sizeToFit()
         return label
     }()
     
-    let confirmLabel: UILabel = {
+    fileprivate let confirmLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.confirmpass()
         label.sizeToFit()
         return label
     }()
 
-    let addressTextField: UITextField = {
+    fileprivate let addressTextField: UITextField = {
         let textField = UITextField()
         textField.delegate = self as? UITextFieldDelegate
         textField.placeholder = R.string.localizable.addressInput()
@@ -35,7 +35,7 @@ class AccountSettingViewController: UIViewController {
         return textField
     }()
     
-    let passwordTextField: UITextField = {
+    fileprivate let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.delegate = self as? UITextFieldDelegate
         textField.placeholder = R.string.localizable.passwordInput()
@@ -47,7 +47,7 @@ class AccountSettingViewController: UIViewController {
         return textField
     }()
     
-    let confirmTextField: UITextField = {
+    fileprivate let confirmTextField: UITextField = {
         let textField = UITextField()
         textField.delegate = self as? UITextFieldDelegate
         textField.placeholder = R.string.localizable.confirmpassInput()

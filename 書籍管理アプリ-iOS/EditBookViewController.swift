@@ -2,10 +2,10 @@ import UIKit
 
 class EditBookViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    var bookImage: UIImage!
-    var bookImageView: UIImageView!
+    private var bookImage: UIImage!
+    fileprivate var bookImageView: UIImageView!
     
-    let imageButton: UIButton = {
+    fileprivate let imageButton: UIButton = {
         let button = UIButton()
         let addImageTitle = R.string.localizable.addimage()
         button.setTitle(addImageTitle, for:UIControlState.normal)
@@ -16,28 +16,28 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         return button
     }()
     
-    let bookNameLabel: UILabel = {
+    fileprivate let bookNameLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.booktitle()
         label.sizeToFit()
         return label
     }()
     
-    let priceLabel: UILabel = {
+    fileprivate let priceLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.pricetitle()
         label.sizeToFit()
         return label
     }()
 
-    let dateLabel: UILabel = {
+    fileprivate let dateLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.datetitle()
         label.sizeToFit()
         return label
     }()
     
-    let bookNameTextField: UITextField = {
+    fileprivate let bookNameTextField: UITextField = {
         let textField = UITextField()
         textField.delegate = self as? UITextFieldDelegate
         textField.placeholder = ""
@@ -49,7 +49,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         return textField
     }()
     
-    let priceTextField: UITextField = {
+    fileprivate let priceTextField: UITextField = {
         let textField = UITextField()
         textField.delegate = self as? UITextFieldDelegate
         textField.placeholder = ""
@@ -61,7 +61,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         return textField
     }()
     
-    var datePickerTextField: UITextField = {
+    fileprivate var datePickerTextField: UITextField = {
         var textField = UITextField()
         textField = Util()
         textField.delegate = self as? UITextFieldDelegate
