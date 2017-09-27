@@ -4,13 +4,75 @@ class EditBookViewController: UIViewController, UITextFieldDelegate, UIImagePick
 
     var bookImage: UIImage!
     var bookImageView: UIImageView!
-    let imageButton = UIButton()
-    let bookNameLabel = UILabel()
-    let priceLabel = UILabel()
-    let dateLabel = UILabel()
-    let bookNameTextField = UITextField()
-    let priceTextField = UITextField()
-    var datePickerTextField = UITextField()
+    
+    let imageButton: UIButton = {
+        let button = UIButton()
+        let addImageTitle = R.string.localizable.addimage()
+        button.setTitle(addImageTitle, for:UIControlState.normal)
+        button.setTitleColor(UIColor.lightGray, for: .normal)
+        button.titleLabel?.font =  UIFont.systemFont(ofSize: 12)
+        button.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        button.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
+        return button
+    }()
+    
+    let bookNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = R.string.localizable.booktitle()
+        label.sizeToFit()
+        return label
+    }()
+    
+    let priceLabel: UILabel = {
+        let label = UILabel()
+        label.text = R.string.localizable.pricetitle()
+        label.sizeToFit()
+        return label
+    }()
+
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.text = R.string.localizable.datetitle()
+        label.sizeToFit()
+        return label
+    }()
+    
+    let bookNameTextField: UITextField = {
+        let textField = UITextField()
+        textField.delegate = self as? UITextFieldDelegate
+        textField.placeholder = ""
+        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        textField.leftViewMode = .always//文字の左の余白
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        textField.clearButtonMode = .always
+        textField.returnKeyType = .done
+        return textField
+    }()
+    
+    let priceTextField: UITextField = {
+        let textField = UITextField()
+        textField.delegate = self as? UITextFieldDelegate
+        textField.placeholder = ""
+        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        textField.leftViewMode = .always//文字の左の余白
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        textField.clearButtonMode = .always
+        textField.returnKeyType = .done
+        return textField
+    }()
+    
+    var datePickerTextField: UITextField = {
+        var textField = UITextField()
+        textField = Util()
+        textField.delegate = self as? UITextFieldDelegate
+        textField.placeholder = ""
+        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        textField.leftViewMode = .always//文字の左の余白
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        textField.clearButtonMode = .always
+        textField.returnKeyType = .done
+        return textField
+    }()
 
     var book: Book! {
         didSet {
@@ -35,60 +97,14 @@ class EditBookViewController: UIViewController, UITextFieldDelegate, UIImagePick
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
 
-        //書籍画像の設定
         bookImageView = UIImageView(image:bookImage)
         self.view.addSubview(bookImageView)
-
-        //画像添付ボタンの設定
-        let addImageTitle = NSLocalizedString("addimage", comment: "")
-        imageButton.setTitle(addImageTitle, for:UIControlState.normal)
-        imageButton.setTitleColor(UIColor.lightGray, for: .normal)
-        imageButton.titleLabel?.font =  UIFont.systemFont(ofSize: 12)
-        imageButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
-        imageButton.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
-
         self.view.addSubview(imageButton)
-
-        //書籍名ラベルの設定
-        bookNameLabel.text = R.string.localizable.booktitle()
-        bookNameLabel.sizeToFit()
         self.view.addSubview(bookNameLabel)
-
-        //金額ラベルの設定
-        priceLabel.text = R.string.localizable.pricetitle()
-        priceLabel.sizeToFit()
         self.view.addSubview(priceLabel)
-
-        //購入日ラベルの設定
-        dateLabel.text = R.string.localizable.datetitle()
-        dateLabel.sizeToFit()
         self.view.addSubview(dateLabel)
-
-        //書籍名入力欄の設定
-        bookNameTextField.delegate = self
-        bookNameTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        bookNameTextField.leftViewMode = .always//文字の左の余白
-        bookNameTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        bookNameTextField.clearButtonMode = .always
-        bookNameTextField.returnKeyType = .done
         self.view.addSubview(bookNameTextField)
-
-        //金額入力欄の設定
-        priceTextField.delegate = self
-        priceTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        priceTextField.leftViewMode = .always//文字の左の余白
-        priceTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        priceTextField.clearButtonMode = .always
-        priceTextField.returnKeyType = .done
         self.view.addSubview(priceTextField)
-        //
-        datePickerTextField = Util()
-        datePickerTextField.delegate = self
-        datePickerTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        datePickerTextField.leftViewMode = .always//文字の左の余白
-        datePickerTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        datePickerTextField.clearButtonMode = .always
-        datePickerTextField.returnKeyType = .done
         self.view.addSubview(datePickerTextField)
 
         ////全体のレイアウト////

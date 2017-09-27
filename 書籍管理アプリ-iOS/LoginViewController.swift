@@ -1,58 +1,68 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-
+    
+    let addressLabel: UILabel = {
+        let label = UILabel()
+        label.text = R.string.localizable.mailaddress()
+        label.sizeToFit()
+        return label
+    }()
+    
+    let passwordLabel: UILabel = {
+        let label = UILabel()
+        label.text = R.string.localizable.password()
+        label.sizeToFit()
+        return label
+    }()
+    
+    let addressTextField: UITextField = {
+        let textField = UITextField()
+        textField.delegate = self as? UITextFieldDelegate
+        textField.placeholder = R.string.localizable.addressInput()
+        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        textField.leftViewMode = .always//文字の左の余白
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        textField.clearButtonMode = .always
+        textField.returnKeyType = .done
+        return textField
+    }()
+    
+    let passwordTextField: UITextField = {
+        let textField = UITextField()
+        textField.delegate = self as? UITextFieldDelegate
+        textField.placeholder = R.string.localizable.passwordInput()
+        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        textField.leftViewMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        textField.clearButtonMode = .always
+        textField.returnKeyType = .done
+        return textField
+    }()
+    
+    lazy var loginButton: UIButton = {
+        let button = UIButton()
+        let loginTitle = R.string.localizable.login()
+        button.setTitle(loginTitle, for:UIControlState.normal)
+        button.setTitleColor(UIColor.lightGray, for: .normal)
+        button.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
+        button.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        button.layer.position = CGPoint(x:self.view.frame.width/2, y:200)
+        button.addTarget(self, action: #selector(LoginViewController.loginTapped(sender:)), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = R.string.localizable.booksview()
-
-        let addressLabel = UILabel()
-        let passwordLabel = UILabel()
-        let addressTextField = UITextField()
-        let passwordTextField = UITextField()
-        let loginButton = UIButton()
-
-        //メールアドレスラベルの設定
-        addressLabel.text = R.string.localizable.mailaddress()
-        addressLabel.sizeToFit()
+        
         self.view.addSubview(addressLabel)
-
-        //パスワードラベルの設定
-        passwordLabel.text = R.string.localizable.password()
-        passwordLabel.sizeToFit()
         self.view.addSubview(passwordLabel)
-
-        //メールアドレス入力欄の設定
-        addressTextField.delegate = self
-        addressTextField.placeholder = R.string.localizable.addressInput()
-        addressTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        addressTextField.leftViewMode = .always//文字の左の余白
-        addressTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        addressTextField.clearButtonMode = .always
-        addressTextField.returnKeyType = .done
         self.view.addSubview(addressTextField)
-
-        //パスワード入力欄の設定
-        passwordTextField.delegate = self
-        passwordTextField.placeholder = R.string.localizable.passwordInput()
-        passwordTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        passwordTextField.leftViewMode = .always
-        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        passwordTextField.clearButtonMode = .always
-        passwordTextField.returnKeyType = .done
         self.view.addSubview(passwordTextField)
-
-        //ログインボタンの設定
-        let loginTitle = R.string.localizable.login()
-        loginButton.setTitle(loginTitle, for:UIControlState.normal)
-        loginButton.setTitleColor(UIColor.lightGray, for: .normal)
-        loginButton.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
-        loginButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
-        loginButton.layer.position = CGPoint(x:self.view.frame.width/2, y:200)
-        loginButton.addTarget(self, action: #selector(LoginViewController.loginTapped(sender:)), for: .touchUpInside)
         self.view.addSubview(loginButton)
-
+        
         //画面のレイアウト
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false

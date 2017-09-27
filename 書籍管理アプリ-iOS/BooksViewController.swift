@@ -2,55 +2,62 @@ import UIKit
 
 class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let statusBarHeight = UIApplication.shared.statusBarFrame.height
-    
     var books:[Book] = []
     var selectedImage: UIImage?
-
+    
+    lazy var bookTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.frame = CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height)
+        tableView.rowHeight = 90
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(BookCell.self, forCellReuseIdentifier: NSStringFromClass(BookCell.self))//
+        return tableView
+    }()
+    
+    lazy var loadButton: UIButton = {
+        let button = UIButton()
+        let loadTitle = R.string.localizable.load()
+        button.layer.position = CGPoint(x:self.view.frame.width/2, y:200)
+        button.setTitle(loadTitle, for:UIControlState.normal)
+        button.setTitleColor(UIColor.lightGray, for: .normal)
+        button.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
+        button.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = R.string.localizable.booksview()
         
-        books.append(Book(name: "超暇つぶし図鑑", price:1000, boughtDate: "2017/5/10", imagePath: "himatubusi.jpg"))
-        books.append(Book(name: "せつない動物図鑑", price: 1100, boughtDate: "2017/7/20", imagePath: "animal.jpg"))
-        books.append(Book(name: "浪費図鑑", price: 900, boughtDate: "2017/8/8", imagePath: "waste.jpg"))
-        books.append(Book(name: "冒険図鑑", price: 1700, boughtDate: "1985/6/20", imagePath: "adventure.jpg"))
-        
-        let tableView = UITableView()
-        let loadButton = UIButton()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(BooksViewController.addButtonTapped))
-        self.navigationItem.setRightBarButtonItems([addButton], animated: true)
-
-        //テーブルビューの設定
-        tableView.frame = CGRect(x:0, y:statusBarHeight, width:self.view.frame.width, height:self.view.frame.height-statusBarHeight)
-        tableView.rowHeight = 90
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(BookCell.self, forCellReuseIdentifier: NSStringFromClass(BookCell.self))//
-        self.view.addSubview(tableView)
-
-        //読み込みボタンの設定
-        let loadTitle = R.string.localizable.load()
-        loadButton.setTitle(loadTitle, for:UIControlState.normal)
-        loadButton.setTitleColor(UIColor.lightGray, for: .normal)
-        loadButton.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
-        loadButton.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
-        loadButton.layer.position = CGPoint(x:self.view.frame.width/2, y:200)
+        self.view.addSubview(bookTableView)
         self.view.addSubview(loadButton)
 
+        bookData()
+        
+        //追加ボタンの設定
+        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(BooksViewController.addButtonTapped))
+        self.navigationItem.setRightBarButtonItems([addButton], animated: true)
+        //ロードボタンのanchor
         loadButton.translatesAutoresizingMaskIntoConstraints = false
-
+        
         loadButton.bottomAnchor.constraint(equalTo:self.view.bottomAnchor, constant:-50).isActive = true
         loadButton.widthAnchor.constraint(equalTo:self.view.widthAnchor).isActive = true
-
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    func bookData() {
+        books.append(Book(name: "超暇つぶし図鑑", price:1000, boughtDate: "2017/5/10", imagePath: "himatubusi.jpg"))
+        books.append(Book(name: "せつない動物図鑑", price: 1100, boughtDate: "2017/7/20", imagePath: "animal.jpg"))
+        books.append(Book(name: "浪費図鑑", price: 900, boughtDate: "2017/8/8", imagePath: "waste.jpg"))
+        books.append(Book(name: "冒険図鑑", price: 1700, boughtDate: "1985/6/20", imagePath: "adventure.jpg"))
+    }
+    
     //追加ボタンの処理
     func addButtonTapped() {
         let addBookViewController = AddBookViewController()

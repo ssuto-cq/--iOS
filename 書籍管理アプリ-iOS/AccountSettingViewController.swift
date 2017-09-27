@@ -1,18 +1,68 @@
 import UIKit
 
 class AccountSettingViewController: UIViewController, UITextFieldDelegate {
+    
+    let addressLabel: UILabel = {
+        let label = UILabel()
+        label.text = R.string.localizable.mailaddress()
+        label.sizeToFit()
+        return label
+    }()
+    
+    let passwordLabel: UILabel = {
+        let label = UILabel()
+        label.text = R.string.localizable.password()
+        label.sizeToFit()
+        return label
+    }()
+    
+    let confirmLabel: UILabel = {
+        let label = UILabel()
+        label.text = R.string.localizable.confirmpass()
+        label.sizeToFit()
+        return label
+    }()
+
+    let addressTextField: UITextField = {
+        let textField = UITextField()
+        textField.delegate = self as? UITextFieldDelegate
+        textField.placeholder = R.string.localizable.addressInput()
+        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        textField.leftViewMode = .always//文字の左の余白
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        textField.clearButtonMode = .always
+        textField.returnKeyType = .done
+        return textField
+    }()
+    
+    let passwordTextField: UITextField = {
+        let textField = UITextField()
+        textField.delegate = self as? UITextFieldDelegate
+        textField.placeholder = R.string.localizable.passwordInput()
+        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        textField.leftViewMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        textField.clearButtonMode = .always
+        textField.returnKeyType = .done
+        return textField
+    }()
+    
+    let confirmTextField: UITextField = {
+        let textField = UITextField()
+        textField.delegate = self as? UITextFieldDelegate
+        textField.placeholder = R.string.localizable.confirmpassInput()
+        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        textField.leftViewMode = .always//文字の左の余白
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        textField.clearButtonMode = .always
+        textField.returnKeyType = .done
+        return textField
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = R.string.localizable.accountsetting()
-
-        let addressLabel = UILabel()
-        let passwordLabel = UILabel()
-        let confirmLabel = UILabel()
-        let addressTextField = UITextField()
-        let passwordTextField = UITextField()
-        let confirmTextField =  UITextField()
 
         //閉じるボタンの追加
         let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookViewController.closeModal))
@@ -22,49 +72,11 @@ class AccountSettingViewController: UIViewController, UITextFieldDelegate {
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(self.saveButtonTapped(sender:)))
         self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
 
-        //メールアドレスラベルの設定
-        addressLabel.text = R.string.localizable.mailaddress()
-        addressLabel.sizeToFit()
         self.view.addSubview(addressLabel)
-
-        //パスワードラベルの設定
-        passwordLabel.text = R.string.localizable.password()
-        passwordLabel.sizeToFit()
         self.view.addSubview(passwordLabel)
-
-        //パスワード確認ラベルの設定
-        confirmLabel.text = R.string.localizable.confirmpass()
-        confirmLabel.sizeToFit()
         self.view.addSubview(confirmLabel)
-
-        //メールアドレス入力欄の設定
-        addressTextField.delegate = self
-        addressTextField.placeholder = R.string.localizable.addressInput()
-        addressTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        addressTextField.leftViewMode = .always//文字の左の余白
-        addressTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        addressTextField.clearButtonMode = .always
-        addressTextField.returnKeyType = .done
         self.view.addSubview(addressTextField)
-
-        //パスワード入力欄の設定
-        passwordTextField.delegate = self
-        passwordTextField.placeholder = R.string.localizable.passwordInput()
-        passwordTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        passwordTextField.leftViewMode = .always
-        passwordTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        passwordTextField.clearButtonMode = .always
-        passwordTextField.returnKeyType = .done
         self.view.addSubview(passwordTextField)
-
-        //パスワード確認入力欄の設定
-        confirmTextField.delegate = self
-        confirmTextField.placeholder = R.string.localizable.confirmpassInput()
-        confirmTextField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        confirmTextField.leftViewMode = .always//文字の左の余白
-        confirmTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        confirmTextField.clearButtonMode = .always
-        confirmTextField.returnKeyType = .done
         self.view.addSubview(confirmTextField)
 
         //全体のレイアウト
