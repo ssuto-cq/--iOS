@@ -11,7 +11,7 @@ class BookCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
         
-        bookTitleLabel = UILabel(frame:CGRect.zero)
+        bookTitleLabel = UILabel(frame: .zero)
         bookTitleLabel.textAlignment = .left
         contentView.addSubview(bookTitleLabel)
         
@@ -19,11 +19,11 @@ class BookCell: UITableViewCell {
         bookImageView = UIImageView(image:bookImage)
         contentView.addSubview(bookImageView)
         
-        bookPriceLabel = UILabel(frame:CGRect.zero)
+        bookPriceLabel = UILabel(frame: .zero)
         bookPriceLabel.textAlignment = .left
         contentView.addSubview(bookPriceLabel)
         
-        bookDateLabel = UILabel(frame:CGRect.zero)
+        bookDateLabel = UILabel(frame: .zero)
         bookDateLabel.textAlignment = .left
         contentView.addSubview(bookDateLabel)
     }

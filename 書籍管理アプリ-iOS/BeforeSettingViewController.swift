@@ -5,10 +5,10 @@ class BeforeSettingViewController: UIViewController {
     private lazy var settingButton: UIButton = {
         let button = UIButton()
         let accountSettingTitle = R.string.localizable.accountsetting()
-        button.setTitle(accountSettingTitle, for:UIControlState.normal)
-        button.setTitleColor(UIColor.lightGray, for: .normal)
-        button.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
-        button.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        button.setTitle(accountSettingTitle, for: .normal)
+        button.setTitleColor( .lightGray, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 24)
+        button.backgroundColor = UIColor(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
         button.layer.position = CGPoint(x:self.view.frame.width/2, y:200)
         button.addTarget(self, action: #selector(settingButtonTapped(sender:)), for: .touchUpInside)
         return button

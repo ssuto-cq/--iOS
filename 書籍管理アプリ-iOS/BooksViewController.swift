@@ -18,10 +18,10 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let button = UIButton()
         let loadTitle = R.string.localizable.load()
         button.layer.position = CGPoint(x:self.view.frame.width/2, y:200)
-        button.setTitle(loadTitle, for:UIControlState.normal)
-        button.setTitleColor(UIColor.lightGray, for: .normal)
-        button.titleLabel?.font =  UIFont.systemFont(ofSize: 24)
-        button.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        button.setTitle(loadTitle, for: .normal)
+        button.setTitleColor( .lightGray, for: .normal)
+        button.titleLabel?.font =  .systemFont(ofSize: 24)
+        button.backgroundColor = UIColor(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
         return button
     }()
     
@@ -61,7 +61,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func addButtonTapped() {
         let addBookViewController = AddBookViewController()
         let navi = UINavigationController(rootViewController: addBookViewController)
-        addBookViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        addBookViewController.modalTransitionStyle = .crossDissolve
         present(navi, animated: true, completion: nil)
     }
 

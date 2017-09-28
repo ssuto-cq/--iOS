@@ -11,10 +11,10 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     fileprivate let imageButton: UIButton = {
         let button = UIButton()
         let addImageTitle = R.string.localizable.addimage()
-        button.setTitle(addImageTitle, for:UIControlState.normal)
-        button.setTitleColor(UIColor.lightGray, for: .normal)
-        button.titleLabel?.font =  UIFont.systemFont(ofSize: 12)
-        button.backgroundColor = UIColor.init(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        button.setTitle(addImageTitle, for: .normal)
+        button.setTitleColor( .lightGray, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.backgroundColor = UIColor(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
         button.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
         return button
     }()
