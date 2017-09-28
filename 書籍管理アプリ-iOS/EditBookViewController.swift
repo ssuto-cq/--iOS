@@ -87,7 +87,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = NSLocalizedString("editbook", comment: "")
+        title = R.string.localizable.editbook()
         
         //閉じるボタンの追加
         let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(backBooksView))

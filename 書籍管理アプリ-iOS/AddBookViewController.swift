@@ -3,7 +3,7 @@ import UIKit
 class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     fileprivate var bookImageView: UIImageView! = {
-        let image = UIImage(named: "noimage.png")
+        let image = R.image.noimage()
         let imageView = UIImageView(image:image)
         return imageView
     }()
