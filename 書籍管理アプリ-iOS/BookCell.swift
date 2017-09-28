@@ -41,10 +41,25 @@ class BookCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        bookTitleLabel.frame = CGRect(x: 110, y: -20, width: frame.width, height: frame.height)
-        bookPriceLabel.frame = CGRect(x: 90, y: 25, width: 120, height: frame.height)
-        bookDateLabel.frame = CGRect(x: 170, y: 25, width: 120, height: frame.height)
-        bookImageView.frame = CGRect(x: 5, y: 0, width: 70, height: frame.height)
+        
+        bookTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        bookPriceLabel.translatesAutoresizingMaskIntoConstraints = false
+        bookDateLabel.translatesAutoresizingMaskIntoConstraints = false
+        bookImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        bookTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 120).isActive = true
+        bookTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        
+        bookPriceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 120).isActive = true
+        bookPriceLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 60).isActive = true
+        
+        bookDateLabel.leadingAnchor.constraint(equalTo: bookPriceLabel.leadingAnchor, constant: 100).isActive = true
+        bookDateLabel.topAnchor.constraint(equalTo: bookPriceLabel.topAnchor).isActive = true
+        
+        bookImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
+        bookImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1/4).isActive = true
+        bookImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
+        
     }
     
     func bookRegister(book:Book){
