@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class UISetting: UITextField{
+class SettingTextField: UITextField{
     
     private let datePicker = UIDatePicker()
     private let dateFormat = DateFormatter()

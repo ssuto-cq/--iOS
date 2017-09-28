@@ -63,7 +63,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     
     fileprivate lazy var datePickerTextField: UITextField = {
         var textField = UITextField()
-        textField = UISetting()
+        textField = SettingTextField()
         textField.delegate = self
         textField.placeholder = ""
         textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
