@@ -2,30 +2,30 @@ import UIKit
 
 class BookCell: UITableViewCell {
     
-    var booksTitlesUI: UILabel!
-    var booksImagesUI: UIImage!
+    var booksTitles: UILabel!
+    var booksImages: UIImage!
     var myImageView: UIImageView!
-    var booksPriceUI: UILabel!
-    var booksDateUI: UILabel!
+    var booksPrice: UILabel!
+    var booksDate: UILabel!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
         
-        booksTitlesUI = UILabel(frame:CGRect.zero)
-        booksTitlesUI.textAlignment = .left
-        contentView.addSubview(booksTitlesUI)
+        booksTitles = UILabel(frame:CGRect.zero)
+        booksTitles.textAlignment = .left
+        contentView.addSubview(booksTitles)
         
-        booksImagesUI = UIImage(named:"azarasi.jpg")
-        myImageView = UIImageView(image:booksImagesUI)
+        booksImages = UIImage(named:"azarasi.jpg")
+        myImageView = UIImageView(image:booksImages)
         contentView.addSubview(myImageView)
         
-        booksPriceUI = UILabel(frame:CGRect.zero)
-        booksPriceUI.textAlignment = .left
-        contentView.addSubview(booksPriceUI)
+        booksPrice = UILabel(frame:CGRect.zero)
+        booksPrice.textAlignment = .left
+        contentView.addSubview(booksPrice)
         
-        booksDateUI = UILabel(frame:CGRect.zero)
-        booksDateUI.textAlignment = .left
-        contentView.addSubview(booksDateUI)
+        booksDate = UILabel(frame:CGRect.zero)
+        booksDate.textAlignment = .left
+        contentView.addSubview(booksDate)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,17 +34,17 @@ class BookCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        booksTitlesUI.frame = CGRect(x: 110, y: -20, width: frame.width, height: frame.height)
-        booksPriceUI.frame = CGRect(x: 90, y: 25, width: 120, height: frame.height)
-        booksDateUI.frame = CGRect(x: 170, y: 25, width: 120, height: frame.height)
+        booksTitles.frame = CGRect(x: 110, y: -20, width: frame.width, height: frame.height)
+        booksPrice.frame = CGRect(x: 90, y: 25, width: 120, height: frame.height)
+        booksDate.frame = CGRect(x: 170, y: 25, width: 120, height: frame.height)
         myImageView.frame = CGRect(x: 5, y: 0, width: 70, height: frame.height)
     }
     
     func bookRegister(book:Book){
         
-        booksTitlesUI.text = book.name
-        booksPriceUI.text = R.string.localizable.price(book.price) 
-        booksDateUI.text = book.boughtDate
+        booksTitles.text = book.name
+        booksPrice.text = R.string.localizable.price(book.price) 
+        booksDate.text = book.boughtDate
         myImageView.image = UIImage(named: book.imagePath)
     }
 }

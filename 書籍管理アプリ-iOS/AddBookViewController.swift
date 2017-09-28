@@ -66,7 +66,7 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     fileprivate var datePickerTextField: UITextField = {
         var textField = UITextField()
-        textField = Util()
+        textField = UISetting()
         textField.delegate = self as? UITextFieldDelegate
         textField.placeholder = ""
         textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
