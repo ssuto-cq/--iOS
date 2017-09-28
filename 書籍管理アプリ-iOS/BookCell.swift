@@ -2,29 +2,36 @@ import UIKit
 
 class BookCell: UITableViewCell {
     
-    var bookTitleLabel: UILabel!
-    var bookImage: UIImage!
-    var bookImageView: UIImageView!
-    var bookPriceLabel: UILabel!
-    var bookDateLabel: UILabel!
+    fileprivate var bookImageView: UIImageView! = {
+        let image = R.image.noimage()
+        let imageView = UIImageView(image:image)
+        return imageView
+    }()
+    
+    fileprivate let bookTitleLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .left
+        return label
+    }()
+    
+    fileprivate let bookPriceLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .left
+        return label
+    }()
+    
+    fileprivate let bookDateLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .left
+        return label
+    }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
         
-        bookTitleLabel = UILabel(frame: .zero)
-        bookTitleLabel.textAlignment = .left
-        contentView.addSubview(bookTitleLabel)
-        
-        bookImage = UIImage(named:"azarasi.jpg")
-        bookImageView = UIImageView(image:bookImage)
         contentView.addSubview(bookImageView)
-        
-        bookPriceLabel = UILabel(frame: .zero)
-        bookPriceLabel.textAlignment = .left
+        contentView.addSubview(bookTitleLabel)
         contentView.addSubview(bookPriceLabel)
-        
-        bookDateLabel = UILabel(frame: .zero)
-        bookDateLabel.textAlignment = .left
         contentView.addSubview(bookDateLabel)
     }
     
@@ -43,7 +50,7 @@ class BookCell: UITableViewCell {
     func bookRegister(book:Book){
         
         bookTitleLabel.text = book.name
-        bookPriceLabel.text = R.string.localizable.price(book.price) 
+        bookPriceLabel.text = R.string.localizable.price(book.price)
         bookDateLabel.text = book.boughtDate
         bookImageView.image = UIImage(named: book.imagePath)
     }
