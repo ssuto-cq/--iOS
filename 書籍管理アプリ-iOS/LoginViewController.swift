@@ -55,13 +55,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = R.string.localizable.booksview()
+        title = R.string.localizable.booksview()
         
-        self.view.addSubview(addressLabel)
-        self.view.addSubview(passwordLabel)
-        self.view.addSubview(addressTextField)
-        self.view.addSubview(passwordTextField)
-        self.view.addSubview(loginButton)
+        view.addSubview(addressLabel)
+        view.addSubview(passwordLabel)
+        view.addSubview(addressTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(loginButton)
         
         layout()
     }
@@ -72,7 +72,7 @@ class LoginViewController: UIViewController {
 
     func loginTapped(sender: UIButton) {
         let booksViewController: BooksViewController = BooksViewController()
-        self.navigationController?.pushViewController(booksViewController, animated: true)
+        navigationController?.pushViewController(booksViewController, animated: true)
     }
 }
 

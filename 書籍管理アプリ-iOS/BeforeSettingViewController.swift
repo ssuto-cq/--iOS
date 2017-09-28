@@ -17,9 +17,9 @@ class BeforeSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = R.string.localizable.setting()
+        title = R.string.localizable.setting()
         
-        self.view.addSubview(settingButton)
+        view.addSubview(settingButton)
         //設定ボタンのanchor
         settingButton.translatesAutoresizingMaskIntoConstraints = false
 

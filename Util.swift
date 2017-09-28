@@ -10,7 +10,7 @@ class UISetting: UITextField{
         super.init(frame: frame)
         datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
-        self.inputView = datePicker
+        inputView = datePicker
         
     }
     
@@ -23,6 +23,6 @@ class UISetting: UITextField{
         
         dateFormat.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
         dateFormat.dateFormat = "yyyy年MM月dd日"
-        self.text = dateFormat.string(from: pickerDate)
+        text = dateFormat.string(from: pickerDate)
     }
 }

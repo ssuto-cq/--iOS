@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             userDefault.set(false, forKey: "firstLaunch")
             print("初回起動")
-            self.window?.rootViewController = UINavigationController(rootViewController: AccountSettingViewController())
+            window?.rootViewController = UINavigationController(rootViewController: AccountSettingViewController())
         } else {
             print("2回目以降")
-            self.window?.rootViewController = TabBarSetting()
+            window?.rootViewController = TabBarSetting()
         }
 
         return true

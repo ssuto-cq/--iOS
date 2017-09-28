@@ -62,22 +62,22 @@ class AccountSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = R.string.localizable.accountsetting()
+        title = R.string.localizable.accountsetting()
 
         //閉じるボタンの追加
         let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookViewController.closeModal))
-        self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
+        navigationItem.setLeftBarButtonItems([closeButton], animated: true)
 
         //保存ボタンの追加
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(self.saveButtonTapped(sender:)))
-        self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
+        navigationItem.setRightBarButtonItems([saveButton], animated: true)
 
-        self.view.addSubview(addressLabel)
-        self.view.addSubview(passwordLabel)
-        self.view.addSubview(confirmLabel)
-        self.view.addSubview(addressTextField)
-        self.view.addSubview(passwordTextField)
-        self.view.addSubview(confirmTextField)
+        view.addSubview(addressLabel)
+        view.addSubview(passwordLabel)
+        view.addSubview(confirmLabel)
+        view.addSubview(addressTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(confirmTextField)
 
         layout()
     }
@@ -87,7 +87,7 @@ class AccountSettingViewController: UIViewController {
     }
 
     func closeModal(sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     //保存ボタンを押した時の処理
     func saveButtonTapped(sender: UITabBarItem) {

@@ -19,8 +19,8 @@ class TabBarSetting: UITabBarController, UITabBarControllerDelegate {
         beforeSettingViewController.tabBarItem = UITabBarItem(title: settingTitle, image:nil, tag: 2)
         navigationController.append(beforeSettingViewController)//配列の要素を追加
 
-        self.delegate = self
-        self.viewControllers = navigationController
+        delegate = self
+        viewControllers = navigationController
 
     }
 

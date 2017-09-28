@@ -80,24 +80,24 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = R.string.localizable.addbook()
+        title = R.string.localizable.addbook()
 
         //UISetting()
         //閉じるボタンの追加
         let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(self.closeModal))
-        self.navigationItem.setLeftBarButtonItems([closeButton], animated: true)
+        navigationItem.setLeftBarButtonItems([closeButton], animated: true)
         //保存ボタンの追加
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
-        self.navigationItem.setRightBarButtonItems([saveButton], animated: true)
+        navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
-        self.view.addSubview(bookImageView)
-        self.view.addSubview(imageButton)
-        self.view.addSubview(bookNameLabel)
-        self.view.addSubview(priceLabel)
-        self.view.addSubview(dateLabel)
-        self.view.addSubview(bookNameTextField)
-        self.view.addSubview(priceTextField)
-        self.view.addSubview(datePickerTextField)
+        view.addSubview(bookImageView)
+        view.addSubview(imageButton)
+        view.addSubview(bookNameLabel)
+        view.addSubview(priceLabel)
+        view.addSubview(dateLabel)
+        view.addSubview(bookNameTextField)
+        view.addSubview(priceTextField)
+        view.addSubview(datePickerTextField)
         
         layout()
 
@@ -109,12 +109,12 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     //モーダル画面を閉じる処理
     func closeModal(sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
     //ピッカー外タッチで閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
 
     //カメラロールから写真を選択
@@ -125,7 +125,7 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
             pickerView.delegate = self
             pickerView.sourceType = .photoLibrary
 
-            self.present(pickerView, animated: true, completion: nil)
+            present(pickerView, animated: true, completion: nil)
 
         }
     }
@@ -133,8 +133,8 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     //写真を選んだ後の処理
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        self.bookImageView.image = image
-        self.dismiss(animated: true)
+        bookImageView.image = image
+        dismiss(animated: true)
     }
 
 }

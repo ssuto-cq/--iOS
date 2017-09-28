@@ -28,10 +28,10 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = R.string.localizable.booksview()
+        title = R.string.localizable.booksview()
         
-        self.view.addSubview(bookTableView)
-        self.view.addSubview(loadButton)
+        view.addSubview(bookTableView)
+        view.addSubview(loadButton)
 
         bookData()
         
