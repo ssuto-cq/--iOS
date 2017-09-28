@@ -40,9 +40,9 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
         return label
     }()
     
-    fileprivate let bookNameTextField: UITextField = {
+    fileprivate lazy var bookNameTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self as? UITextFieldDelegate
+        textField.delegate = self
         textField.placeholder = ""
         textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
         textField.leftViewMode = .always//文字の左の余白
@@ -52,9 +52,9 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
         return textField
     }()
     
-    fileprivate let priceTextField: UITextField = {
+    fileprivate lazy var priceTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self as? UITextFieldDelegate
+        textField.delegate = self
         textField.placeholder = ""
         textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
         textField.leftViewMode = .always//文字の左の余白
@@ -64,10 +64,10 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
         return textField
     }()
     
-    fileprivate var datePickerTextField: UITextField = {
+    fileprivate lazy var datePickerTextField: UITextField = {
         var textField = UITextField()
         textField = UISetting()
-        textField.delegate = self as? UITextFieldDelegate
+        textField.delegate = self
         textField.placeholder = ""
         textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
         textField.leftViewMode = .always//文字の左の余白

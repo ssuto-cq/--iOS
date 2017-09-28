@@ -23,9 +23,9 @@ class AccountSettingViewController: UIViewController {
         return label
     }()
 
-    fileprivate let addressTextField: UITextField = {
+    fileprivate lazy var addressTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self as? UITextFieldDelegate
+        textField.delegate = self
         textField.placeholder = R.string.localizable.addressInput()
         textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
         textField.leftViewMode = .always//文字の左の余白
@@ -35,9 +35,9 @@ class AccountSettingViewController: UIViewController {
         return textField
     }()
     
-    fileprivate let passwordTextField: UITextField = {
+    fileprivate lazy var passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self as? UITextFieldDelegate
+        textField.delegate = self
         textField.placeholder = R.string.localizable.passwordInput()
         textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
         textField.leftViewMode = .always
@@ -47,9 +47,9 @@ class AccountSettingViewController: UIViewController {
         return textField
     }()
     
-    fileprivate let confirmTextField: UITextField = {
+    fileprivate lazy var confirmTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self as? UITextFieldDelegate
+        textField.delegate = self
         textField.placeholder = R.string.localizable.confirmpassInput()
         textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
         textField.leftViewMode = .always//文字の左の余白
