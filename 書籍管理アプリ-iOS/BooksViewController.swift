@@ -33,7 +33,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         view.addSubview(bookTableView)
         view.addSubview(loadButton)
 
-        bookData()
+        fetchData()
         
         //追加ボタンの設定
         let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(BooksViewController.addButtonTapped))
@@ -50,7 +50,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.didReceiveMemoryWarning()
     }
     
-    func bookData() {
+    func fetchData() {
         books.append(Book(name: "超暇つぶし図鑑", price:1000, boughtDate: "2017/5/10", imagePath: "himatubusi.jpg"))
         books.append(Book(name: "せつない動物図鑑", price: 1100, boughtDate: "2017/7/20", imagePath: "animal.jpg"))
         books.append(Book(name: "浪費図鑑", price: 900, boughtDate: "2017/8/8", imagePath: "waste.jpg"))
