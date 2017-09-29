@@ -6,7 +6,9 @@ extension UITextField {
         delegate = self as? UITextFieldDelegate
         backgroundColor = UIColor(white: 0.9, alpha: 1)
         leftViewMode = .always//文字の左の余白
-        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        leftView?.translatesAutoresizingMaskIntoConstraints = false
+        leftView?.widthAnchor.constraint(equalToConstant: 10).isActive = true
+        leftView?.heightAnchor.constraint(equalToConstant: 10).isActive = true
         clearButtonMode = .always
         returnKeyType = .done
     }
