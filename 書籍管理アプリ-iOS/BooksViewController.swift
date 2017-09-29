@@ -6,7 +6,6 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private lazy var bookTableView: UITableView = {
         let tableView = UITableView()
-        tableView.frame = CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height)
         tableView.rowHeight = 90
         tableView.delegate = self
         tableView.dataSource = self
@@ -38,8 +37,12 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //追加ボタンの設定
         let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(BooksViewController.addButtonTapped))
         self.navigationItem.setRightBarButtonItems([addButton], animated: true)
-        //ロードボタンのanchor
+        //anchor
+        bookTableView.translatesAutoresizingMaskIntoConstraints = false
         loadButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        bookTableView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        bookTableView.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
         
         loadButton.bottomAnchor.constraint(equalTo:self.view.bottomAnchor, constant:-50).isActive = true
         loadButton.widthAnchor.constraint(equalTo:self.view.widthAnchor).isActive = true
