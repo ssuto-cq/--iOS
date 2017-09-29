@@ -18,43 +18,28 @@ class LoginViewController: UIViewController {
     
     fileprivate lazy var addressTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self
         textField.placeholder = R.string.localizable.addressInput()
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always//文字の左の余白
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self
         textField.placeholder = R.string.localizable.passwordInput()
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var loginButton: UIButton = {
         let button = UIButton()
-        let loginTitle = R.string.localizable.login()
-        button.setTitle(loginTitle, for: .normal)
-        button.setTitleColor( .lightGray, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 24)
-        button.backgroundColor = UIColor(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
-        button.layer.position = CGPoint(x:self.view.frame.width/2, y:200)
+        button.setTitle(R.string.localizable.login(), for: .normal)
         button.addTarget(self, action: #selector(LoginViewController.loginTapped(sender:)), for: .touchUpInside)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = R.string.localizable.booksview()
         
         view.addSubview(addressLabel)
@@ -65,11 +50,11 @@ class LoginViewController: UIViewController {
         
         layout()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     func loginTapped(sender: UIButton) {
         let booksViewController: BooksViewController = BooksViewController()
         navigationController?.pushViewController(booksViewController, animated: true)
@@ -102,6 +87,6 @@ extension LoginViewController: UITextFieldDelegate {
         
         loginButton.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
         loginButton.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:150.0).isActive = true
-
+        
     }
 }

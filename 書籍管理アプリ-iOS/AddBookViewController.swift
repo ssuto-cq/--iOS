@@ -10,11 +10,8 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     fileprivate let imageButton: UIButton = {
         let button = UIButton()
-        let addImageTitle = R.string.localizable.addimage()
-        button.setTitle(addImageTitle, for: .normal)
-        button.setTitleColor( .lightGray, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 12)
-        button.backgroundColor = UIColor(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        button.setTitle(R.string.localizable.addimage(), for: .normal)
+        button.setButton()
         button.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
         return button
     }()
@@ -42,37 +39,22 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     fileprivate lazy var bookNameTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self
         textField.placeholder = ""
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always//文字の左の余白
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var priceTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self
         textField.placeholder = ""
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always//文字の左の余白
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var datePickerTextField: UITextField = {
         var textField = SettingTextField()
-        textField.delegate = self
         textField.placeholder = ""
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always//文字の左の余白
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
     

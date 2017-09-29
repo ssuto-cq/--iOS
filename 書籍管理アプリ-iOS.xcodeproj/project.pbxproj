@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF032C1A1F7109C700AB6596 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF032C191F7109C700AB6596 /* Util.swift */; };
+		EF032C1A1F7109C700AB6596 /* SettingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF032C191F7109C700AB6596 /* SettingTextField.swift */; };
 		EF036E691F664E1B00106B4C /* EditBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF036E681F664E1B00106B4C /* EditBookViewController.swift */; };
 		EF036E6B1F6696BE00106B4C /* BeforeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF036E6A1F6696BE00106B4C /* BeforeSettingViewController.swift */; };
 		EF0717081F724FBA00732883 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0717071F724FBA00732883 /* BookCell.swift */; };
@@ -15,6 +15,7 @@
 		EF0800F31F6570CB0042D566 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0800F21F6570CB0042D566 /* noimage.png */; };
 		EF0AAE131F6773A800E19987 /* TabBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE121F6773A800E19987 /* TabBarSetting.swift */; };
 		EF0AAE151F67A33100E19987 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE141F67A33100E19987 /* AccountSettingViewController.swift */; };
+		EF0FEF811F7E2D0900D7B838 /* SettingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FEF801F7E2D0900D7B838 /* SettingUI.swift */; };
 		EF13394B1F6A05820073EACF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EF13394A1F6A05820073EACF /* .swiftlint.yml */; };
 		EF1339581F6A1DD20073EACF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1339571F6A1DD20073EACF /* R.generated.swift */; };
 		EF1339591F6A1EF00073EACF /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF13394D1F6A14160073EACF /* Rswift.framework */; };
@@ -61,7 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EF032C191F7109C700AB6596 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
+		EF032C191F7109C700AB6596 /* SettingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingTextField.swift; path = ../SettingTextField.swift; sourceTree = "<group>"; };
 		EF036E681F664E1B00106B4C /* EditBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBookViewController.swift; sourceTree = "<group>"; };
 		EF036E6A1F6696BE00106B4C /* BeforeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeSettingViewController.swift; sourceTree = "<group>"; };
 		EF0717071F724FBA00732883 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		EF0800F21F6570CB0042D566 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noimage.png; path = ../../Documents/noimage.png; sourceTree = "<group>"; };
 		EF0AAE121F6773A800E19987 /* TabBarSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarSetting.swift; sourceTree = "<group>"; };
 		EF0AAE141F67A33100E19987 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
+		EF0FEF801F7E2D0900D7B838 /* SettingUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingUI.swift; sourceTree = "<group>"; };
 		EF13394A1F6A05820073EACF /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EF13394D1F6A14160073EACF /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		EF1339551F6A1D1A0073EACF /* rswift */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = rswift; sourceTree = "<group>"; };
@@ -163,10 +165,11 @@
 			isa = PBXGroup;
 			children = (
 				EF1800311F6114F600D65DB7 /* AppDelegate.swift */,
-				EF032C191F7109C700AB6596 /* Util.swift */,
+				EF032C191F7109C700AB6596 /* SettingTextField.swift */,
 				EF0AAE121F6773A800E19987 /* TabBarSetting.swift */,
 				EF1800331F6114F600D65DB7 /* LoginViewController.swift */,
 				EF37574E1F626DF400FBCF6E /* BooksViewController.swift */,
+				EF0FEF801F7E2D0900D7B838 /* SettingUI.swift */,
 				EF0717071F724FBA00732883 /* BookCell.swift */,
 				EFD1F3721F6F444E003C62BD /* Book.swift */,
 				EF0800F01F65425C0042D566 /* AddBookViewController.swift */,
@@ -389,7 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF0717081F724FBA00732883 /* BookCell.swift in Sources */,
-				EF032C1A1F7109C700AB6596 /* Util.swift in Sources */,
+				EF032C1A1F7109C700AB6596 /* SettingTextField.swift in Sources */,
 				EF1800341F6114F600D65DB7 /* LoginViewController.swift in Sources */,
 				EF036E6B1F6696BE00106B4C /* BeforeSettingViewController.swift in Sources */,
 				EF1339581F6A1DD20073EACF /* R.generated.swift in Sources */,
@@ -397,6 +400,7 @@
 				EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */,
 				EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */,
 				EF0AAE151F67A33100E19987 /* AccountSettingViewController.swift in Sources */,
+				EF0FEF811F7E2D0900D7B838 /* SettingUI.swift in Sources */,
 				EF036E691F664E1B00106B4C /* EditBookViewController.swift in Sources */,
 				EFD1F3731F6F444E003C62BD /* Book.swift in Sources */,
 				EF0800F11F65425C0042D566 /* AddBookViewController.swift in Sources */,

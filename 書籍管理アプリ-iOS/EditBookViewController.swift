@@ -1,17 +1,14 @@
 import UIKit
 
 class EditBookViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     private var bookImage: UIImage!
     fileprivate var bookImageView: UIImageView!
     
     fileprivate let imageButton: UIButton = {
         let button = UIButton()
-        let addImageTitle = R.string.localizable.addimage()
-        button.setTitle(addImageTitle, for: .normal)
-        button.setTitleColor( .lightGray, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 12)
-        button.backgroundColor = UIColor(red:0.9, green: 0.9, blue: 0.9, alpha: 1)
+        button.setTitle(R.string.localizable.addimage(), for: .normal)
+        button.setButton()
         button.addTarget(self, action: #selector(choosePicture), for: .touchUpInside)
         return button
     }()
@@ -29,7 +26,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         label.sizeToFit()
         return label
     }()
-
+    
     fileprivate let dateLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.datetitle()
@@ -39,63 +36,47 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     
     fileprivate lazy var bookNameTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self
         textField.placeholder = ""
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always//文字の左の余白
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var priceTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self
         textField.placeholder = ""
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always//文字の左の余白
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var datePickerTextField: UITextField = {
         var textField = SettingTextField()
-        textField.delegate = self
         textField.placeholder = ""
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always//文字の左の余白
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
-
+    
     var book: Book! {
         didSet {
             bookNameTextField.text = book.name
             priceTextField.text = String(book.price)
             datePickerTextField.text = book.boughtDate
-            print(datePickerTextField)
             bookImage = UIImage(named: book.imagePath)!
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = R.string.localizable.editbook()
         
         //閉じるボタンの追加
         let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(backBooksView))
         navigationItem.setLeftBarButtonItems([closeButton], animated: true)
-
+        
         //保存ボタンの追加
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
         navigationItem.setRightBarButtonItems([saveButton], animated: true)
-
+        
         bookImageView = UIImageView(image:bookImage)
         view.addSubview(bookImageView)
         view.addSubview(imageButton)
@@ -105,14 +86,14 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         view.addSubview(bookNameTextField)
         view.addSubview(priceTextField)
         view.addSubview(datePickerTextField)
-
+        
         layout()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     //書籍一覧へ戻る処理
     func backBooksView() {
         navigationController?.popViewController(animated: true)
@@ -122,20 +103,20 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-
+    
     //カメラロールから写真を選択
     func choosePicture() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let pickerView = UIImagePickerController()
-
+            
             pickerView.delegate = self
             pickerView.sourceType = .photoLibrary
-
+            
             present(pickerView, animated: true, completion: nil)
-
+            
         }
     }
-
+    
     //写真を選んだ後の処理
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
@@ -191,6 +172,6 @@ extension EditBookViewController: UITextFieldDelegate {
         datePickerTextField.centerXAnchor.constraint(equalTo: bookNameTextField.centerXAnchor).isActive = true
         datePickerTextField.widthAnchor.constraint(equalToConstant: 220).isActive = true
         datePickerTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
-
+        
     }
 }

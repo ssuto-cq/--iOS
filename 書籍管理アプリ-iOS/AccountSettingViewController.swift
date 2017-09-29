@@ -81,18 +81,6 @@ class AccountSettingViewController: UIViewController {
     }
 }
 
-extension UITextField {
-    
-    func setTextField() {
-        delegate = self as? UITextFieldDelegate
-        backgroundColor = UIColor(white: 0.9, alpha: 1)
-        leftViewMode = .always//文字の左の余白
-        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        clearButtonMode = .always
-        returnKeyType = .done
-    }
-}
-
 extension AccountSettingViewController: UITextFieldDelegate {
     
     func layout() {
