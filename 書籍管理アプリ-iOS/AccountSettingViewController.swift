@@ -22,70 +22,55 @@ class AccountSettingViewController: UIViewController {
         label.sizeToFit()
         return label
     }()
-
+    
     fileprivate lazy var addressTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self
         textField.placeholder = R.string.localizable.addressInput()
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always//文字の左の余白
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self
         textField.placeholder = R.string.localizable.passwordInput()
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var confirmTextField: UITextField = {
         let textField = UITextField()
-        textField.delegate = self
         textField.placeholder = R.string.localizable.confirmpassInput()
-        textField.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        textField.leftViewMode = .always//文字の左の余白
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        textField.clearButtonMode = .always
-        textField.returnKeyType = .done
+        textField.setTextField()
         return textField
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = R.string.localizable.accountsetting()
-
+        
         //閉じるボタンの追加
         let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookViewController.closeModal))
         navigationItem.setLeftBarButtonItems([closeButton], animated: true)
-
+        
         //保存ボタンの追加
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(self.saveButtonTapped(sender:)))
         navigationItem.setRightBarButtonItems([saveButton], animated: true)
-
+        
         view.addSubview(addressLabel)
         view.addSubview(passwordLabel)
         view.addSubview(confirmLabel)
         view.addSubview(addressTextField)
         view.addSubview(passwordTextField)
         view.addSubview(confirmTextField)
-
+        
         layout()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     func closeModal(sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
@@ -93,6 +78,18 @@ class AccountSettingViewController: UIViewController {
     func saveButtonTapped(sender: UITabBarItem) {
         //self.navigationController?.pushViewController(BooksViewScene(), animated: true)
         print("保存")
+    }
+}
+
+extension UITextField {
+    
+    func setTextField() {
+        delegate = self as? UITextFieldDelegate
+        backgroundColor = UIColor(white: 0.9, alpha: 1)
+        leftViewMode = .always//文字の左の余白
+        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        clearButtonMode = .always
+        returnKeyType = .done
     }
 }
 
@@ -126,5 +123,5 @@ extension AccountSettingViewController: UITextFieldDelegate {
         confirmTextField.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
         confirmTextField.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:200).isActive = true
         confirmTextField.widthAnchor.constraint(equalTo: addressTextField.widthAnchor).isActive = true
-     }
+    }
 }
