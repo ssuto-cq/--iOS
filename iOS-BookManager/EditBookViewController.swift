@@ -2,8 +2,12 @@ import UIKit
 
 class EditBookViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    private var bookImage: UIImage!
-    fileprivate var bookImageView: UIImageView!
+    fileprivate var bookImage: UIImage!
+    
+    fileprivate lazy var bookImageView: UIImageView! = {
+        let imageView = UIImageView()
+        return imageView
+    }()
     
     fileprivate let imageButton: UIButton = {
         let button = UIButton()
@@ -74,7 +78,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
         navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
-        bookImageView = UIImageView(image:bookImage)
+        bookImageView.image = bookImage
         view.addSubview(bookImageView)
         view.addSubview(imageButton)
         view.addSubview(bookNameLabel)
