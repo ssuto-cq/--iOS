@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
     fileprivate lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle(R.string.localizable.login(), for: .normal)
-        button.addTarget(self, action: #selector(LoginViewController.loginTapped(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         return button
     }()
     
@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func loginTapped(sender: UIButton) {
+    func loginTapped() {
         let booksViewController: BooksViewController = BooksViewController()
         navigationController?.pushViewController(booksViewController, animated: true)
     }

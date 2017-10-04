@@ -3,7 +3,6 @@ import UIKit
 extension UITextField {
     
     func setTextField() {
-        delegate = self as? UITextFieldDelegate
         backgroundColor = UIColor(white: 0.9, alpha: 1)
         leftViewMode = .always//文字の左の余白
         leftView?.translatesAutoresizingMaskIntoConstraints = false

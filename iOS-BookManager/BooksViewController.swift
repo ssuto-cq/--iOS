@@ -9,7 +9,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.rowHeight = 90
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(BookCell.self, forCellReuseIdentifier: NSStringFromClass(BookCell.self))//
+        tableView.register(BookCell.self, forCellReuseIdentifier: NSStringFromClass(BookCell.self))
         return tableView
     }()
     
@@ -31,7 +31,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         fetchData()
         
         //追加ボタンの設定
-        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(BooksViewController.addButtonTapped))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         self.navigationItem.setRightBarButtonItems([addButton], animated: true)
         //anchor
         bookTableView.translatesAutoresizingMaskIntoConstraints = false

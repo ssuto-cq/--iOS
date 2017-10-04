@@ -6,7 +6,7 @@ class BeforeSettingViewController: UIViewController {
         let button = UIButton()
         button.setTitle(R.string.localizable.accountsetting(), for: .normal)
         button.setButton()
-        button.addTarget(self, action: #selector(settingButtonTapped(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(settingButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -27,7 +27,7 @@ class BeforeSettingViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func settingButtonTapped(sender: UIButton) {
+    func settingButtonTapped() {
         let accountSettingViewController = AccountSettingViewController()
         let navi = UINavigationController(rootViewController: accountSettingViewController)
         accountSettingViewController.modalTransitionStyle = .crossDissolve

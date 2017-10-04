@@ -50,11 +50,11 @@ class AccountSettingViewController: UIViewController {
         title = R.string.localizable.accountsetting()
         
         //閉じるボタンの追加
-        let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(AddBookViewController.closeModal))
+        let closeButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeModal))
         navigationItem.setLeftBarButtonItems([closeButton], animated: true)
         
         //保存ボタンの追加
-        let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(self.saveButtonTapped(sender:)))
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
         navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
         view.addSubview(addressLabel)
@@ -71,11 +71,11 @@ class AccountSettingViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func closeModal(sender: UIBarButtonItem) {
+    func closeModal() {
         dismiss(animated: true, completion: nil)
     }
     //保存ボタンを押した時の処理
-    func saveButtonTapped(sender: UITabBarItem) {
+    func saveButtonTapped() {
         //self.navigationController?.pushViewController(BooksViewScene(), animated: true)
         print("save")
     }

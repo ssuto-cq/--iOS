@@ -59,10 +59,10 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
         title = R.string.localizable.addbook()
         
         //閉じるボタンの追加
-        let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(self.closeModal))
+        let closeButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeModal))
         navigationItem.setLeftBarButtonItems([closeButton], animated: true)
         //保存ボタンの追加
-        let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: nil)
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
         navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
         view.addSubview(bookImageView)
@@ -83,7 +83,7 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     //モーダル画面を閉じる処理
-    func closeModal(sender: UIBarButtonItem) {
+    func closeModal() {
         dismiss(animated: true, completion: nil)
     }
     

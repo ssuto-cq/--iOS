@@ -9,7 +9,7 @@ class SettingTextField: UITextField{
     override init(frame: CGRect) {
         super.init(frame: frame)
         datePicker.datePickerMode = .date
-        datePicker.addTarget(self, action: #selector(datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: UIControlEvents.valueChanged)
         inputView = datePicker
     }
     
@@ -17,7 +17,7 @@ class SettingTextField: UITextField{
         fatalError("init(coder:) has not been implemented")
     }
         
-    func datePickerValueChanged(sender: UIDatePicker) {
+    func datePickerValueChanged() {
         let pickerDate = datePicker.date
         dateFormat.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
         dateFormat.dateFormat = "yyyy年MM月dd日"
