@@ -36,21 +36,18 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     
     fileprivate lazy var bookNameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = ""
         textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var priceTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = ""
         textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var datePickerTextField: UITextField = {
         var textField = SettingTextField()
-        textField.placeholder = ""
         textField.setTextField()
         return textField
     }()

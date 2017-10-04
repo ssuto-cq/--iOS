@@ -37,21 +37,18 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     fileprivate lazy var bookNameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = ""
         textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var priceTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = ""
         textField.setTextField()
         return textField
     }()
     
     fileprivate lazy var datePickerTextField: UITextField = {
         var textField = SettingTextField()
-        textField.placeholder = ""
         textField.setTextField()
         return textField
     }()
@@ -99,12 +96,9 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     func choosePicture() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let pickerView = UIImagePickerController()
-            
             pickerView.delegate = self
             pickerView.sourceType = .photoLibrary
-            
             present(pickerView, animated: true, completion: nil)
-            
         }
     }
     
