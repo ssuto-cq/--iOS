@@ -83,7 +83,7 @@ class AccountSettingViewController: UIViewController {
 
 extension AccountSettingViewController: UITextFieldDelegate {
     
-    func layout() {
+    fileprivate func layout() {
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
         confirmLabel.translatesAutoresizingMaskIntoConstraints = false

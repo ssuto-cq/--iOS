@@ -125,7 +125,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
 
 extension EditBookViewController: UITextFieldDelegate {
     
-    func layout() {
+    fileprivate func layout() {
         bookImageView.translatesAutoresizingMaskIntoConstraints = false
         imageButton.translatesAutoresizingMaskIntoConstraints = false
         bookNameLabel.translatesAutoresizingMaskIntoConstraints = false

@@ -113,7 +113,7 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
 
 extension AddBookViewController:UITextFieldDelegate {
     
-    func layout() {
+    fileprivate func layout() {
         
         bookImageView.translatesAutoresizingMaskIntoConstraints = false
         imageButton.translatesAutoresizingMaskIntoConstraints = false
