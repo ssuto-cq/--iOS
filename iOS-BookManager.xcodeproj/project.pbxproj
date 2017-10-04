@@ -14,7 +14,7 @@
 		EF0800F11F65425C0042D566 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0800F01F65425C0042D566 /* AddBookViewController.swift */; };
 		EF0AAE131F6773A800E19987 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE121F6773A800E19987 /* TabBarController.swift */; };
 		EF0AAE151F67A33100E19987 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE141F67A33100E19987 /* AccountSettingViewController.swift */; };
-		EF0FEF811F7E2D0900D7B838 /* SettingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FEF801F7E2D0900D7B838 /* SettingUI.swift */; };
+		EF0FEF811F7E2D0900D7B838 /* SettingUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FEF801F7E2D0900D7B838 /* SettingUITextField.swift */; };
 		EF13394B1F6A05820073EACF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EF13394A1F6A05820073EACF /* .swiftlint.yml */; };
 		EF1339581F6A1DD20073EACF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1339571F6A1DD20073EACF /* R.generated.swift */; };
 		EF1339591F6A1EF00073EACF /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF13394D1F6A14160073EACF /* Rswift.framework */; };
@@ -30,6 +30,7 @@
 		EF500D181F846DC50043566B /* himatubusi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D131F846DC50043566B /* himatubusi.jpg */; };
 		EF500D191F846DC50043566B /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = EF500D141F846DC50043566B /* noimage.png */; };
 		EF500D1A1F846DC50043566B /* waste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D151F846DC50043566B /* waste.jpg */; };
+		EFA037EA1F84BCD2007C1CB3 /* SettingUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA037E91F84BCD2007C1CB3 /* SettingUIButton.swift */; };
 		EFD1F3731F6F444E003C62BD /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD1F3721F6F444E003C62BD /* Book.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +70,7 @@
 		EF0800F01F65425C0042D566 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		EF0AAE121F6773A800E19987 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EF0AAE141F67A33100E19987 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
-		EF0FEF801F7E2D0900D7B838 /* SettingUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingUI.swift; sourceTree = "<group>"; };
+		EF0FEF801F7E2D0900D7B838 /* SettingUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingUITextField.swift; sourceTree = "<group>"; };
 		EF13394A1F6A05820073EACF /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EF13394D1F6A14160073EACF /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = "<group>"; };
 		EF1339551F6A1D1A0073EACF /* rswift */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = rswift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		EF500D131F846DC50043566B /* himatubusi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = himatubusi.jpg; path = ../../../Documents/himatubusi.jpg; sourceTree = "<group>"; };
 		EF500D141F846DC50043566B /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noimage.png; path = ../../../Documents/noimage.png; sourceTree = "<group>"; };
 		EF500D151F846DC50043566B /* waste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waste.jpg; path = ../../../Documents/waste.jpg; sourceTree = "<group>"; };
+		EFA037E91F84BCD2007C1CB3 /* SettingUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingUIButton.swift; sourceTree = "<group>"; };
 		EFD1F3721F6F444E003C62BD /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,7 +171,8 @@
 				EF0AAE121F6773A800E19987 /* TabBarController.swift */,
 				EF1800331F6114F600D65DB7 /* LoginViewController.swift */,
 				EF37574E1F626DF400FBCF6E /* BooksViewController.swift */,
-				EF0FEF801F7E2D0900D7B838 /* SettingUI.swift */,
+				EF0FEF801F7E2D0900D7B838 /* SettingUITextField.swift */,
+				EFA037E91F84BCD2007C1CB3 /* SettingUIButton.swift */,
 				EF0717071F724FBA00732883 /* BookCell.swift */,
 				EFD1F3721F6F444E003C62BD /* Book.swift */,
 				EF0800F01F65425C0042D566 /* AddBookViewController.swift */,
@@ -401,8 +404,9 @@
 				EF0AAE131F6773A800E19987 /* TabBarController.swift in Sources */,
 				EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */,
 				EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */,
+				EFA037EA1F84BCD2007C1CB3 /* SettingUIButton.swift in Sources */,
 				EF0AAE151F67A33100E19987 /* AccountSettingViewController.swift in Sources */,
-				EF0FEF811F7E2D0900D7B838 /* SettingUI.swift in Sources */,
+				EF0FEF811F7E2D0900D7B838 /* SettingUITextField.swift in Sources */,
 				EF036E691F664E1B00106B4C /* EditBookViewController.swift in Sources */,
 				EFD1F3731F6F444E003C62BD /* Book.swift in Sources */,
 				EF0800F11F65425C0042D566 /* AddBookViewController.swift in Sources */,
