@@ -19,10 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if userDefault.bool(forKey: "firstLaunch") {
 
             userDefault.set(false, forKey: "firstLaunch")
-            print("初回起動")
+            print("FirstLaunch")
             window?.rootViewController = UINavigationController(rootViewController: AccountSettingViewController())
         } else {
-            print("2回目以降")
+            print("SecondLaunch")
             window?.rootViewController = TabBarController()
         }
 

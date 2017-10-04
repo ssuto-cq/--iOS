@@ -61,7 +61,6 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         title = R.string.localizable.addbook()
         
-        //UISetting()
         //閉じるボタンの追加
         let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(self.closeModal))
         navigationItem.setLeftBarButtonItems([closeButton], animated: true)
