@@ -67,3 +67,5 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlana/wiftest_output 
 *.generated.swift
+*.Carthage.swp
+*.DS_Store
