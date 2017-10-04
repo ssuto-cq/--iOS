@@ -11,7 +11,7 @@ opt_in_rules: # some rules are only opt-in
 # Find all the available rules by running:
 # swiftlint rules
 included:
-- 書籍管理アプリ-iOS
+- iOS-BookManager
 excluded: # paths to ignore during linting. Takes precedence over `included`.
 - Carthage
 - Pods
