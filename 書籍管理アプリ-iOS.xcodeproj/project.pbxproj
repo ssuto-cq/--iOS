@@ -12,7 +12,6 @@
 		EF036E6B1F6696BE00106B4C /* BeforeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF036E6A1F6696BE00106B4C /* BeforeSettingViewController.swift */; };
 		EF0717081F724FBA00732883 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0717071F724FBA00732883 /* BookCell.swift */; };
 		EF0800F11F65425C0042D566 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0800F01F65425C0042D566 /* AddBookViewController.swift */; };
-		EF0800F31F6570CB0042D566 /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0800F21F6570CB0042D566 /* noimage.png */; };
 		EF0AAE131F6773A800E19987 /* TabBarSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE121F6773A800E19987 /* TabBarSetting.swift */; };
 		EF0AAE151F67A33100E19987 /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AAE141F67A33100E19987 /* AccountSettingViewController.swift */; };
 		EF0FEF811F7E2D0900D7B838 /* SettingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FEF801F7E2D0900D7B838 /* SettingUI.swift */; };
@@ -24,12 +23,13 @@
 		EF1800341F6114F600D65DB7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800331F6114F600D65DB7 /* LoginViewController.swift */; };
 		EF1800471F6114F600D65DB7 /* _________iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800461F6114F600D65DB7 /* _________iOSTests.swift */; };
 		EF1800521F6114F600D65DB7 /* _________iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */; };
-		EF31BC7C1F643F28002DECEE /* adventure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7A1F643F28002DECEE /* adventure.jpg */; };
-		EF31BC7D1F643F28002DECEE /* animal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7B1F643F28002DECEE /* animal.jpg */; };
-		EF31BC801F643F53002DECEE /* himatubusi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7E1F643F53002DECEE /* himatubusi.jpg */; };
-		EF31BC811F643F53002DECEE /* waste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF31BC7F1F643F53002DECEE /* waste.jpg */; };
 		EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37574E1F626DF400FBCF6E /* BooksViewController.swift */; };
-		EF3757511F62A49E00FBCF6E /* azarasi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF3757501F62A49E00FBCF6E /* azarasi.jpg */; };
+		EF500D101F846DA10043566B /* adventure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D0F1F846DA10043566B /* adventure.jpg */; };
+		EF500D161F846DC50043566B /* animal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D111F846DC50043566B /* animal.jpg */; };
+		EF500D171F846DC50043566B /* azarasi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D121F846DC50043566B /* azarasi.jpg */; };
+		EF500D181F846DC50043566B /* himatubusi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D131F846DC50043566B /* himatubusi.jpg */; };
+		EF500D191F846DC50043566B /* noimage.png in Resources */ = {isa = PBXBuildFile; fileRef = EF500D141F846DC50043566B /* noimage.png */; };
+		EF500D1A1F846DC50043566B /* waste.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D151F846DC50043566B /* waste.jpg */; };
 		EFD1F3731F6F444E003C62BD /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD1F3721F6F444E003C62BD /* Book.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +67,6 @@
 		EF036E6A1F6696BE00106B4C /* BeforeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeSettingViewController.swift; sourceTree = "<group>"; };
 		EF0717071F724FBA00732883 /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		EF0800F01F65425C0042D566 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
-		EF0800F21F6570CB0042D566 /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noimage.png; path = ../../Documents/noimage.png; sourceTree = "<group>"; };
 		EF0AAE121F6773A800E19987 /* TabBarSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarSetting.swift; sourceTree = "<group>"; };
 		EF0AAE141F67A33100E19987 /* AccountSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		EF0FEF801F7E2D0900D7B838 /* SettingUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingUI.swift; sourceTree = "<group>"; };
@@ -87,12 +86,13 @@
 		EF18004D1F6114F600D65DB7 /* 書籍管理アプリ-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "書籍管理アプリ-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_________iOSUITests.swift"; sourceTree = "<group>"; };
 		EF1800531F6114F600D65DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF31BC7A1F643F28002DECEE /* adventure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = adventure.jpg; path = ../../Documents/adventure.jpg; sourceTree = "<group>"; };
-		EF31BC7B1F643F28002DECEE /* animal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = animal.jpg; path = ../../Documents/animal.jpg; sourceTree = "<group>"; };
-		EF31BC7E1F643F53002DECEE /* himatubusi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = himatubusi.jpg; path = ../../Documents/himatubusi.jpg; sourceTree = "<group>"; };
-		EF31BC7F1F643F53002DECEE /* waste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waste.jpg; path = ../../Documents/waste.jpg; sourceTree = "<group>"; };
 		EF37574E1F626DF400FBCF6E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
-		EF3757501F62A49E00FBCF6E /* azarasi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = azarasi.jpg; path = ../../Documents/azarasi.jpg; sourceTree = "<group>"; };
+		EF500D0F1F846DA10043566B /* adventure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = adventure.jpg; path = ../../../Documents/adventure.jpg; sourceTree = "<group>"; };
+		EF500D111F846DC50043566B /* animal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = animal.jpg; path = ../../../Documents/animal.jpg; sourceTree = "<group>"; };
+		EF500D121F846DC50043566B /* azarasi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = azarasi.jpg; path = ../../../Documents/azarasi.jpg; sourceTree = "<group>"; };
+		EF500D131F846DC50043566B /* himatubusi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = himatubusi.jpg; path = ../../../Documents/himatubusi.jpg; sourceTree = "<group>"; };
+		EF500D141F846DC50043566B /* noimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noimage.png; path = ../../../Documents/noimage.png; sourceTree = "<group>"; };
+		EF500D151F846DC50043566B /* waste.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waste.jpg; path = ../../../Documents/waste.jpg; sourceTree = "<group>"; };
 		EFD1F3721F6F444E003C62BD /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,12 +138,12 @@
 				EF13395E1F6A248F0073EACF /* Localizable.strings */,
 				EF13394A1F6A05820073EACF /* .swiftlint.yml */,
 				EF1800301F6114F600D65DB7 /* 書籍管理アプリ-iOS */,
-				EF31BC7A1F643F28002DECEE /* adventure.jpg */,
-				EF31BC7B1F643F28002DECEE /* animal.jpg */,
-				EF31BC7E1F643F53002DECEE /* himatubusi.jpg */,
-				EF31BC7F1F643F53002DECEE /* waste.jpg */,
-				EF0800F21F6570CB0042D566 /* noimage.png */,
-				EF3757501F62A49E00FBCF6E /* azarasi.jpg */,
+				EF500D0F1F846DA10043566B /* adventure.jpg */,
+				EF500D111F846DC50043566B /* animal.jpg */,
+				EF500D121F846DC50043566B /* azarasi.jpg */,
+				EF500D131F846DC50043566B /* himatubusi.jpg */,
+				EF500D141F846DC50043566B /* noimage.png */,
+				EF500D151F846DC50043566B /* waste.jpg */,
 				EF1800451F6114F600D65DB7 /* 書籍管理アプリ-iOSTests */,
 				EF1800501F6114F600D65DB7 /* 書籍管理アプリ-iOSUITests */,
 				EF18002F1F6114F600D65DB7 /* Products */,
@@ -314,14 +314,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF500D181F846DC50043566B /* himatubusi.jpg in Resources */,
 				EF13394B1F6A05820073EACF /* .swiftlint.yml in Resources */,
-				EF0800F31F6570CB0042D566 /* noimage.png in Resources */,
-				EF31BC801F643F53002DECEE /* himatubusi.jpg in Resources */,
-				EF3757511F62A49E00FBCF6E /* azarasi.jpg in Resources */,
+				EF500D191F846DC50043566B /* noimage.png in Resources */,
+				EF500D1A1F846DC50043566B /* waste.jpg in Resources */,
+				EF500D161F846DC50043566B /* animal.jpg in Resources */,
+				EF500D171F846DC50043566B /* azarasi.jpg in Resources */,
+				EF500D101F846DA10043566B /* adventure.jpg in Resources */,
 				EF13395C1F6A248F0073EACF /* Localizable.strings in Resources */,
-				EF31BC811F643F53002DECEE /* waste.jpg in Resources */,
-				EF31BC7C1F643F28002DECEE /* adventure.jpg in Resources */,
-				EF31BC7D1F643F28002DECEE /* animal.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
