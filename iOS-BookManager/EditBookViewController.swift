@@ -108,12 +108,9 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     func choosePicture() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let pickerView = UIImagePickerController()
-            
             pickerView.delegate = self
             pickerView.sourceType = .photoLibrary
-            
             present(pickerView, animated: true, completion: nil)
-            
         }
     }
     

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = UINavigationController(rootViewController: AccountSettingViewController())
         } else {
             print("2回目以降")
-            window?.rootViewController = TabBarSetting()
+            window?.rootViewController = TabBarController()
         }
 
         return true

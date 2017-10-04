@@ -65,11 +65,8 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(BookCell.self), for: indexPath) as! BookCell
-        
         cell.bookRegister(book: books[indexPath.row])
-        
         return cell
     }
     
@@ -79,13 +76,9 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //書籍編集画面への遷移処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let editBookViewController = EditBookViewController()
-        
         editBookViewController.book = books[indexPath.row]
-        
         self.navigationController?.pushViewController(editBookViewController, animated: true)
-        
     }
     
 }

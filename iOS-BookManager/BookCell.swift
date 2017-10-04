@@ -3,25 +3,23 @@ import UIKit
 class BookCell: UITableViewCell {
     
     fileprivate var bookImageView: UIImageView! = {
-        let image = R.image.noimage()
-        let imageView = UIImageView(image:image)
-        return imageView
+        return UIImageView(image: R.image.noimage())
     }()
     
     fileprivate let bookTitleLabel: UILabel = {
-        let label = UILabel(frame: .zero)
+        let label = UILabel()
         label.textAlignment = .left
         return label
     }()
     
     fileprivate let bookPriceLabel: UILabel = {
-        let label = UILabel(frame: .zero)
+        let label = UILabel()
         label.textAlignment = .left
         return label
     }()
     
     fileprivate let bookDateLabel: UILabel = {
-        let label = UILabel(frame: .zero)
+        let label = UILabel()
         label.textAlignment = .left
         return label
     }()
@@ -63,7 +61,6 @@ class BookCell: UITableViewCell {
     }
     
     func bookRegister(book:Book){
-        
         bookTitleLabel.text = book.name
         bookPriceLabel.text = R.string.localizable.price(book.price)
         bookDateLabel.text = book.boughtDate
