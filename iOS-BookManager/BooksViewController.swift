@@ -58,9 +58,9 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //追加ボタンの処理
     func addButtonTapped() {
-        let addBookViewController = AddBookViewController()
-        let navi = UINavigationController(rootViewController: addBookViewController)
-        addBookViewController.modalTransitionStyle = .crossDissolve
+        let vc = AddBookViewController()
+        let navi = UINavigationController(rootViewController: vc)
+        vc.modalTransitionStyle = .crossDissolve
         present(navi, animated: true, completion: nil)
     }
     
@@ -76,9 +76,9 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //書籍編集画面への遷移処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let editBookViewController = EditBookViewController()
-        editBookViewController.book = books[indexPath.row]
-        self.navigationController?.pushViewController(editBookViewController, animated: true)
+        let vc = EditBookViewController()
+        vc.book = books[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -28,9 +28,9 @@ class BeforeSettingViewController: UIViewController {
     }
     
     func settingButtonTapped() {
-        let accountSettingViewController = AccountSettingViewController()
-        let navi = UINavigationController(rootViewController: accountSettingViewController)
-        accountSettingViewController.modalTransitionStyle = .crossDissolve
+        let vc = AccountSettingViewController()
+        let navi = UINavigationController(rootViewController: vc)
+        vc.modalTransitionStyle = .crossDissolve
         present(navi, animated: true, completion: nil)
     }
 }

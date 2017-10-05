@@ -56,8 +56,8 @@ class LoginViewController: UIViewController {
     }
     
     func loginTapped() {
-        let booksViewController: BooksViewController = BooksViewController()
-        navigationController?.pushViewController(booksViewController, animated: true)
+        let vc = BooksViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

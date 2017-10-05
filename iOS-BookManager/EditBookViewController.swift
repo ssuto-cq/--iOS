@@ -5,8 +5,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     fileprivate var bookImage: UIImage!
     
     fileprivate lazy var bookImageView: UIImageView! = {
-        let imageView = UIImageView()
-        return imageView
+        return UIImageView()
     }()
     
     fileprivate let imageButton: UIButton = {
