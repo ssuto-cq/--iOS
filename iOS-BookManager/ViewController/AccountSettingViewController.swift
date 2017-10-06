@@ -78,7 +78,6 @@ class AccountSettingViewController: UIViewController {
     }
     //保存ボタンを押した時の処理
     @objc func tappedSaveButton() {
-        //self.navigationController?.pushViewController(BooksViewScene(), animated: true)
         print("save")
         
         let email = addressTextField.text!
@@ -89,6 +88,10 @@ class AccountSettingViewController: UIViewController {
             switch result{
             case.success(let response):
                 print(response)
+                UserDefaults.standard.set(response.id, forKey: "id")
+                UserDefaults.standard.set(response.email, forKey: "email")
+                UserDefaults.standard.set(response.token, forKey: "token")
+                self.navigationController?.pushViewController(LoginViewController(), animated: true)
             case.failure(let error):
                 print(error)
             }

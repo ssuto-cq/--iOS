@@ -5,7 +5,7 @@ protocol APIRequest: Request { }
 
 extension APIRequest{
     var baseURL: URL{
-        return URL(string: "http://54.250.239.8/")!
+        return URL(string: "http://54.250.239.8")!
     }
 }
 
