@@ -1,4 +1,6 @@
 import UIKit
+import APIKit
+import Himotoki
 
 class AccountSettingViewController: UIViewController {
     
@@ -54,7 +56,7 @@ class AccountSettingViewController: UIViewController {
         navigationItem.setLeftBarButtonItems([closeButton], animated: true)
         
         //保存ボタンの追加
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(tappedSaveButton))
         navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
         view.addSubview(addressLabel)
@@ -75,15 +77,28 @@ class AccountSettingViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     //保存ボタンを押した時の処理
-    @objc func saveButtonTapped() {
+    @objc func tappedSaveButton() {
         //self.navigationController?.pushViewController(BooksViewScene(), animated: true)
         print("save")
+        
+        let email = addressTextField.text!
+        let password = passwordTextField.text!
+        //let check = confirmTextField.text!
+        let request = SignUpRequest(email: email, password: password)
+        Session.send(request){result in
+            switch result{
+            case.success(let response):
+                print(response)
+            case.failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
 extension AccountSettingViewController: UITextFieldDelegate {
     
-    fileprivate func layout() {
+    private func layout() {
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
         confirmLabel.translatesAutoresizingMaskIntoConstraints = false

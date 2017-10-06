@@ -33,6 +33,7 @@
 		EF41D0E41F871B9300C07798 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41D0E31F871B9300C07798 /* APIRequest.swift */; };
 		EF41D0E61F871E1600C07798 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41D0E51F871E1600C07798 /* LoginRequest.swift */; };
 		EF41D0E81F871F3B00C07798 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41D0E71F871F3B00C07798 /* User.swift */; };
+		EF41D0EA1F87343200C07798 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF41D0E91F87343200C07798 /* SignUpRequest.swift */; };
 		EF500D101F846DA10043566B /* adventure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D0F1F846DA10043566B /* adventure.jpg */; };
 		EF500D161F846DC50043566B /* animal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D111F846DC50043566B /* animal.jpg */; };
 		EF500D181F846DC50043566B /* himatubusi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D131F846DC50043566B /* himatubusi.jpg */; };
@@ -118,6 +119,7 @@
 		EF41D0E31F871B9300C07798 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		EF41D0E51F871E1600C07798 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		EF41D0E71F871F3B00C07798 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EF41D0E91F87343200C07798 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		EF500D0F1F846DA10043566B /* adventure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = adventure.jpg; path = ../../../Documents/adventure.jpg; sourceTree = "<group>"; };
 		EF500D111F846DC50043566B /* animal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = animal.jpg; path = ../../../Documents/animal.jpg; sourceTree = "<group>"; };
 		EF500D131F846DC50043566B /* himatubusi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = himatubusi.jpg; path = ../../../Documents/himatubusi.jpg; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				EF1800311F6114F600D65DB7 /* AppDelegate.swift */,
 				EF41D0E31F871B9300C07798 /* APIRequest.swift */,
 				EF41D0E51F871E1600C07798 /* LoginRequest.swift */,
+				EF41D0E91F87343200C07798 /* SignUpRequest.swift */,
 				EF41D0E71F871F3B00C07798 /* User.swift */,
 				EF18003D1F6114F600D65DB7 /* Info.plist */,
 			);
@@ -454,6 +457,7 @@
 				EF1800341F6114F600D65DB7 /* LoginViewController.swift in Sources */,
 				EF036E6B1F6696BE00106B4C /* BeforeSettingViewController.swift in Sources */,
 				EF1339581F6A1DD20073EACF /* R.generated.swift in Sources */,
+				EF41D0EA1F87343200C07798 /* SignUpRequest.swift in Sources */,
 				EF0AAE131F6773A800E19987 /* TabBarController.swift in Sources */,
 				EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */,
 				EF41D0E81F871F3B00C07798 /* User.swift in Sources */,
