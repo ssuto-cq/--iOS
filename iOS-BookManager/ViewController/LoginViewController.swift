@@ -59,8 +59,6 @@ class LoginViewController: UIViewController {
     
     @objc func tappedLoginButton() {
         let vc = BooksViewController()
-        navigationController?.pushViewController(vc, animated: true)
-        
         let email = addressTextField.text!
         let password = passwordTextField.text!
         let request = LoginRequest(email: email, password: password)
@@ -68,6 +66,11 @@ class LoginViewController: UIViewController {
             switch result{
             case.success(let response):
                 print(response)
+                print("ユーザー認証に成功しました。")
+                UserDefaults.standard.set(response.id, forKey: "id")
+                UserDefaults.standard.set(response.email, forKey: "email")
+                UserDefaults.standard.set(response.token, forKey: "token")
+                self.navigationController?.pushViewController(vc, animated: true)
             case.failure(let error):
                 print(error)
             }
