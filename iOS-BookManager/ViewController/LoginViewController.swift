@@ -1,4 +1,5 @@
 import UIKit
+import APIKit
 
 class LoginViewController: UIViewController {
     
@@ -32,8 +33,9 @@ class LoginViewController: UIViewController {
     
     fileprivate lazy var loginButton: UIButton = {
         let button = UIButton()
+        button.setButton()
         button.setTitle(R.string.localizable.login(), for: .normal)
-        button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return button
     }()
     
@@ -55,16 +57,28 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @objc func loginTapped() {
+    @objc func tappedLoginButton() {
         let vc = BooksViewController()
         navigationController?.pushViewController(vc, animated: true)
+        
+        let email = addressTextField.text!
+        let password = passwordTextField.text!
+        let request = LoginRequest(email: email, password: password)
+        Session.send(request) {result in
+            switch result{
+            case.success(let response):
+                print(response)
+            case.failure(let error):
+                print(error)
+            }
+        }
+        
     }
 }
 
 extension LoginViewController: UITextFieldDelegate {
     
-    func layout() {
-        
+    private func layout() {
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
         addressTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -72,21 +86,22 @@ extension LoginViewController: UITextFieldDelegate {
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         
         addressLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:35).isActive = true
-        addressLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant:250).isActive = true
+        addressLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant:200).isActive = true
         
         passwordLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
         passwordLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:100).isActive = true
         
-        addressTextField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        addressTextField.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        addressTextField.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
+        addressTextField.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant: 30).isActive = true
         addressTextField.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:0.8).isActive = true
         
-        passwordTextField.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:100.0).isActive = true
+        passwordTextField.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: passwordLabel.topAnchor, constant: 30).isActive = true
         passwordTextField.widthAnchor.constraint(equalTo: addressTextField.widthAnchor).isActive = true
         
-        loginButton.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
-        loginButton.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:150.0).isActive = true
-        
+        loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        loginButton.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant: 250).isActive = true
+        loginButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
 }
