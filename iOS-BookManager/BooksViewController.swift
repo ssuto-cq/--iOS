@@ -57,7 +57,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     //追加ボタンの処理
-    func addButtonTapped() {
+    @objc func addButtonTapped() {
         let vc = AddBookViewController()
         let navi = UINavigationController(rootViewController: vc)
         vc.modalTransitionStyle = .crossDissolve

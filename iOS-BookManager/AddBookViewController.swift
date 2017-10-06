@@ -83,7 +83,7 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     //モーダル画面を閉じる処理
-    func closeModal() {
+    @objc func closeModal() {
         dismiss(animated: true, completion: nil)
     }
     
@@ -93,7 +93,7 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     //カメラロールから写真を選択
-    func choosePicture() {
+    @objc func choosePicture() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let pickerView = UIImagePickerController()
             pickerView.delegate = self

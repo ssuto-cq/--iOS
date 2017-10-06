@@ -17,7 +17,7 @@ class SettingTextField: UITextField{
         fatalError("init(coder:) has not been implemented")
     }
         
-    func datePickerValueChanged() {
+    @objc func datePickerValueChanged() {
         let pickerDate = datePicker.date
         dateFormat.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
         dateFormat.dateFormat = "yyyy年MM月dd日"

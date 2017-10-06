@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func loginTapped() {
+    @objc func loginTapped() {
         let vc = BooksViewController()
         navigationController?.pushViewController(vc, animated: true)
     }

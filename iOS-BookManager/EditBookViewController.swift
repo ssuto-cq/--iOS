@@ -95,7 +95,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     //書籍一覧へ戻る処理
-    func backBooksView() {
+    @objc func backBooksView() {
         navigationController?.popViewController(animated: true)
     }
     
@@ -105,7 +105,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     //カメラロールから写真を選択
-    func choosePicture() {
+    @objc func choosePicture() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let pickerView = UIImagePickerController()
             pickerView.delegate = self

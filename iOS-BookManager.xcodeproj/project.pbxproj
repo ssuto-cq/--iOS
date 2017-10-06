@@ -24,6 +24,9 @@
 		EF1800471F6114F600D65DB7 /* _________iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800461F6114F600D65DB7 /* _________iOSTests.swift */; };
 		EF1800521F6114F600D65DB7 /* _________iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */; };
 		EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37574E1F626DF400FBCF6E /* BooksViewController.swift */; };
+		EF41D0C51F870DF000C07798 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C41F870DF000C07798 /* APIKit.framework */; };
+		EF41D0C71F870E0300C07798 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C61F870E0300C07798 /* Himotoki.framework */; };
+		EF41D0C91F870E1900C07798 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C81F870E1900C07798 /* Result.framework */; };
 		EF500D101F846DA10043566B /* adventure.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D0F1F846DA10043566B /* adventure.jpg */; };
 		EF500D161F846DC50043566B /* animal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D111F846DC50043566B /* animal.jpg */; };
 		EF500D171F846DC50043566B /* azarasi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF500D121F846DC50043566B /* azarasi.jpg */; };
@@ -88,6 +91,9 @@
 		EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_________iOSUITests.swift"; sourceTree = "<group>"; };
 		EF1800531F6114F600D65DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF37574E1F626DF400FBCF6E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		EF41D0C41F870DF000C07798 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
+		EF41D0C61F870E0300C07798 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
+		EF41D0C81F870E1900C07798 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		EF500D0F1F846DA10043566B /* adventure.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = adventure.jpg; path = ../../../Documents/adventure.jpg; sourceTree = "<group>"; };
 		EF500D111F846DC50043566B /* animal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = animal.jpg; path = ../../../Documents/animal.jpg; sourceTree = "<group>"; };
 		EF500D121F846DC50043566B /* azarasi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = azarasi.jpg; path = ../../../Documents/azarasi.jpg; sourceTree = "<group>"; };
@@ -103,6 +109,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF41D0C91F870E1900C07798 /* Result.framework in Frameworks */,
+				EF41D0C71F870E0300C07798 /* Himotoki.framework in Frameworks */,
+				EF41D0C51F870DF000C07798 /* APIKit.framework in Frameworks */,
 				EF1339591F6A1EF00073EACF /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +136,9 @@
 		EF13394C1F6A14150073EACF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF41D0C81F870E1900C07798 /* Result.framework */,
+				EF41D0C61F870E0300C07798 /* Himotoki.framework */,
+				EF41D0C41F870DF000C07798 /* APIKit.framework */,
 				EF1339551F6A1D1A0073EACF /* rswift */,
 				EF13394D1F6A14160073EACF /* Rswift.framework */,
 			);
@@ -271,7 +283,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "須藤 翔太";
 				TargetAttributes = {
 					EF18002D1F6114F600D65DB7 = {
@@ -468,7 +480,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -476,7 +490,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -520,7 +538,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -528,7 +548,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -572,7 +596,7 @@
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.someone.---------iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -594,7 +618,7 @@
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.someone.---------iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -608,7 +632,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.someone.---------iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/書籍管理アプリ-iOS.app/書籍管理アプリ-iOS";
 			};
 			name = Debug;
@@ -623,7 +647,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.someone.---------iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/書籍管理アプリ-iOS.app/書籍管理アプリ-iOS";
 			};
 			name = Release;
@@ -637,7 +661,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.someone.---------iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "書籍管理アプリ-iOS";
 			};
 			name = Debug;
@@ -651,7 +675,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.someone.---------iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "書籍管理アプリ-iOS";
 			};
 			name = Release;

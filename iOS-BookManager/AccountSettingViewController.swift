@@ -71,11 +71,11 @@ class AccountSettingViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func closeModal() {
+    @objc func closeModal() {
         dismiss(animated: true, completion: nil)
     }
     //保存ボタンを押した時の処理
-    func saveButtonTapped() {
+    @objc func saveButtonTapped() {
         //self.navigationController?.pushViewController(BooksViewScene(), animated: true)
         print("save")
     }
