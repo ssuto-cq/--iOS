@@ -1,4 +1,6 @@
 import UIKit
+import APIKit
+import Himotoki
 
 class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -62,7 +64,7 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
         let closeButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeModal))
         navigationItem.setLeftBarButtonItems([closeButton], animated: true)
         //保存ボタンの追加
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(tappedSaveButton))
         navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
         view.addSubview(bookImageView)
@@ -85,6 +87,25 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     //モーダル画面を閉じる処理
     @objc func closeModal() {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func tappedSaveButton(){
+        let name = bookNameTextField.text!
+        let price = Int(priceTextField.text!)
+        let purchaseDate = datePickerTextField.text!
+        let data = UIImagePNGRepresentation(bookImageView.image!)!
+        let encodedString = data.base64EncodedString()
+        let request = AddBookRequest(name: name, image: encodedString, price: price!, purchaseDate: purchaseDate)
+        
+        Session.send(request){ result in
+            switch result {
+            case .success(let response):
+                print(response)
+                print("書籍を追加しました。")
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     //ピッカー外タッチで閉じる
