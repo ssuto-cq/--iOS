@@ -28,7 +28,7 @@ struct AddBookRequest: APIRequest {
             "name": name,
             "image": image,
             "price": price,
-            "purchas_date": purchaseDate
+            "purchase_date": purchaseDate
             ])
     }
 }

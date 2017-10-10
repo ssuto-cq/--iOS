@@ -52,16 +52,18 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func fetchData() {
-        books.append(Book(name: "超暇つぶし図鑑", imagePath: "himatubusi.jpg", price:1000, purchaseDate: "2017/5/10" ))
+        /*books.append(Book(name: "超暇つぶし図鑑", imagePath: "himatubusi.jpg", price:1000, purchaseDate: "2017/5/10" ))
         books.append(Book(name: "せつない動物図鑑", imagePath: "animal.jpg", price: 1100, purchaseDate: "2017/7/20" ))
         books.append(Book(name: "浪費図鑑", imagePath: "waste.jpg", price: 900, purchaseDate: "2017/8/8" ))
-        books.append(Book(name: "冒険図鑑", imagePath: "adventure.jpg", price: 1700, purchaseDate: "1985/6/20"))
-        
-        let request = BookRequest(limit: 20, page: 1)
+        books.append(Book(name: "冒険図鑑", imagePath: "adventure.jpg", price: 1700, purchaseDate: "1985/6/20"))*/
+
+        let request = BookRequest(limit: 5, page: 1)
         Session.send(request) { result in
             switch result {
             case.success(let response):
                 print(response)
+                self.books.append(contentsOf: response.result)
+                self.bookTableView.reloadData()
             case.failure(let error):
                 print(error)
             }
