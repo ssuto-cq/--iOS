@@ -5,6 +5,8 @@ import Himotoki
 class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var books:[Book] = []
+    private var limit = 6
+    private var page = 1
     
     private lazy var bookTableView: UITableView = {
         let tableView = UITableView()
@@ -19,6 +21,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let button = UIButton()
         button.setTitle(R.string.localizable.load(), for: .normal)
         button.setButton()
+        button.addTarget(self, action: #selector(tappedLoadButton), for: .touchUpInside)
         return button
     }()
     
@@ -52,12 +55,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func fetchData() {
-        /*books.append(Book(name: "超暇つぶし図鑑", imagePath: "himatubusi.jpg", price:1000, purchaseDate: "2017/5/10" ))
-        books.append(Book(name: "せつない動物図鑑", imagePath: "animal.jpg", price: 1100, purchaseDate: "2017/7/20" ))
-        books.append(Book(name: "浪費図鑑", imagePath: "waste.jpg", price: 900, purchaseDate: "2017/8/8" ))
-        books.append(Book(name: "冒険図鑑", imagePath: "adventure.jpg", price: 1700, purchaseDate: "1985/6/20"))*/
-
-        let request = BookRequest(limit: 5, page: 1)
+        let request = BookRequest(limit: limit, page: page)
         Session.send(request) { result in
             switch result {
             case.success(let response):
@@ -76,6 +74,12 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let navi = UINavigationController(rootViewController: vc)
         vc.modalTransitionStyle = .crossDissolve
         present(navi, animated: true, completion: nil)
+    }
+    
+    @objc func tappedLoadButton() {
+        print("more load")
+        page += 1
+        fetchData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
