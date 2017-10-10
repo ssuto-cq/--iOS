@@ -1,7 +1,10 @@
 import UIKit
+import APIKit
+import Himotoki
 
 class EditBookViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    fileprivate var bookID = 0//
     fileprivate var bookImage: UIImage!
     
     fileprivate lazy var bookImageView: UIImageView! = {
@@ -57,10 +60,10 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     
     var book: Book! {
         didSet {
+            bookID = book.id
             bookNameTextField.text = book.name
             priceTextField.text = String(book.price)
             datePickerTextField.text = book.purchaseDate
-            bookImage = UIImage(named: book.imagePath)!
         }
     }
     
@@ -74,10 +77,10 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         navigationItem.setLeftBarButtonItems([closeButton], animated: true)
         
         //保存ボタンの追加
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(tappedSaveButton))
         navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
-        bookImageView.image = bookImage
+        bookImageView.kf.setImage(with: URL(string: book.imagePath))
         view.addSubview(bookImageView)
         view.addSubview(imageButton)
         view.addSubview(bookNameLabel)
@@ -97,6 +100,24 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     //書籍一覧へ戻る処理
     @objc func backBooksView() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func tappedSaveButton() {
+        let name = bookNameTextField.text!
+        let price = Int(priceTextField.text!)
+        let purchaseDate = datePickerTextField.text!
+        let data = UIImagePNGRepresentation(bookImageView.image!)!
+        let encodedString = data.base64EncodedString()
+        let request = EditBookRequest(id: bookID, name: name, image: encodedString, price: price!, purchaseDate: purchaseDate)
+        
+        Session.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     //ピッカー外タッチで閉じる

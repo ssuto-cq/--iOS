@@ -24,6 +24,8 @@
 		EF1800471F6114F600D65DB7 /* _________iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800461F6114F600D65DB7 /* _________iOSTests.swift */; };
 		EF1800521F6114F600D65DB7 /* _________iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */; };
 		EF30005A1F8C88E2005B74CF /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3000591F8C88E2005B74CF /* Kingfisher.framework */; };
+		EF30005C1F8C9A5B005B74CF /* EditBookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30005B1F8C9A5B005B74CF /* EditBookRequest.swift */; };
+		EF30005E1F8C9E17005B74CF /* EditBookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30005D1F8C9E17005B74CF /* EditBookResponse.swift */; };
 		EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37574E1F626DF400FBCF6E /* BooksViewController.swift */; };
 		EF41D0C91F870E1900C07798 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C81F870E1900C07798 /* Result.framework */; };
 		EF41D0DB1F871A1000C07798 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C81F870E1900C07798 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -118,6 +120,8 @@
 		EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_________iOSUITests.swift"; sourceTree = "<group>"; };
 		EF1800531F6114F600D65DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF3000591F8C88E2005B74CF /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		EF30005B1F8C9A5B005B74CF /* EditBookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookRequest.swift; sourceTree = "<group>"; };
+		EF30005D1F8C9E17005B74CF /* EditBookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookResponse.swift; sourceTree = "<group>"; };
 		EF37574E1F626DF400FBCF6E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		EF41D0C41F870DF000C07798 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		EF41D0C61F870E0300C07798 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 				EF41D0E51F871E1600C07798 /* LoginRequest.swift */,
 				EFD1F3721F6F444E003C62BD /* Book.swift */,
 				EF41D0EB1F876ED600C07798 /* AddBookRequest.swift */,
+				EF30005B1F8C9A5B005B74CF /* EditBookRequest.swift */,
+				EF30005D1F8C9E17005B74CF /* EditBookResponse.swift */,
 				EF41D0ED1F87708300C07798 /* AddBookResponse.swift */,
 				EF41D0E91F87343200C07798 /* SignUpRequest.swift */,
 				EF41D0E71F871F3B00C07798 /* User.swift */,
@@ -469,6 +475,7 @@
 			files = (
 				EF0717081F724FBA00732883 /* BookCell.swift in Sources */,
 				EF032C1A1F7109C700AB6596 /* SettingTextField.swift in Sources */,
+				EF30005C1F8C9A5B005B74CF /* EditBookRequest.swift in Sources */,
 				EF1800341F6114F600D65DB7 /* LoginViewController.swift in Sources */,
 				EF41D0EC1F876ED600C07798 /* AddBookRequest.swift in Sources */,
 				EF036E6B1F6696BE00106B4C /* BeforeSettingViewController.swift in Sources */,
@@ -480,6 +487,7 @@
 				EF41D0E81F871F3B00C07798 /* User.swift in Sources */,
 				EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */,
 				EFA037EA1F84BCD2007C1CB3 /* SettingUIButton.swift in Sources */,
+				EF30005E1F8C9E17005B74CF /* EditBookResponse.swift in Sources */,
 				EF0AAE151F67A33100E19987 /* AccountSettingViewController.swift in Sources */,
 				EF0FEF811F7E2D0900D7B838 /* SettingUITextField.swift in Sources */,
 				EF036E691F664E1B00106B4C /* EditBookViewController.swift in Sources */,
