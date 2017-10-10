@@ -1,4 +1,6 @@
 import UIKit
+import APIKit
+import Himotoki
 
 class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -50,10 +52,20 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func fetchData() {
-        books.append(Book(name: "超暇つぶし図鑑", price:1000, boughtDate: "2017/5/10", imagePath: "himatubusi.jpg"))
-        books.append(Book(name: "せつない動物図鑑", price: 1100, boughtDate: "2017/7/20", imagePath: "animal.jpg"))
-        books.append(Book(name: "浪費図鑑", price: 900, boughtDate: "2017/8/8", imagePath: "waste.jpg"))
-        books.append(Book(name: "冒険図鑑", price: 1700, boughtDate: "1985/6/20", imagePath: "adventure.jpg"))
+        books.append(Book(name: "超暇つぶし図鑑", imagePath: "himatubusi.jpg", price:1000, purchaseDate: "2017/5/10" ))
+        books.append(Book(name: "せつない動物図鑑", imagePath: "animal.jpg", price: 1100, purchaseDate: "2017/7/20" ))
+        books.append(Book(name: "浪費図鑑", imagePath: "waste.jpg", price: 900, purchaseDate: "2017/8/8" ))
+        books.append(Book(name: "冒険図鑑", imagePath: "adventure.jpg", price: 1700, purchaseDate: "1985/6/20"))
+        
+        let request = BookRequest(limit: 20, page: 1)
+        Session.send(request) { result in
+            switch result {
+            case.success(let response):
+                print(response)
+            case.failure(let error):
+                print(error)
+            }
+        }
     }
     
     //追加ボタンの処理
@@ -71,7 +83,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return books.count
     }
     
     //書籍編集画面への遷移処理

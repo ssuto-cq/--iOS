@@ -59,7 +59,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         didSet {
             bookNameTextField.text = book.name
             priceTextField.text = String(book.price)
-            datePickerTextField.text = book.boughtDate
+            datePickerTextField.text = book.purchaseDate
             bookImage = UIImage(named: book.imagePath)!
         }
     }

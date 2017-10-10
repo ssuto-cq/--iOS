@@ -63,7 +63,7 @@ class BookCell: UITableViewCell {
     func bookRegister(book:Book){
         bookTitleLabel.text = book.name
         bookPriceLabel.text = R.string.localizable.price(book.price)
-        bookDateLabel.text = book.boughtDate
+        bookDateLabel.text = book.purchaseDate
         bookImageView.image = UIImage(named: book.imagePath)
     }
 }
