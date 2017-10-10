@@ -2,7 +2,7 @@ import APIKit
 import Himotoki
 
 struct BookRequest: APIRequest {
-    typealias Response = AddBookResponse
+    typealias Response = GetBookResponse
     let limit: Int
     let page: Int
     

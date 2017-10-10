@@ -3,10 +3,10 @@ import Himotoki
 
 struct AddBookRequest: APIRequest {
     typealias Response = AddBookResponse
-    let name: String
-    let image: String
-    let price: Int
-    let purchaseDate: String
+    var name: String
+    var image: String
+    var price: Int
+    var purchaseDate: String
     
     var method: HTTPMethod{
         return .post

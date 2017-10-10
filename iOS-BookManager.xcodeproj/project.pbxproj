@@ -26,6 +26,7 @@
 		EF30005A1F8C88E2005B74CF /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3000591F8C88E2005B74CF /* Kingfisher.framework */; };
 		EF30005C1F8C9A5B005B74CF /* EditBookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30005B1F8C9A5B005B74CF /* EditBookRequest.swift */; };
 		EF30005E1F8C9E17005B74CF /* EditBookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30005D1F8C9E17005B74CF /* EditBookResponse.swift */; };
+		EF3000601F8CC67B005B74CF /* GetBookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30005F1F8CC67B005B74CF /* GetBookResponse.swift */; };
 		EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37574E1F626DF400FBCF6E /* BooksViewController.swift */; };
 		EF41D0C91F870E1900C07798 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C81F870E1900C07798 /* Result.framework */; };
 		EF41D0DB1F871A1000C07798 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C81F870E1900C07798 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -122,6 +123,7 @@
 		EF3000591F8C88E2005B74CF /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		EF30005B1F8C9A5B005B74CF /* EditBookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookRequest.swift; sourceTree = "<group>"; };
 		EF30005D1F8C9E17005B74CF /* EditBookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookResponse.swift; sourceTree = "<group>"; };
+		EF30005F1F8CC67B005B74CF /* GetBookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookResponse.swift; sourceTree = "<group>"; };
 		EF37574E1F626DF400FBCF6E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		EF41D0C41F870DF000C07798 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		EF41D0C61F870E0300C07798 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -220,12 +222,13 @@
 				EF41D0E21F871B3100C07798 /* Setting */,
 				EF41D0E11F871AF300C07798 /* ViewController */,
 				EF1800311F6114F600D65DB7 /* AppDelegate.swift */,
-				EF41D0EF1F8AF29A00C07798 /* BookRequest.swift */,
 				EF41D0E31F871B9300C07798 /* APIRequest.swift */,
 				EF41D0E51F871E1600C07798 /* LoginRequest.swift */,
 				EFD1F3721F6F444E003C62BD /* Book.swift */,
+				EF41D0EF1F8AF29A00C07798 /* BookRequest.swift */,
 				EF41D0EB1F876ED600C07798 /* AddBookRequest.swift */,
 				EF30005B1F8C9A5B005B74CF /* EditBookRequest.swift */,
+				EF30005F1F8CC67B005B74CF /* GetBookResponse.swift */,
 				EF30005D1F8C9E17005B74CF /* EditBookResponse.swift */,
 				EF41D0ED1F87708300C07798 /* AddBookResponse.swift */,
 				EF41D0E91F87343200C07798 /* SignUpRequest.swift */,
@@ -475,6 +478,7 @@
 			files = (
 				EF0717081F724FBA00732883 /* BookCell.swift in Sources */,
 				EF032C1A1F7109C700AB6596 /* SettingTextField.swift in Sources */,
+				EF3000601F8CC67B005B74CF /* GetBookResponse.swift in Sources */,
 				EF30005C1F8C9A5B005B74CF /* EditBookRequest.swift in Sources */,
 				EF1800341F6114F600D65DB7 /* LoginViewController.swift in Sources */,
 				EF41D0EC1F876ED600C07798 /* AddBookRequest.swift in Sources */,
