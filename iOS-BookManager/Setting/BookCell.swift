@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class BookCell: UITableViewCell {
     
@@ -64,6 +65,6 @@ class BookCell: UITableViewCell {
         bookTitleLabel.text = book.name
         bookPriceLabel.text = R.string.localizable.price(book.price)
         bookDateLabel.text = book.purchaseDate
-        bookImageView.image = UIImage(named: book.imagePath)
+        bookImageView.kf.setImage(with: URL(string: book.imagePath))
     }
 }

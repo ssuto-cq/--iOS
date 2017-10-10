@@ -23,6 +23,7 @@
 		EF1800341F6114F600D65DB7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800331F6114F600D65DB7 /* LoginViewController.swift */; };
 		EF1800471F6114F600D65DB7 /* _________iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800461F6114F600D65DB7 /* _________iOSTests.swift */; };
 		EF1800521F6114F600D65DB7 /* _________iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */; };
+		EF30005A1F8C88E2005B74CF /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3000591F8C88E2005B74CF /* Kingfisher.framework */; };
 		EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37574E1F626DF400FBCF6E /* BooksViewController.swift */; };
 		EF41D0C91F870E1900C07798 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C81F870E1900C07798 /* Result.framework */; };
 		EF41D0DB1F871A1000C07798 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C81F870E1900C07798 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -54,6 +55,7 @@
 			isEditable = 1;
 			outputFiles = (
 			);
+			script = "";
 		};
 /* End PBXBuildRule section */
 
@@ -115,6 +117,7 @@
 		EF18004D1F6114F600D65DB7 /* iOS-BookManager-UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-BookManager-UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1800511F6114F600D65DB7 /* _________iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "_________iOSUITests.swift"; sourceTree = "<group>"; };
 		EF1800531F6114F600D65DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3000591F8C88E2005B74CF /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		EF37574E1F626DF400FBCF6E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		EF41D0C41F870DF000C07798 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		EF41D0C61F870E0300C07798 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF30005A1F8C88E2005B74CF /* Kingfisher.framework in Frameworks */,
 				EF41D0C91F870E1900C07798 /* Result.framework in Frameworks */,
 				EF41D0DD1F871A3700C07798 /* Himotoki.framework in Frameworks */,
 				EF1339591F6A1EF00073EACF /* Rswift.framework in Frameworks */,
@@ -167,6 +171,7 @@
 		EF13394C1F6A14150073EACF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF3000591F8C88E2005B74CF /* Kingfisher.framework */,
 				EF41D0C81F870E1900C07798 /* Result.framework */,
 				EF41D0C61F870E0300C07798 /* Himotoki.framework */,
 				EF41D0C41F870DF000C07798 /* APIKit.framework */,
@@ -419,6 +424,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputPaths = (
 			);
