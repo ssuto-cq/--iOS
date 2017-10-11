@@ -3,23 +3,23 @@ import Kingfisher
 
 class BookCell: UITableViewCell {
     
-    fileprivate var bookImageView: UIImageView! = {
+    private var bookImageView: UIImageView! = {
         return UIImageView(image: R.image.noimage())
     }()
     
-    fileprivate let bookTitleLabel: UILabel = {
+    private let bookTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         return label
     }()
     
-    fileprivate let bookPriceLabel: UILabel = {
+    private let bookPriceLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         return label
     }()
     
-    fileprivate let bookDateLabel: UILabel = {
+    private let bookDateLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
         return label

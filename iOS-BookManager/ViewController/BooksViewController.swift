@@ -73,14 +73,14 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     //追加ボタンの処理
-    @objc func addButtonTapped() {
+    @objc private func addButtonTapped() {
         let vc = AddBookViewController()
         let navi = UINavigationController(rootViewController: vc)
         vc.modalTransitionStyle = .crossDissolve
         present(navi, animated: true, completion: nil)
     }
     
-    @objc func tappedLoadButton() {
+    @objc private func tappedLoadButton() {
         print("more load")
         page += 1
         fetchData()

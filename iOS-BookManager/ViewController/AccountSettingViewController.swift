@@ -4,42 +4,42 @@ import Himotoki
 
 class AccountSettingViewController: UIViewController {
     
-    fileprivate let addressLabel: UILabel = {
+    private let addressLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.mailaddress()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate let passwordLabel: UILabel = {
+    private let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.password()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate let confirmLabel: UILabel = {
+    private let confirmLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.confirmpass()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate lazy var addressTextField: UITextField = {
+    private lazy var addressTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = R.string.localizable.addressInput()
         textField.setTextField()
         return textField
     }()
     
-    fileprivate lazy var passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = R.string.localizable.passwordInput()
         textField.setTextField()
         return textField
     }()
     
-    fileprivate lazy var confirmTextField: UITextField = {
+    private lazy var confirmTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = R.string.localizable.confirmpassInput()
         textField.setTextField()
@@ -73,11 +73,11 @@ class AccountSettingViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @objc func closeModal() {
+    @objc private func closeModal() {
         dismiss(animated: true, completion: nil)
     }
     //保存ボタンを押した時の処理
-    @objc func tappedSaveButton() {
+    @objc private func tappedSaveButton() {
         let email = addressTextField.text!
         let password = passwordTextField.text!
         let check = confirmTextField.text!

@@ -3,35 +3,35 @@ import APIKit
 
 class LoginViewController: UIViewController {
     
-    fileprivate let addressLabel: UILabel = {
+    private let addressLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.mailaddress()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate let passwordLabel: UILabel = {
+    private let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.password()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate lazy var addressTextField: UITextField = {
+    private lazy var addressTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = R.string.localizable.addressInput()
         textField.setTextField()
         return textField
     }()
     
-    fileprivate lazy var passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = R.string.localizable.passwordInput()
         textField.setTextField()
         return textField
     }()
     
-    fileprivate lazy var loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setButton()
         button.setTitle(R.string.localizable.login(), for: .normal)
@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @objc func tappedLoginButton() {
+    @objc private func tappedLoginButton() {
         let email = addressTextField.text!
         let password = passwordTextField.text!
         let request = LoginRequest(email: email, password: password)
