@@ -58,7 +58,6 @@ class LoginViewController: UIViewController {
     }
     
     @objc func tappedLoginButton() {
-        let vc = BooksViewController()
         let email = addressTextField.text!
         let password = passwordTextField.text!
         let request = LoginRequest(email: email, password: password)
@@ -70,7 +69,7 @@ class LoginViewController: UIViewController {
                 UserDefaults.standard.set(response.id, forKey: "id")
                 UserDefaults.standard.set(response.email, forKey: "email")
                 UserDefaults.standard.set(response.token, forKey: "token")
-                self.navigationController?.pushViewController(vc, animated: true)
+                UIApplication.shared.keyWindow?.rootViewController = TabBarController()
             case.failure(let error):
                 print(error)
             }

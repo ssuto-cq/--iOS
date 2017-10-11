@@ -5,7 +5,7 @@ import Himotoki
 class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var books:[Book] = []
-    private var limit = 6
+    private var limit = 5
     private var page = 1
     
     private lazy var bookTableView: UITableView = {
@@ -33,8 +33,6 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         view.addSubview(bookTableView)
         view.addSubview(loadButton)
         
-        fetchData()
-        
         //追加ボタンの設定
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         self.navigationItem.setRightBarButtonItems([addButton], animated: true)
@@ -47,7 +45,13 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         loadButton.bottomAnchor.constraint(equalTo:self.view.bottomAnchor, constant:-50).isActive = true
         loadButton.widthAnchor.constraint(equalTo:self.view.widthAnchor).isActive = true
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        books = []
+        page = 1
+        bookTableView.reloadData()
+        fetchData()
     }
     
     override func didReceiveMemoryWarning() {
