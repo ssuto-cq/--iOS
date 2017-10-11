@@ -4,7 +4,7 @@ import Himotoki
 
 class EditBookViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    fileprivate var bookID = 0//
+    fileprivate var bookID = 0
     fileprivate var bookImage: UIImage!
     
     fileprivate lazy var bookImageView: UIImageView! = {

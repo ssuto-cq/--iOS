@@ -221,18 +221,8 @@
 			children = (
 				EF41D0E21F871B3100C07798 /* Setting */,
 				EF41D0E11F871AF300C07798 /* ViewController */,
+				EF3000631F8DBD85005B74CF /* API */,
 				EF1800311F6114F600D65DB7 /* AppDelegate.swift */,
-				EF41D0E31F871B9300C07798 /* APIRequest.swift */,
-				EF41D0E51F871E1600C07798 /* LoginRequest.swift */,
-				EFD1F3721F6F444E003C62BD /* Book.swift */,
-				EF41D0EF1F8AF29A00C07798 /* BookRequest.swift */,
-				EF41D0EB1F876ED600C07798 /* AddBookRequest.swift */,
-				EF30005B1F8C9A5B005B74CF /* EditBookRequest.swift */,
-				EF30005F1F8CC67B005B74CF /* GetBookResponse.swift */,
-				EF30005D1F8C9E17005B74CF /* EditBookResponse.swift */,
-				EF41D0ED1F87708300C07798 /* AddBookResponse.swift */,
-				EF41D0E91F87343200C07798 /* SignUpRequest.swift */,
-				EF41D0E71F871F3B00C07798 /* User.swift */,
 				EF18003D1F6114F600D65DB7 /* Info.plist */,
 			);
 			path = "iOS-BookManager";
@@ -256,6 +246,24 @@
 			);
 			name = "iOS-BookManager-UITests";
 			path = "書籍管理アプリ-iOSUITests";
+			sourceTree = "<group>";
+		};
+		EF3000631F8DBD85005B74CF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EF41D0E31F871B9300C07798 /* APIRequest.swift */,
+				EF41D0E91F87343200C07798 /* SignUpRequest.swift */,
+				EF41D0E51F871E1600C07798 /* LoginRequest.swift */,
+				EF41D0EF1F8AF29A00C07798 /* BookRequest.swift */,
+				EF41D0EB1F876ED600C07798 /* AddBookRequest.swift */,
+				EF30005B1F8C9A5B005B74CF /* EditBookRequest.swift */,
+				EF30005F1F8CC67B005B74CF /* GetBookResponse.swift */,
+				EF41D0ED1F87708300C07798 /* AddBookResponse.swift */,
+				EF30005D1F8C9E17005B74CF /* EditBookResponse.swift */,
+				EFD1F3721F6F444E003C62BD /* Book.swift */,
+				EF41D0E71F871F3B00C07798 /* User.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		EF41D0E11F871AF300C07798 /* ViewController */ = {

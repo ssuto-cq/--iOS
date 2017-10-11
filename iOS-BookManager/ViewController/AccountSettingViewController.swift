@@ -78,24 +78,28 @@ class AccountSettingViewController: UIViewController {
     }
     //保存ボタンを押した時の処理
     @objc func tappedSaveButton() {
-        print("save")
-        
         let email = addressTextField.text!
         let password = passwordTextField.text!
-        //let check = confirmTextField.text!
+        let check = confirmTextField.text!
         let request = SignUpRequest(email: email, password: password)
-        Session.send(request){result in
-            switch result{
-            case.success(let response):
-                print(response)
-                UserDefaults.standard.set(response.id, forKey: "id")
-                UserDefaults.standard.set(response.email, forKey: "email")
-                UserDefaults.standard.set(response.token, forKey: "token")
-                self.navigationController?.pushViewController(LoginViewController(), animated: true)
-            case.failure(let error):
-                print(error)
+        
+        if password == check {
+            Session.send(request){result in
+                switch result{
+                case.success(let response):
+                    print(response)
+                    UserDefaults.standard.set(response.id, forKey: "id")
+                    UserDefaults.standard.set(response.email, forKey: "email")
+                    UserDefaults.standard.set(response.token, forKey: "token")
+                    self.navigationController?.pushViewController(LoginViewController(), animated: true)
+                case.failure(let error):
+                    print(error)
+                }
             }
+        } else {
+            print("パスワードが一致しません。")
         }
+        
     }
 }
 
