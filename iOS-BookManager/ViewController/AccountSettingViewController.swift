@@ -97,7 +97,7 @@ class AccountSettingViewController: UIViewController {
                 }
             }
         } else {
-            print("パスワードが一致しません。")
+            AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
         }
         
     }

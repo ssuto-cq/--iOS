@@ -61,6 +61,7 @@ class LoginViewController: UIViewController {
         let email = addressTextField.text!
         let password = passwordTextField.text!
         let request = LoginRequest(email: email, password: password)
+        
         Session.send(request) {result in
             switch result{
             case.success(let response):
@@ -72,9 +73,10 @@ class LoginViewController: UIViewController {
                 UIApplication.shared.keyWindow?.rootViewController = TabBarController()
             case.failure(let error):
                 print(error)
+                AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
             }
+            
         }
-        
     }
 }
 

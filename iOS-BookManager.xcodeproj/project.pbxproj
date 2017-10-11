@@ -27,6 +27,7 @@
 		EF30005C1F8C9A5B005B74CF /* EditBookRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30005B1F8C9A5B005B74CF /* EditBookRequest.swift */; };
 		EF30005E1F8C9E17005B74CF /* EditBookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30005D1F8C9E17005B74CF /* EditBookResponse.swift */; };
 		EF3000601F8CC67B005B74CF /* GetBookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF30005F1F8CC67B005B74CF /* GetBookResponse.swift */; };
+		EF3000651F8DC164005B74CF /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3000641F8DC164005B74CF /* AlertController.swift */; };
 		EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37574E1F626DF400FBCF6E /* BooksViewController.swift */; };
 		EF41D0C91F870E1900C07798 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C81F870E1900C07798 /* Result.framework */; };
 		EF41D0DB1F871A1000C07798 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EF41D0C81F870E1900C07798 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -124,6 +125,7 @@
 		EF30005B1F8C9A5B005B74CF /* EditBookRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookRequest.swift; sourceTree = "<group>"; };
 		EF30005D1F8C9E17005B74CF /* EditBookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookResponse.swift; sourceTree = "<group>"; };
 		EF30005F1F8CC67B005B74CF /* GetBookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookResponse.swift; sourceTree = "<group>"; };
+		EF3000641F8DC164005B74CF /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		EF37574E1F626DF400FBCF6E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		EF41D0C41F870DF000C07798 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		EF41D0C61F870E0300C07798 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				EF0FEF801F7E2D0900D7B838 /* SettingUITextField.swift */,
 				EFA037E91F84BCD2007C1CB3 /* SettingUIButton.swift */,
 				EF0717071F724FBA00732883 /* BookCell.swift */,
+				EF3000641F8DC164005B74CF /* AlertController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				EF41D0EA1F87343200C07798 /* SignUpRequest.swift in Sources */,
 				EF0AAE131F6773A800E19987 /* TabBarController.swift in Sources */,
 				EF41D0F01F8AF29A00C07798 /* BookRequest.swift in Sources */,
+				EF3000651F8DC164005B74CF /* AlertController.swift in Sources */,
 				EF37574F1F626DF400FBCF6E /* BooksViewController.swift in Sources */,
 				EF41D0E81F871F3B00C07798 /* User.swift in Sources */,
 				EF1800321F6114F600D65DB7 /* AppDelegate.swift in Sources */,

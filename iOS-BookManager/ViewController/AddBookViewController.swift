@@ -88,14 +88,18 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     @objc func closeModal() {
         dismiss(animated: true, completion: nil)
     }
-        
+    
     @objc func tappedSaveButton(){
-        let name = bookNameTextField.text!
-        let price = Int(priceTextField.text!)
-        let purchaseDate = datePickerTextField.text!
+        guard let name = bookNameTextField.text,
+            let price = Int(priceTextField.text!),
+            let purchaseDate = datePickerTextField.text
+            else {
+                return AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
+        }
+        
         let data = UIImagePNGRepresentation(bookImageView.image!)!
         let encodedString = data.base64EncodedString()
-        let request = AddBookRequest(name: name, image: encodedString, price: price!, purchaseDate: purchaseDate)
+        let request = AddBookRequest(name: name, image: encodedString, price: price, purchaseDate: purchaseDate)
         
         Session.send(request){ result in
             switch result {

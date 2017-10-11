@@ -17,3 +17,6 @@
 "confirmpass" = "Confirming Password";
 "confirmpassInput" = "Input password again";
 "price" = "%d yen";
+"alert" = "Alert";
+"message" = "Please try again";
+"ok" = "OK";
