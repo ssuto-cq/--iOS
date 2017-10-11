@@ -83,23 +83,23 @@ class AccountSettingViewController: UIViewController {
         let check = confirmTextField.text!
         let request = SignUpRequest(email: email, password: password)
         
-        if password == check {
-            Session.send(request){result in
-                switch result{
-                case.success(let response):
-                    print(response)
-                    UserDefaults.standard.set(response.id, forKey: "id")
-                    UserDefaults.standard.set(response.email, forKey: "email")
-                    UserDefaults.standard.set(response.token, forKey: "token")
-                    self.navigationController?.pushViewController(LoginViewController(), animated: true)
-                case.failure(let error):
-                    print(error)
-                }
-            }
-        } else {
+        if password != check {
             AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
         }
         
+        Session.send(request) {result in
+            switch result{
+            case.success(let response):
+                print(response)
+                UserDefaults.standard.set(response.id, forKey: "id")
+                UserDefaults.standard.set(response.email, forKey: "email")
+                UserDefaults.standard.set(response.token, forKey: "token")
+                self.navigationController?.pushViewController(LoginViewController(), animated: true)
+            case.failure(let error):
+                print(error)
+                AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
+            }
+        }
     }
 }
 

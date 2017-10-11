@@ -90,15 +90,16 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @objc private func tappedSaveButton(){
+        let data = UIImagePNGRepresentation(bookImageView.image!)
+        
         guard let name = bookNameTextField.text,
-            let price = Int(priceTextField.text!),
-            let purchaseDate = datePickerTextField.text
-            else {
-                return AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
+              let price = Int(priceTextField.text!),
+              let purchaseDate = datePickerTextField.text,
+              let encodedString = data?.base64EncodedString()
+        else {
+            return AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
         }
         
-        let data = UIImagePNGRepresentation(bookImageView.image!)!
-        let encodedString = data.base64EncodedString()
         let request = AddBookRequest(name: name, image: encodedString, price: price, purchaseDate: purchaseDate)
         
         Session.send(request){ result in
@@ -108,6 +109,7 @@ class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print("書籍を追加しました。")
             case .failure(let error):
                 print(error)
+                AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
             }
         }
     }
