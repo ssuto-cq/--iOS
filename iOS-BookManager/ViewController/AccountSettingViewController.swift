@@ -80,12 +80,12 @@ class AccountSettingViewController: UIViewController {
     @objc private func tappedSaveButton() {
         guard let email = addressTextField.text,
               let password = passwordTextField.text,
-              let check = confirmTextField.text
+              let passwordConfirm = confirmTextField.text
         else {
             return AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
         }
         
-        if password != check {
+        if password != passwordConfirm {
             AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
         }
         
