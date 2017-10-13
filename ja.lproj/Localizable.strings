@@ -17,3 +17,6 @@
 "confirmpass" = "パスワード確認";
 "confirmpassInput" = "パスワードをもう一回入力";
 "price" = "%d 円";
+"alert" = "警告";
+"message" = "もう一度やり直してください。";
+"ok" = "OK";

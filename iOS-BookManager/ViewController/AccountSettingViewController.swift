@@ -1,43 +1,45 @@
 import UIKit
+import APIKit
+import Himotoki
 
 class AccountSettingViewController: UIViewController {
     
-    fileprivate let addressLabel: UILabel = {
+    private let addressLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.mailaddress()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate let passwordLabel: UILabel = {
+    private let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.password()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate let confirmLabel: UILabel = {
+    private let confirmLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.confirmpass()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate lazy var addressTextField: UITextField = {
+    private lazy var addressTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = R.string.localizable.addressInput()
         textField.setTextField()
         return textField
     }()
     
-    fileprivate lazy var passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = R.string.localizable.passwordInput()
         textField.setTextField()
         return textField
     }()
     
-    fileprivate lazy var confirmTextField: UITextField = {
+    private lazy var confirmTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = R.string.localizable.confirmpassInput()
         textField.setTextField()
@@ -54,7 +56,7 @@ class AccountSettingViewController: UIViewController {
         navigationItem.setLeftBarButtonItems([closeButton], animated: true)
         
         //保存ボタンの追加
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(tappedSaveButton))
         navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
         view.addSubview(addressLabel)
@@ -71,19 +73,43 @@ class AccountSettingViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func closeModal() {
+    @objc private func closeModal() {
         dismiss(animated: true, completion: nil)
     }
     //保存ボタンを押した時の処理
-    func saveButtonTapped() {
-        //self.navigationController?.pushViewController(BooksViewScene(), animated: true)
-        print("save")
+    @objc private func tappedSaveButton() {
+        guard let email = addressTextField.text,
+              let password = passwordTextField.text,
+              let passwordConfirm = confirmTextField.text
+        else {
+            return AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
+        }
+        
+        if password != passwordConfirm {
+            AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
+        }
+        
+        let request = SignUpRequest(email: email, password: password)
+        
+        Session.send(request) {result in
+            switch result{
+            case.success(let response):
+                print(response)
+                UserDefaults.standard.set(response.id, forKey: "id")
+                UserDefaults.standard.set(response.email, forKey: "email")
+                UserDefaults.standard.set(response.token, forKey: "token")
+                self.navigationController?.pushViewController(LoginViewController(), animated: true)
+            case.failure(let error):
+                print(error)
+                AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
+            }
+        }
     }
 }
 
 extension AccountSettingViewController: UITextFieldDelegate {
     
-    fileprivate func layout() {
+    private func layout() {
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
         confirmLabel.translatesAutoresizingMaskIntoConstraints = false

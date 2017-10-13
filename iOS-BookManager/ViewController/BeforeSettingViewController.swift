@@ -27,7 +27,7 @@ class BeforeSettingViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func settingButtonTapped() {
+    @objc private func settingButtonTapped() {
         let vc = AccountSettingViewController()
         let navi = UINavigationController(rootViewController: vc)
         vc.modalTransitionStyle = .crossDissolve

@@ -1,14 +1,14 @@
 import UIKit
+import APIKit
+import Himotoki
 
-class EditBookViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddBookViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    fileprivate var bookImage: UIImage!
-    
-    fileprivate lazy var bookImageView: UIImageView! = {
-        return UIImageView()
+    private var bookImageView: UIImageView! = {
+        return UIImageView(image: R.image.noimage())
     }()
     
-    fileprivate let imageButton: UIButton = {
+    private let imageButton: UIButton = {
         let button = UIButton()
         button.setTitle(R.string.localizable.addimage(), for: .normal)
         button.setButton()
@@ -16,68 +16,57 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         return button
     }()
     
-    fileprivate let bookNameLabel: UILabel = {
+    private let bookNameLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.booktitle()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate let priceLabel: UILabel = {
+    private let priceLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.pricetitle()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate let dateLabel: UILabel = {
+    private let dateLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.datetitle()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate lazy var bookNameTextField: UITextField = {
+    private lazy var bookNameTextField: UITextField = {
         let textField = UITextField()
         textField.setTextField()
         return textField
     }()
     
-    fileprivate lazy var priceTextField: UITextField = {
+    private lazy var priceTextField: UITextField = {
         let textField = UITextField()
         textField.setTextField()
         return textField
     }()
     
-    fileprivate lazy var datePickerTextField: UITextField = {
+    private lazy var datePickerTextField: UITextField = {
         var textField = SettingTextField()
         textField.setTextField()
         return textField
     }()
     
-    var book: Book! {
-        didSet {
-            bookNameTextField.text = book.name
-            priceTextField.text = String(book.price)
-            datePickerTextField.text = book.boughtDate
-            bookImage = UIImage(named: book.imagePath)!
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = R.string.localizable.editbook()
+        title = R.string.localizable.addbook()
         
         //閉じるボタンの追加
-        let closeButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backBooksView))
+        let closeButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeModal))
         navigationItem.setLeftBarButtonItems([closeButton], animated: true)
-        
         //保存ボタンの追加
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(tappedSaveButton))
         navigationItem.setRightBarButtonItems([saveButton], animated: true)
         
-        bookImageView.image = bookImage
         view.addSubview(bookImageView)
         view.addSubview(imageButton)
         view.addSubview(bookNameLabel)
@@ -88,15 +77,41 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         view.addSubview(datePickerTextField)
         
         layout()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    //書籍一覧へ戻る処理
-    func backBooksView() {
-        navigationController?.popViewController(animated: true)
+    //モーダル画面を閉じる処理
+    @objc private func closeModal() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func tappedSaveButton(){
+        let data = UIImagePNGRepresentation(bookImageView.image!)
+        
+        guard let name = bookNameTextField.text,
+              let price = Int(priceTextField.text!),
+              let purchaseDate = datePickerTextField.text,
+              let encodedString = data?.base64EncodedString()
+        else {
+            return AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
+        }
+        
+        let request = AddBookRequest(name: name, image: encodedString, price: price, purchaseDate: purchaseDate)
+        
+        Session.send(request){ result in
+            switch result {
+            case .success(let response):
+                print(response)
+                print("書籍を追加しました。")
+            case .failure(let error):
+                print(error)
+                AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
+            }
+        }
     }
     
     //ピッカー外タッチで閉じる
@@ -105,7 +120,7 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     //カメラロールから写真を選択
-    func choosePicture() {
+    @objc private func choosePicture() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let pickerView = UIImagePickerController()
             pickerView.delegate = self
@@ -120,11 +135,13 @@ class EditBookViewController: UIViewController, UIImagePickerControllerDelegate,
         bookImageView.image = image
         dismiss(animated: true)
     }
+    
 }
 
-extension EditBookViewController: UITextFieldDelegate {
+extension AddBookViewController:UITextFieldDelegate {
     
-    fileprivate func layout() {
+    private func layout() {
+        
         bookImageView.translatesAutoresizingMaskIntoConstraints = false
         imageButton.translatesAutoresizingMaskIntoConstraints = false
         bookNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -149,10 +166,10 @@ extension EditBookViewController: UITextFieldDelegate {
         bookNameLabel.leadingAnchor.constraint(equalTo:self.view.leadingAnchor, constant:50).isActive = true
         
         priceLabel.centerYAnchor.constraint(equalTo: priceTextField.centerYAnchor, constant:-30).isActive = true
-        priceLabel.leadingAnchor.constraint(equalTo: bookNameLabel.leadingAnchor).isActive=true
+        priceLabel.leadingAnchor.constraint(equalTo: bookNameLabel.leadingAnchor).isActive = true
         
         dateLabel.centerYAnchor.constraint(equalTo: datePickerTextField.centerYAnchor, constant:-30).isActive = true
-        dateLabel.leadingAnchor.constraint(equalTo: bookNameLabel.leadingAnchor).isActive=true
+        dateLabel.leadingAnchor.constraint(equalTo: bookNameLabel.leadingAnchor).isActive = true
         
         //入力欄のレイアウト
         bookNameTextField.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
@@ -169,6 +186,5 @@ extension EditBookViewController: UITextFieldDelegate {
         datePickerTextField.centerXAnchor.constraint(equalTo: bookNameTextField.centerXAnchor).isActive = true
         datePickerTextField.widthAnchor.constraint(equalToConstant: 220).isActive = true
         datePickerTextField.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
     }
 }

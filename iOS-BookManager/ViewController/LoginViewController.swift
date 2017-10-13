@@ -1,39 +1,41 @@
 import UIKit
+import APIKit
 
 class LoginViewController: UIViewController {
     
-    fileprivate let addressLabel: UILabel = {
+    private let addressLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.mailaddress()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate let passwordLabel: UILabel = {
+    private let passwordLabel: UILabel = {
         let label = UILabel()
         label.text = R.string.localizable.password()
         label.sizeToFit()
         return label
     }()
     
-    fileprivate lazy var addressTextField: UITextField = {
+    private lazy var addressTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = R.string.localizable.addressInput()
         textField.setTextField()
         return textField
     }()
     
-    fileprivate lazy var passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = R.string.localizable.passwordInput()
         textField.setTextField()
         return textField
     }()
     
-    fileprivate lazy var loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let button = UIButton()
+        button.setButton()
         button.setTitle(R.string.localizable.login(), for: .normal)
-        button.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         return button
     }()
     
@@ -55,16 +57,32 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func loginTapped() {
-        let vc = BooksViewController()
-        navigationController?.pushViewController(vc, animated: true)
+    @objc private func tappedLoginButton() {
+        let email = addressTextField.text!
+        let password = passwordTextField.text!
+        let request = LoginRequest(email: email, password: password)
+        
+        Session.send(request) {result in
+            switch result{
+            case.success(let response):
+                print(response)
+                print("ユーザー認証に成功しました。")
+                UserDefaults.standard.set(response.id, forKey: "id")
+                UserDefaults.standard.set(response.email, forKey: "email")
+                UserDefaults.standard.set(response.token, forKey: "token")
+                UIApplication.shared.keyWindow?.rootViewController = TabBarController()
+            case.failure(let error):
+                print(error)
+                AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
+            }
+            
+        }
     }
 }
 
 extension LoginViewController: UITextFieldDelegate {
     
-    func layout() {
-        
+    private func layout() {
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         passwordLabel.translatesAutoresizingMaskIntoConstraints = false
         addressTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -72,21 +90,22 @@ extension LoginViewController: UITextFieldDelegate {
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         
         addressLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:35).isActive = true
-        addressLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant:250).isActive = true
+        addressLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant:200).isActive = true
         
         passwordLabel.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
         passwordLabel.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant:100).isActive = true
         
-        addressTextField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        addressTextField.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        addressTextField.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
+        addressTextField.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant: 30).isActive = true
         addressTextField.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier:0.8).isActive = true
         
-        passwordTextField.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
-        passwordTextField.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:100.0).isActive = true
+        passwordTextField.leadingAnchor.constraint(equalTo: addressLabel.leadingAnchor).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: passwordLabel.topAnchor, constant: 30).isActive = true
         passwordTextField.widthAnchor.constraint(equalTo: addressTextField.widthAnchor).isActive = true
         
-        loginButton.centerXAnchor.constraint(equalTo: addressTextField.centerXAnchor).isActive = true
-        loginButton.topAnchor.constraint(equalTo: addressTextField.topAnchor, constant:150.0).isActive = true
-        
+        loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        loginButton.topAnchor.constraint(equalTo: addressLabel.topAnchor, constant: 250).isActive = true
+        loginButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
 }

@@ -1,8 +1,12 @@
 import UIKit
+import APIKit
+import Himotoki
 
 class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var books:[Book] = []
+    private var limit = 5
+    private var page = 1
     
     private lazy var bookTableView: UITableView = {
         let tableView = UITableView()
@@ -17,6 +21,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let button = UIButton()
         button.setTitle(R.string.localizable.load(), for: .normal)
         button.setButton()
+        button.addTarget(self, action: #selector(tappedLoadButton), for: .touchUpInside)
         return button
     }()
     
@@ -27,8 +32,6 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         view.addSubview(bookTableView)
         view.addSubview(loadButton)
-        
-        fetchData()
         
         //追加ボタンの設定
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
@@ -42,7 +45,13 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         loadButton.bottomAnchor.constraint(equalTo:self.view.bottomAnchor, constant:-50).isActive = true
         loadButton.widthAnchor.constraint(equalTo:self.view.widthAnchor).isActive = true
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        books = []
+        page = 1
+        bookTableView.reloadData()
+        fetchData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,18 +59,31 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     private func fetchData() {
-        books.append(Book(name: "超暇つぶし図鑑", price:1000, boughtDate: "2017/5/10", imagePath: "himatubusi.jpg"))
-        books.append(Book(name: "せつない動物図鑑", price: 1100, boughtDate: "2017/7/20", imagePath: "animal.jpg"))
-        books.append(Book(name: "浪費図鑑", price: 900, boughtDate: "2017/8/8", imagePath: "waste.jpg"))
-        books.append(Book(name: "冒険図鑑", price: 1700, boughtDate: "1985/6/20", imagePath: "adventure.jpg"))
+        let request = BookRequest(limit: limit, page: page)
+        Session.send(request) { result in
+            switch result {
+            case.success(let response):
+                print(response)
+                self.books.append(contentsOf: response.result)
+                self.bookTableView.reloadData()
+            case.failure(let error):
+                print(error)
+            }
+        }
     }
     
     //追加ボタンの処理
-    func addButtonTapped() {
+    @objc private func addButtonTapped() {
         let vc = AddBookViewController()
         let navi = UINavigationController(rootViewController: vc)
         vc.modalTransitionStyle = .crossDissolve
         present(navi, animated: true, completion: nil)
+    }
+    
+    @objc private func tappedLoadButton() {
+        print("more load")
+        page += 1
+        fetchData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,7 +93,7 @@ class BooksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return books.count
     }
     
     //書籍編集画面への遷移処理
