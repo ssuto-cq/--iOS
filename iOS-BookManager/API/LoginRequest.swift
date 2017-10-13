@@ -19,6 +19,9 @@ struct LoginRequest: APIRequest {
     }
     
     var bodyParameters: BodyParameters?{
-        return JSONBodyParameters(JSONObject: ["email": email, "password": password])
+        return JSONBodyParameters(JSONObject: [
+            "email": email,
+            "password": password
+            ])
     }
 }

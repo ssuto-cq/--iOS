@@ -78,14 +78,18 @@ class AccountSettingViewController: UIViewController {
     }
     //保存ボタンを押した時の処理
     @objc private func tappedSaveButton() {
-        let email = addressTextField.text!
-        let password = passwordTextField.text!
-        let check = confirmTextField.text!
-        let request = SignUpRequest(email: email, password: password)
+        guard let email = addressTextField.text,
+              let password = passwordTextField.text,
+              let check = confirmTextField.text
+        else {
+            return AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
+        }
         
         if password != check {
             AlertController.setAlert(target: self, title: R.string.localizable.alert(), message: R.string.localizable.message())
         }
+        
+        let request = SignUpRequest(email: email, password: password)
         
         Session.send(request) {result in
             switch result{
